@@ -37,7 +37,7 @@
       inherit inputs isDarwin;
       utils = import ./utils.nix { inherit isDarwin username; };
     };
-    users.${username} = import ../../home/home.nix;
+    users.${username} = import (lib.custom.relativeToRoot "home/home.nix");
     useGlobalPkgs = true;
     useUserPackages = true;
     backupFileExtension = "backup";

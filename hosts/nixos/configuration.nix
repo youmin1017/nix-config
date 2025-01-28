@@ -2,37 +2,30 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
+{ lib, ... }:
 {
-  config,
-  lib,
-  pkgs,
-  inputs,
-  ...
-}:
-{
-  imports = [
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-    ../core
-    ./modules/apps.nix
-    ./modules/system.nix
-    ./modules/hyprland.nix
+  imports =
+    [
+      # Include the results of the hardware scan.
+      ./hardware-configuration.nix
+      ./modules/apps.nix
+      ./modules/system.nix
+      ./modules/hyprland.nix
+    ]
+    ++ (map lib.custom.relativeToRoot [
+      #
+      # ========== Required Configs ==========
+      #
+      "hosts/core"
 
-    # (map lib.custom.relativeToRoot [
-    #   #
-    #   # ========== Required Configs ==========
-    #   #
-    #   # "hosts/common/core"
-    #
-    #   #
-    #   # ========== Non-Primary Users to Create ==========
-    #   #
-    #
-    #   #
-    #   # ========== Optional Configs ==========
-    #   #
-    # ])
-  ];
+      #
+      # ========== Non-Primary Users to Create ==========
+      #
+
+      #
+      # ========== Optional Configs ==========
+      #
+    ]);
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
