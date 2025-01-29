@@ -4,15 +4,14 @@
 
 { lib, ... }:
 {
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./modules/apps.nix
-      ./modules/system.nix
-      ./modules/hyprland.nix
-    ]
-    ++ (map lib.custom.relativeToRoot [
+  imports = lib.flatten [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./modules/apps.nix
+    ./modules/system.nix
+    ./modules/hyprland.nix
+
+    (map lib.custom.relativeToRoot [
       #
       # ========== Required Configs ==========
       #
@@ -25,7 +24,8 @@
       #
       # ========== Optional Configs ==========
       #
-    ]);
+    ])
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

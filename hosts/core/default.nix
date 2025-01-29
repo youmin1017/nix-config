@@ -3,33 +3,26 @@
   username,
   inputs,
   lib,
-  pkgs,
   ...
 }:
+let
+  platform = if isDarwin then "darwin" else "nixos";
+  platformModules = "${platform}Modules";
+in
 {
+  imports = lib.flatten [
+    inputs.home-manager.${platformModules}.home-manager
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.${username} = {
-    isNormalUser = true;
-    description = username;
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-    ];
-  };
-
-  security.sudo.extraRules = [
-    {
-      users = [ username ];
-      commands = [
-        {
-          command = "ALL";
-          options = [
-            "NOPASSWD"
-          ];
-        }
-      ];
-    }
+    (map lib.custom.relativeToRoot (
+      if isDarwin then
+        [
+          "hosts/core/darwin.nix"
+        ]
+      else
+        [
+          "hosts/core/nixos.nix"
+        ]
+    ))
   ];
 
   home-manager = {
@@ -37,7 +30,9 @@
       inherit inputs isDarwin;
       utils = import ./utils.nix { inherit isDarwin username; };
     };
-    users.${username} = import (lib.custom.relativeToRoot "home/home.nix");
+    users.${username}.imports = [
+      (lib.custom.relativeToRoot "home/home.nix")
+    ];
     useGlobalPkgs = true;
     useUserPackages = true;
     backupFileExtension = "backup";
