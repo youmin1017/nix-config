@@ -6,5 +6,7 @@
     vimAlias = true;
   };
 
-  home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink (utils.getDotfilePath "nvim");
+  home.file.".config/nvim" = {
+    source = config.lib.file.mkOutOfStoreSymlink (utils.getDotfilePath "nvim");
+  };
 }
