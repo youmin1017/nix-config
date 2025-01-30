@@ -1,11 +1,10 @@
-{ ... }:
+{ config, utils, ... }:
 {
   # programs.ghostty = {
-  # enable = true;
-
-  # settings = {
-  #   theme = "tokyonight";
+  #   enable = true;
   # };
 
-  # };
+  home.file.".config/ghostty" = {
+    source = config.lib.file.mkOutOfStoreSymlink (utils.getDotfilePath "ghostty");
+  };
 }
