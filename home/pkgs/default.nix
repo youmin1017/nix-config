@@ -26,6 +26,7 @@
     tokei # A program that displays statistics about your code
 
     # productivity
+    dotenv-cli
     lazygit
 
     # lsp related
@@ -42,11 +43,8 @@
     pnpm
 
     # devops
-    # docker-client
     kubernetes-helm
     kubectl
-    werf
-    buildah
     k9s
   ];
 
