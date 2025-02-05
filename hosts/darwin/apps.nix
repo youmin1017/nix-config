@@ -78,12 +78,14 @@
       "rider"
       "spotify"
       "zed"
+      "zen-browser"
     ];
   };
 
   system.defaults.dock.persistent-apps = [
     "/System/Applications/Launchpad.app"
-    "/Applications/Arc.app"
+    # "/Applications/Arc.app"
+    "/Applications/Zen Browser.app"
     "/Applications/Zed.app"
     "/Applications/Ghostty.app"
     "/Applications/Obsidian.app"

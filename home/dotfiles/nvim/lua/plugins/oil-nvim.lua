@@ -16,8 +16,8 @@ local spec = {
     opts = {
       delete_to_trash = true,
       keymaps = {
-        ["I"] = "actions.toggle_hidden",
-        ["g."] = false,
+        -- ["I"] = "actions.toggle_hidden",
+        -- ["g."] = false,
         ["<C-h>"] = false,
         ["<C-l>"] = false,
         ["S"] = { "actions.select", opts = { horizontal = true }, desc = "Open the entry in a horizontal split" },
