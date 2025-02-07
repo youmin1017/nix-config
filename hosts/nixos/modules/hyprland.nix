@@ -4,7 +4,16 @@
     enable = true;
   };
 
-  hardware.graphics.enable = true;
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+      vpl-gpu-rt
+      libvdpau-va-gl
+      libva
+      libva-utils
+    ];
+  };
 
   environment.systemPackages = with pkgs; [
     (waybar.overrideAttrs (old: {

@@ -1,20 +1,20 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 {
   environment.systemPackages =
     with pkgs;
-    [
-      gcc
-      copyq
-    ]
-    ++ (
-      if config.hardware.graphics.enable then
-        [
-          firefox
-          ghostty
-          kitty
-          networkmanagerapplet
-        ]
-      else
-        [ ]
-    );
+    if config.hardware.graphics.enable then
+      [
+        inputs.zen-browser.packages.${system}.default
+        google-chrome
+        ghostty
+        discord
+        bottles
+      ]
+    else
+      [ ];
 }
