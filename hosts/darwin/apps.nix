@@ -77,6 +77,7 @@
       "raycast"
       "rider"
       "spotify"
+      "utm"
       "zed"
       "zen-browser"
     ];
