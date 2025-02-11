@@ -14,6 +14,8 @@
         ghostty
         discord
         bottles
+        spotify
+        zed-editor
       ]
     else
       [ ];
