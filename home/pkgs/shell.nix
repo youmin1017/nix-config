@@ -1,5 +1,5 @@
 {
-  pkgs,
+  lib,
   isDarwin,
   ...
 }:
@@ -49,6 +49,7 @@
     cz = "chezmoi";
     rm = if isDarwin then "trash" else "rm";
     lg = "lazygit";
+    zed = lib.mkIf (!isDarwin) "zeditor";
 
     urldecode = "python3 -c 'import sys, urllib.parse as ul; print(ul.unquote_plus(sys.stdin.read()))'";
     urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";
