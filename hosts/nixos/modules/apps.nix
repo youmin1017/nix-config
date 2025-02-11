@@ -15,6 +15,7 @@
         discord
         bottles
         spotify
+        wl-clipboard-rs
         zed-editor
       ]
     else
