@@ -11,6 +11,10 @@
     oxygen
   ];
 
+  environment.systemPackages = with pkgs; [
+    rofi-wayland
+  ];
+
   # i18n.inputMethod.fcitx5.plasma6Support = true;
 
   hardware.graphics = {

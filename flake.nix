@@ -15,12 +15,18 @@
     };
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
+
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
     {
       nixpkgs,
       home-manager,
+      rust-overlay,
       darwin,
       ...
     }@inputs:
@@ -36,6 +42,18 @@
         system = "x86_64-linux";
         modules = [
           ./hosts/nixos/configuration.nix
+          (
+            { pkgs, ... }:
+            {
+              nixpkgs.overlays = [
+                rust-overlay.overlays.default
+              ];
+              environment.systemPackages = with pkgs; [
+                rust-bin.stable.latest.default
+                rust-analyzer
+              ];
+            }
+          )
         ];
         # ========== Extend lib with lib.custom ==========
         # NOTE: This approach allows lib.custom to propagate into hm

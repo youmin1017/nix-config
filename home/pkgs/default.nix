@@ -38,9 +38,9 @@
     # languages
     go
     goose
-    rustup
     nodejs_22
     pnpm
+    python312
 
     # devops
     kubernetes-helm

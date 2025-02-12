@@ -17,6 +17,7 @@
         spotify
         wl-clipboard-rs
         zed-editor
+        jetbrains.datagrip
       ]
     else
       [ ];
