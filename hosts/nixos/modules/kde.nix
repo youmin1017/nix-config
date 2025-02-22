@@ -7,12 +7,13 @@
 
   environment.plasma6.excludePackages = with pkgs; [
     plasma-browser-integration
-    konsole
+    # konsole
     oxygen
   ];
 
   environment.systemPackages = with pkgs; [
     rofi-wayland
+    cifs-utils
   ];
 
   # i18n.inputMethod.fcitx5.plasma6Support = true;

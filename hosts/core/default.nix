@@ -33,7 +33,7 @@ in
     users.${username}.imports = [
       (lib.custom.relativeToRoot "home/home.nix")
     ];
-    useGlobalPkgs = true;
+    # useGlobalPkgs = true;
     useUserPackages = true;
     backupFileExtension = "backup";
   };

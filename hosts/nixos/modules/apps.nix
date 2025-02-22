@@ -15,6 +15,7 @@
         discord
         bottles
         spotify
+        remmina
         wl-clipboard-rs
         zed-editor
         jetbrains.datagrip

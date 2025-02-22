@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 {
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
@@ -12,6 +12,13 @@
   hardware.keyboard.qmk.enable = true;
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
+
+  # Virtualization
+  # virtualisation.containers.enable = true;
+  virtualisation.docker = {
+    enable = true;
+    # storageDriver = "btrfs";
+  };
 
   i18n.inputMethod = {
     type = "fcitx5";
@@ -29,13 +36,25 @@
     noto-fonts-cjk-sans
     noto-fonts-color-emoji
     font-awesome
-    (nerdfonts.override {
-      fonts = [
-        "NerdFontsSymbolsOnly"
-        "DejaVuSansMono"
-      ];
-    })
+    nerd-fonts.dejavu-sans-mono
+    # (nerdfonts.override {
+    #   fonts = [
+    #     "NerdFontsSymbolsOnly"
+    #     "DejaVuSansMono"
+    #   ];
+    # })
   ];
+
+  # Only In WKE
+  fileSystems."/mnt/syncwke/EAS_RW" = lib.mkIf true {
+    device = "//syncwke.csie.ncnu.edu.tw/EAS_RW";
+    fsType = "cifs";
+    options =
+      let
+        automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
+      in
+      [ "${automount_opts},credentials=/etc/nixos/syncwke-secrets" ];
+  };
 
   services.keyd = {
     enable = true;
