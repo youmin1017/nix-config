@@ -37,12 +37,6 @@
     noto-fonts-color-emoji
     font-awesome
     nerd-fonts.dejavu-sans-mono
-    # (nerdfonts.override {
-    #   fonts = [
-    #     "NerdFontsSymbolsOnly"
-    #     "DejaVuSansMono"
-    #   ];
-    # })
   ];
 
   # Only In WKE

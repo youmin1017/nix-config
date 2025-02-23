@@ -19,6 +19,8 @@
     socat # replacement of openbsd-netcat
     nmap # A utility for network discovery and security auditing
     unar # A program to extract, list, test and view the contents of archives
+    unzip # A utility for unpacking zip files
+    jless
 
     # misc
     # husky # Git hooks made easy

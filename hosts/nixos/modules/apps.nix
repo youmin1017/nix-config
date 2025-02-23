@@ -10,7 +10,7 @@
     if config.hardware.graphics.enable then
       [
         inputs.zen-browser.packages.${system}.default
-        google-chrome
+        microsoft-edge
         ghostty
         discord
         bottles
