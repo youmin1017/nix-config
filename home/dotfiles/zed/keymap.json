@@ -22,8 +22,8 @@
       "ctrl-e": "editor::MoveToEndOfLine",
       "ctrl-a": "editor::MoveToBeginningOfLine",
       "ctrl-s": "editor::ShowCompletions",
-      "alt-l": "editor::AcceptInlineCompletion",
-      "alt-shift-l": "editor::AcceptPartialInlineCompletion"
+      "alt-l": "editor::AcceptEditPrediction",
+      "alt-shift-l": "editor::AcceptPartialEditPrediction"
     }
   },
   {
@@ -56,30 +56,25 @@
       "<": "editor::Outdent",
       "alt-j": "editor::MoveLineDown",
       "alt-k": "editor::MoveLineUp",
-      "shift-s": [
-        "vim::PushOperator",
-        {
-          "AddSurrounds": {}
-        }
-      ]
+      "shift-s": ["vim::PushAddSurrounds", {}]
     }
   },
   {
     "context": "ProjectPanel || CollabPanel || OutlinePanel || ChatPanel || VimControl || EmptyPane || SharedScreen || MarkdownPreview || KeyContextView",
     "bindings": {
-      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
-      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
-      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown"
     }
   },
   {
     "context": "Dock || Terminal",
     "bindings": {
-      "ctrl-w ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
-      "ctrl-w ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
-      "ctrl-w ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-w ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
+      "ctrl-w ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-w ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-w ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-w ctrl-j": "workspace::ActivatePaneDown"
     }
   },
   {
