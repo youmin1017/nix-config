@@ -45,7 +45,8 @@
       "space c a": "editor::ToggleCodeActions",
       "space p": "editor::Paste",
       "space r a": "editor::Rename",
-      "space b o": "pane::CloseAllItems"
+      "space b o": "pane::CloseAllItems",
+      "space x": "pane::CloseActiveItem"
     }
   },
   {

@@ -92,6 +92,13 @@
         }
       ]
     },
+    "Rust": {
+      "tab_size": 4,
+      "code_actions_on_format": {
+        "source.organizeImports.ruff": true,
+        "source.fixAll.ruff": true
+      }
+    },
     "Nix": {
       "formatter": {
         "external": {

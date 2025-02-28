@@ -79,14 +79,12 @@
       "spotify"
       "utm"
       "zed"
-      "zen-browser"
     ];
   };
 
   system.defaults.dock.persistent-apps = [
     "/System/Applications/Launchpad.app"
-    # "/Applications/Arc.app"
-    "/Applications/Zen Browser.app"
+    "/Applications/Arc.app"
     "/Applications/Zed.app"
     "/Applications/Ghostty.app"
     "/Applications/Obsidian.app"

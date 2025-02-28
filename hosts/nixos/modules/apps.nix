@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  inputs,
   ...
 }:
 {
@@ -9,7 +8,6 @@
     with pkgs;
     if config.hardware.graphics.enable then
       [
-        inputs.zen-browser.packages.${system}.default
         microsoft-edge
         ghostty
         discord

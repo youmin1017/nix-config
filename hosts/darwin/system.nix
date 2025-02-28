@@ -51,12 +51,8 @@
 
   fonts.packages = with pkgs; [
     material-design-icons
+    noto-fonts-cjk-sans
     font-awesome
-    (nerdfonts.override {
-      fonts = [
-        "NerdFontsSymbolsOnly"
-        "DejaVuSansMono"
-      ];
-    })
+    nerd-fonts.dejavu-sans-mono
   ];
 }
