@@ -17,6 +17,10 @@
         wl-clipboard-rs
         zed-editor
         jetbrains.datagrip
+        jetbrains.goland
+
+        libreoffice
+        hunspell
       ]
     else
       [ ];

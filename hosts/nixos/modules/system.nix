@@ -37,6 +37,24 @@
     noto-fonts-color-emoji
     font-awesome
     nerd-fonts.dejavu-sans-mono
+    # Windows fonts
+    vistafonts-cht
+    vistafonts
+    corefonts
+    (stdenv.mkDerivation {
+      pname = "wps-missing-fonts";
+      version = "unstable";
+      src = fetchFromGitHub {
+        owner = "iykrichie";
+        repo = "wps-office-19-missing-fonts-on-Linux";
+        rev = "main";
+        sha256 = "QiGyAcHHKuAwrCP0Ek2swMVy2C44DxOAUQwhsRcSXIY="; # Use the hash from the previous step
+      };
+      installPhase = ''
+        mkdir -p $out/share/fonts/truetype
+        cp -r *.ttf *.TTF *.otf $out/share/fonts/truetype/
+      '';
+    })
   ];
 
   # Only In WKE
