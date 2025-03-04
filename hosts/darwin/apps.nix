@@ -65,6 +65,7 @@
       "appcleaner"
       "chatgpt"
       "datagrip"
+      "goland"
       "discord"
       "ghostty"
       "jordanbaird-ice"

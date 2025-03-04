@@ -9,7 +9,6 @@
   home.packages = with pkgs; [
     # utils
     ripgrep # recursively searches directories for a regex pattern
-    jq # A lightweight and flexible command-line JSON processor
     yq-go # yaml processer https://github.com/mikefarah/yq
     fzf # A command-line fuzzy finder
     just # A handy way to save and run project-specific commands
@@ -20,6 +19,8 @@
     nmap # A utility for network discovery and security auditing
     unar # A program to extract, list, test and view the contents of archives
     unzip # A utility for unpacking zip files
+    # JSON utils
+    jq # A lightweight and flexible command-line JSON processor
     jless
 
     # misc
