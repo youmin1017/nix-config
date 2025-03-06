@@ -37,29 +37,21 @@
     noto-fonts-color-emoji
     font-awesome
     nerd-fonts.dejavu-sans-mono
-    # Windows fonts
-    vistafonts-cht
-    vistafonts
-    corefonts
-    (stdenv.mkDerivation {
-      pname = "wps-missing-fonts";
-      version = "unstable";
-      src = fetchFromGitHub {
-        owner = "iykrichie";
-        repo = "wps-office-19-missing-fonts-on-Linux";
-        rev = "main";
-        sha256 = "QiGyAcHHKuAwrCP0Ek2swMVy2C44DxOAUQwhsRcSXIY="; # Use the hash from the previous step
-      };
-      installPhase = ''
-        mkdir -p $out/share/fonts/truetype
-        cp -r *.ttf *.TTF *.otf $out/share/fonts/truetype/
-      '';
-    })
   ];
 
   # Only In WKE
   fileSystems."/mnt/syncwke/EAS_RW" = lib.mkIf true {
     device = "//syncwke.csie.ncnu.edu.tw/EAS_RW";
+    fsType = "cifs";
+    options =
+      let
+        automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
+      in
+      [ "${automount_opts},credentials=/etc/nixos/syncwke-secrets" ];
+  };
+
+  fileSystems."/mnt/syncwke/home" = lib.mkIf true {
+    device = "//syncwke.csie.ncnu.edu.tw/home";
     fsType = "cifs";
     options =
       let
