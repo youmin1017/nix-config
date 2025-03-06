@@ -44,6 +44,8 @@
     nodejs_22
     pnpm
     python312
+    rust-bin.stable.latest.default
+    rust-analyzer
 
     # devops
     kubernetes-helm

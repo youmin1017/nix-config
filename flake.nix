@@ -22,6 +22,7 @@
 
   outputs =
     {
+      self,
       nixpkgs,
       home-manager,
       rust-overlay,
@@ -29,29 +30,20 @@
       ...
     }@inputs:
     let
+      inherit (self) outputs;
       username = "youmin";
     in
     {
+      overlays = import ./overlays { inherit inputs; };
+
       nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
         specialArgs = {
-          inherit inputs username;
+          inherit outputs inputs username;
           isDarwin = false;
         };
         system = "x86_64-linux";
         modules = [
           ./hosts/nixos/configuration.nix
-          (
-            { pkgs, ... }:
-            {
-              nixpkgs.overlays = [
-                rust-overlay.overlays.default
-              ];
-              environment.systemPackages = with pkgs; [
-                rust-bin.stable.latest.default
-                rust-analyzer
-              ];
-            }
-          )
         ];
         # ========== Extend lib with lib.custom ==========
         # NOTE: This approach allows lib.custom to propagate into hm
@@ -62,7 +54,7 @@
       darwinConfigurations."Youmins-MacBook-Air" = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         specialArgs = {
-          inherit inputs username;
+          inherit outputs inputs username;
           isDarwin = true;
         };
         modules = [

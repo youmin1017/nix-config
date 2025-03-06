@@ -2,6 +2,7 @@
   isDarwin,
   username,
   inputs,
+  outputs,
   lib,
   ...
 }:
@@ -25,9 +26,13 @@ in
     ))
   ];
 
+  nixpkgs = {
+    overlays = [ outputs.overlays.default ];
+  };
+
   home-manager = {
     extraSpecialArgs = {
-      inherit inputs isDarwin;
+      inherit outputs inputs isDarwin;
       utils = import ./utils.nix { inherit isDarwin username; };
     };
     users.${username}.imports = [
