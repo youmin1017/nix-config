@@ -67,6 +67,7 @@
       }
     },
     "Svelte": {
+      "enable_language_server": true,
       "formatter": {
         "external": {
           "command": "deno",

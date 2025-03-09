@@ -3,6 +3,8 @@
     "context": "Workspace",
     "bindings": {
       "cmd-j": null,
+      "ctrl-n": null,
+      "ctrl-p": null,
       "alt-i": "workspace::ToggleBottomDock",
       "alt-t": "workspace::NewTerminal"
     }

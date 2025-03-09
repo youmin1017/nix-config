@@ -15,7 +15,7 @@
         (bottles.override { removeWarningPopup = true; })
         spotify
         remmina
-        wl-clipboard-rs
+        wl-clipboard
         zed-editor
         jetbrains.datagrip
         jetbrains.goland

@@ -17,7 +17,6 @@
   # virtualisation.containers.enable = true;
   virtualisation.docker = {
     enable = true;
-    # storageDriver = "btrfs";
   };
 
   i18n.inputMethod = {
@@ -71,7 +70,8 @@
           [main]
           # Bind both "Cmd" keys to trigger the 'meta_mac' layer
           leftmeta = layer(meta_mac)
-          rightmeta = layer(meta_mac)
+          rightalt = rightmeta
+          # rightmeta = layer(meta_mac)
 
           # By default meta_mac = Ctrl+<key>, except for mappings below
           [meta_mac:C]
@@ -82,6 +82,7 @@
           v = S-insert
           # Cut
           x = S-delete
+          a = C-/
 
           # FIXME: for Konsole, we must create a shortcut in our default Konsole profile to bind Copy's Alternate to 'Ctrl+Ins'
 
@@ -95,6 +96,10 @@
           7 = A-7
           8 = A-8
           9 = A-9
+          ` = A-`
+          ] = C-tab
+          [ = C-S-tab
+
 
           # Move cursor to the beginning of the line
           left = home

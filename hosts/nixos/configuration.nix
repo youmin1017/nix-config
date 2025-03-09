@@ -9,8 +9,9 @@
     ./hardware-configuration.nix
     ./modules/apps.nix
     ./modules/system.nix
-    ./modules/kde.nix
+    # ./modules/kde.nix
     # ./modules/hyprland.nix
+    ./modules/gnome.nix
 
     (map lib.custom.relativeToRoot [
       #

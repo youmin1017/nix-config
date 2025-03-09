@@ -43,6 +43,7 @@
     goose
     nodejs_22
     pnpm
+    deno
     python312
     rust-bin.stable.latest.default
     rust-analyzer

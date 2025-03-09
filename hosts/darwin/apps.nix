@@ -53,7 +53,6 @@
     # TODO Feel free to add your favorite apps here.
     brews = [
       "bitwarden-cli"
-      "deno"
       "ko"
       "podman"
     ];
