@@ -77,6 +77,7 @@
       "raycast"
       "rider"
       "spotify"
+      "squirrel"
       "utm"
       "zed"
     ];
