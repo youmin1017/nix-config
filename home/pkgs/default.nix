@@ -14,7 +14,7 @@
     just # A handy way to save and run project-specific commands
     bat # A cat(1) clone with wings
     direnv # Unclutter your .profile
-    aria2 # A lightweight multi-protocol & multi-source command-line download utility
+    axel # A light download accelerator
     socat # replacement of openbsd-netcat
     nmap # A utility for network discovery and security auditing
     unar # A program to extract, list, test and view the contents of archives
