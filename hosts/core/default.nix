@@ -14,7 +14,6 @@ in
 {
   imports = lib.flatten [
     inputs.home-manager.${platformModules}.home-manager
-    inputs.sops-nix.nixosModules.sops
 
     (map lib.custom.relativeToRoot (
       if isDarwin then
