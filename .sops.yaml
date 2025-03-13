@@ -1,0 +1,7 @@
+keys:
+  - &youmin age1mtcnq254jkujp3h9aem7ypz2ktgwqqqxxky524782tflvplk83msa7xf8q
+creation_rules:
+  - path_regex: ^secrets/[^/]*\.yaml$
+    key_groups:
+      - age:
+          - *youmin

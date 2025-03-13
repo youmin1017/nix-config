@@ -3,6 +3,7 @@
   username,
   inputs,
   outputs,
+  config,
   lib,
   ...
 }:
@@ -13,6 +14,7 @@ in
 {
   imports = lib.flatten [
     inputs.home-manager.${platformModules}.home-manager
+    inputs.sops-nix.nixosModules.sops
 
     (map lib.custom.relativeToRoot (
       if isDarwin then
@@ -26,8 +28,11 @@ in
     ))
   ];
 
-  nixpkgs = {
-    overlays = [ outputs.overlays.default ];
+  nixpkgs.overlays = [ outputs.overlays.default ];
+
+  sops = {
+    age.keyFile = config.users.users.${username}.home + "/.config/sops/age/keys.txt";
+    defaultSopsFile = lib.custom.relativeToRoot "secrets/secrets.yaml";
   };
 
   home-manager = {

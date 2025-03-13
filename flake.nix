@@ -18,14 +18,17 @@
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
     {
       self,
       nixpkgs,
-      home-manager,
-      rust-overlay,
       darwin,
       ...
     }@inputs:
@@ -48,6 +51,18 @@
         # ========== Extend lib with lib.custom ==========
         # NOTE: This approach allows lib.custom to propagate into hm
         # see: https://github.com/nix-community/home-manager/pull/3454
+        lib = nixpkgs.lib.extend (self: super: { custom = import ./lib { inherit (nixpkgs) lib; }; });
+      };
+
+      nixosConfigurations."nixos-lab" = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit outputs inputs username;
+          isDarwin = false;
+        };
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/nixos-lab/configuration.nix
+        ];
         lib = nixpkgs.lib.extend (self: super: { custom = import ./lib { inherit (nixpkgs) lib; }; });
       };
 

@@ -8,6 +8,8 @@
 
   home.packages = with pkgs; [
     # utils
+    age # A simple, modern and secure encryption tool
+    sops
     ripgrep # recursively searches directories for a regex pattern
     yq-go # yaml processer https://github.com/mikefarah/yq
     fzf # A command-line fuzzy finder
@@ -22,9 +24,10 @@
     # JSON utils
     jq # A lightweight and flexible command-line JSON processor
     jless
+    openssl
+    openldap
 
     # misc
-    # husky # Git hooks made easy
     onefetch # Git repository summary generator
     tokei # A program that displays statistics about your code
 

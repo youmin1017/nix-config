@@ -7,15 +7,17 @@
   imports = lib.flatten [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./modules/apps.nix
     ./modules/system.nix
-    ./modules/gnome.nix
+    ./modules/baas.nix
 
     (map lib.custom.relativeToRoot [
       #
       # ========== Required Configs ==========
       #
       "hosts/core"
+      "hosts/nixos/modules/system.nix"
+      "hosts/nixos/modules/apps.nix"
+      "hosts/nixos/modules/gnome.nix"
 
       #
       # ========== Non-Primary Users to Create ==========
@@ -42,7 +44,7 @@
     options = "--delete-older-than 7d";
   };
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "nixos-lab"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Enable networking

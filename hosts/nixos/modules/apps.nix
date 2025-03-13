@@ -11,7 +11,6 @@
         microsoft-edge
         ghostty
         discord
-        # bottles
         (bottles.override { removeWarningPopup = true; })
         spotify
         remmina
