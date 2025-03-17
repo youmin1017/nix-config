@@ -71,7 +71,9 @@
           # Bind both "Cmd" keys to trigger the 'meta_mac' layer
           leftmeta = layer(meta_mac)
           rightalt = rightmeta
-          # rightmeta = layer(meta_mac)
+
+          shift = oneshot(shift)
+          control = overload(control, esc)
 
           # By default meta_mac = Ctrl+<key>, except for mappings below
           [meta_mac:C]

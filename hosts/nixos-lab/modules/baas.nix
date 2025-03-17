@@ -22,6 +22,7 @@ in
       rootCredentialsFile = config.sops.secrets."lab/minio/credentials".path;
       consoleAddress = ":9000";
       listenAddress = ":9001";
+      region = "tw-1";
     };
 
     keycloak = {
@@ -48,10 +49,15 @@ in
       '';
       ensureDatabases = [
         keycloak
+        "hasura"
       ];
       ensureUsers = [
         {
           name = keycloak;
+          ensureDBOwnership = true;
+        }
+        {
+          name = "hasura";
           ensureDBOwnership = true;
         }
       ];

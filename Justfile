@@ -1,22 +1,21 @@
 # just is a command runner, Justfile is very similar to Makefile, but simpler.
 
 # TODO update hostname here!
-hostname := "Youmins-MacBook-Air"
+hostname := `hostname`
 
 ############################################################################
 #
 #  Darwin related commands
 #
 ############################################################################
-
-[group('desktop')]
+[group('darwin')]
 darwin:
   nix build .#darwinConfigurations.{{hostname}}.system \
     --extra-experimental-features 'nix-command flakes'
 
   ./result/sw/bin/darwin-rebuild switch --flake .#{{hostname}}
 
-[group('desktop')]
+[group('darwin')]
 darwin-debug:
   nix build .#darwinConfigurations.{{hostname}}.system --show-trace --verbose \
     --extra-experimental-features 'nix-command flakes'
@@ -25,14 +24,12 @@ darwin-debug:
 
 ############################################################################
 #
-#  home-manager related commands
+#  NixOS related commands
 #
 ############################################################################
-
-#home-manager --extra-experimental-features 'nix-command flakes' switch --flake ./home-manager
-[group('home-manager')]
-home:
-  nix run home-manager/release-24.11 -- init --switch ./home-manager
+[group('nixos')]
+nixos:
+  @sudo nixos-rebuild switch --upgrade --flake .#{{hostname}}
 
 ############################################################################
 #
@@ -46,12 +43,6 @@ czsync:
   git --git-dir {{cz_dir}}/.git --work-tree {{cz_dir}} add . 
   git --git-dir {{cz_dir}}/.git --work-tree {{cz_dir}} commit -m "update nvim configs"
   git --git-dir {{cz_dir}}/.git --work-tree {{cz_dir}} push
-
-############################################################################
-#
-#  nix related commands
-#
-############################################################################
 
 # List all the just commands
 default:

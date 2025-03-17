@@ -1,4 +1,5 @@
 {
+  inputs,
   config,
   pkgs,
   ...
@@ -8,6 +9,7 @@
     with pkgs;
     if config.hardware.graphics.enable then
       [
+        inputs.zen-browser.packages."x86_64-linux".default # beta
         microsoft-edge
         ghostty
         discord
