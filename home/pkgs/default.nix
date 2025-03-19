@@ -43,7 +43,7 @@
 
     # languages
     go
-    goose
+    go-migrate
     nodejs_22
     pnpm
     deno
