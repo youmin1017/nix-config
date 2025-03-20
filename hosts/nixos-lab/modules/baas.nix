@@ -5,6 +5,7 @@
 }:
 let
   keycloak = "keycloak";
+  keycloakPort = 30080;
 in
 {
   services = {
@@ -12,9 +13,13 @@ in
     nginx = {
       enable = true;
       recommendedGzipSettings = true;
+      recommendedProxySettings = true;
 
-      virtualHosts."keycloak.local".locations."/".proxyPass =
-        "http://localhost:${toString config.services.keycloak.settings.http-port}";
+      virtualHosts."sso.baas.wke.csie.ncnu.edu.tw" = {
+        locations."/" = {
+          proxyPass = "http://localhost:${toString keycloakPort}/";
+        };
+      };
     };
 
     minio = {
@@ -35,9 +40,11 @@ in
         passwordFile = config.sops.secrets."lab/keycloak/database/password".path;
       };
       settings = {
-        hostname = "localhost";
-        http-port = 30080;
+        http-relative-path = "/";
+        hostname = "sso.baas.wke.csie.ncnu.edu.tw";
+        http-port = keycloakPort;
         http-enabled = true;
+        proxy-headers = "xforwarded";
       };
     };
 

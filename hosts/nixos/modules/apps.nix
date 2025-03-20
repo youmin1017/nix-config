@@ -20,7 +20,7 @@
         zed-editor
         jetbrains.datagrip
         jetbrains.goland
-
+        bibata-cursors
         libreoffice
         hunspell
       ]

@@ -80,8 +80,18 @@
   services.openssh.enable = true;
 
   networking.firewall.enable = true;
-  networking.firewall.allowedTCPPorts = [ 22 ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [
+    3389 # RDP
+    80
+    22
+  ];
+  networking.firewall.allowedUDPPorts = [ 3389 ];
+
+  networking.nameservers = [
+    "163.22.21.44"
+    "163.22.2.1"
+    "163.22.2.2"
+  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

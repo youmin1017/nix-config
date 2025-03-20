@@ -30,7 +30,6 @@
 
   environment.systemPackages = with pkgs; [
     gnome-tweaks
-    bibata-cursors
   ];
 
 }
