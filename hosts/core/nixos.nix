@@ -21,8 +21,10 @@
       "docker"
     ];
     hashedPasswordFile = config.sops.secrets."personal/password".path;
-    openssh.authorizedKeys.keyFiles = [
-      config.sops.secrets."personal/ssh/publicKeys".path
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJGr7f6G1KLjfEvevz1Xc1jiLcalf/FqofnwNDP4587W youmin@MacBook-Air"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPmm9xWkhK9Oxt+z24eHTeWQGqhvc6O757RMUMjC8VNv youmin@nixos-lab"
+
     ];
   };
 
@@ -42,6 +44,5 @@
 
   sops.secrets = {
     "personal/password" = { };
-    "personal/ssh/publicKeys" = { };
   };
 }
