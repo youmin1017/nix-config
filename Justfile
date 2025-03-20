@@ -1,7 +1,7 @@
 # just is a command runner, Justfile is very similar to Makefile, but simpler.
 
 # TODO update hostname here!
-hostname := `hostname -s`
+hostname := `if [ "$(uname)" = "Darwin" ]; then scutil --get LocalHostName; else hostname -s; fi`
 
 ############################################################################
 #
