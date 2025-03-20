@@ -1,9 +1,15 @@
-{ username, inputs, ... }:
+{
+  config,
+  username,
+  inputs,
+  ...
+}:
 {
   imports = [
     inputs.sops-nix.nixosModules.sops
   ];
 
+  users.mutableUsers = false;
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${username} = {
     home = "/home/${username}";
@@ -13,6 +19,10 @@
       "networkmanager"
       "wheel"
       "docker"
+    ];
+    hashedPasswordFile = config.sops.secrets."personal/password".path;
+    openssh.authorizedKeys.keyFiles = [
+      config.sops.secrets."personal/ssh/publicKeys".path
     ];
   };
 
@@ -30,4 +40,8 @@
     }
   ];
 
+  sops.secrets = {
+    "personal/password" = { };
+    "personal/ssh/publicKeys" = { };
+  };
 }
