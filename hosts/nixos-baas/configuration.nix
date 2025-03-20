@@ -41,7 +41,7 @@
     options = "--delete-older-than 7d";
   };
 
-  networking.hostName = "nixos-lab"; # Define your hostname.
+  networking.hostName = "nixos-baas"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Enable networking

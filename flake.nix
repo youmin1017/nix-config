@@ -68,6 +68,18 @@
         lib = nixpkgs.lib.extend (self: super: { custom = import ./lib { inherit (nixpkgs) lib; }; });
       };
 
+      nixosConfigurations."nixos-baas" = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit outputs inputs username;
+          isDarwin = false;
+        };
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/nixos-baas/configuration.nix
+        ];
+        lib = nixpkgs.lib.extend (self: super: { custom = import ./lib { inherit (nixpkgs) lib; }; });
+      };
+
       darwinConfigurations."Youmins-MacBook-Air" = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         specialArgs = {
