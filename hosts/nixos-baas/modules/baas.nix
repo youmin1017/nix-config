@@ -86,8 +86,8 @@ in
     "postgres-init.sql" = {
       owner = "postgres";
       content = ''
-        alter user postgres with password ${config.sops.placeholder."lab/postgres/password"};
-        alter user ${keycloak} with password ${config.sops.placeholder."lab/keycloak/database/password"};
+        alter user postgres with password '${config.sops.placeholder."lab/postgres/password"}';
+        alter user ${keycloak} with password '${config.sops.placeholder."lab/keycloak/database/password"}';
       '';
     };
   };
