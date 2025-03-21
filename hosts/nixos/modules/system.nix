@@ -3,11 +3,6 @@
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
 
-  environment.systemPackages = with pkgs; [
-    gcc
-    copyq
-  ];
-
   # Keyboard
   hardware.keyboard.qmk.enable = true;
   hardware.bluetooth.enable = true;

@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ lib, inputs, ... }:
+{ lib, ... }:
 {
   imports = lib.flatten [
     # Include the results of the hardware scan.
@@ -41,11 +41,21 @@
     options = "--delete-older-than 7d";
   };
 
+  # Enable networking
+  networking.networkmanager.enable = true;
   networking.hostName = "nixos-baas"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  # Enable networking
-  networking.networkmanager.enable = true;
+  networking.interfaces.eth0.ipv4.addresses = [
+    {
+      address = "163.22.22.46";
+      prefixLength = 24;
+    }
+  ];
+  networking.nameservers = [
+    "163.22.2.1"
+    "163.22.2.2"
+  ];
 
   # Set your time zone. time.timeZone = "Asia/Taipei";
   time.timeZone = "Asia/Taipei";
@@ -75,20 +85,11 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+  services.openssh.openFirewall = true;
 
   networking.firewall.enable = true;
-  networking.firewall.allowedTCPPorts = [
-    3389 # RDP
-    80
-    22
-  ];
-  networking.firewall.allowedUDPPorts = [ 3389 ];
-
-  networking.nameservers = [
-    "163.22.21.44"
-    "163.22.2.1"
-    "163.22.2.2"
-  ];
+  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedUDPPorts = [ ... ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

@@ -2,11 +2,16 @@
   config,
   username,
   inputs,
+  pkgs,
   ...
 }:
 {
   imports = [
     inputs.sops-nix.nixosModules.sops
+  ];
+
+  environment.systemPackages = with pkgs; [
+    gcc
   ];
 
   users.mutableUsers = false;
@@ -24,7 +29,6 @@
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJGr7f6G1KLjfEvevz1Xc1jiLcalf/FqofnwNDP4587W youmin@MacBook-Air"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPmm9xWkhK9Oxt+z24eHTeWQGqhvc6O757RMUMjC8VNv youmin@nixos-lab"
-
     ];
   };
 

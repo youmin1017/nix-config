@@ -78,14 +78,11 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+  services.openssh.openFirewall = true;
 
   networking.firewall.enable = true;
-  networking.firewall.allowedTCPPorts = [
-    3389 # RDP
-    80
-    22
-  ];
-  networking.firewall.allowedUDPPorts = [ 3389 ];
+  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedUDPPorts = [ ... ];
 
   networking.nameservers = [
     "163.22.21.44"
