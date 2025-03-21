@@ -47,6 +47,8 @@
   ];
 
   sops.secrets = {
-    "personal/password" = { };
+    "personal/password" = {
+      neededForUsers = true;
+    };
   };
 }
