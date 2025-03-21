@@ -56,6 +56,10 @@
     "163.22.2.1"
     "163.22.2.2"
   ];
+  networking.defaultGateway = {
+    address = "163.22.22.254";
+    interface = "eth0";
+  };
 
   # Set your time zone. time.timeZone = "Asia/Taipei";
   time.timeZone = "Asia/Taipei";
@@ -88,7 +92,10 @@
   services.openssh.openFirewall = true;
 
   networking.firewall.enable = true;
-  # networking.firewall.allowedTCPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [
+    80
+    443
+  ];
   # networking.firewall.allowedUDPPorts = [ ... ];
 
   # This value determines the NixOS release from which the default

@@ -1,5 +1,4 @@
 {
-  pkgs,
   config,
   ...
 }:
@@ -9,13 +8,16 @@ let
 in
 {
   services = {
-
     nginx = {
       enable = true;
       recommendedGzipSettings = true;
       recommendedProxySettings = true;
 
-      virtualHosts."sso.baas.wke.csie.ncnu.edu.tw" = {
+      virtualHosts."auth.wke.csie.ncnu.edu.tw" = {
+        sslCertificateKey = config.sops.secrets."wke/ssl/key".path;
+        sslCertificate = config.sops.secrets."wke/ssl/cert".path;
+        sslTrustedCertificate = config.sops.secrets."wke/ssl/ca".path;
+        forceSSL = true;
         locations."/" = {
           proxyPass = "http://localhost:${toString keycloakPort}/";
         };
@@ -41,11 +43,12 @@ in
       };
       settings = {
         http-relative-path = "/";
-        hostname = "sso.baas.wke.csie.ncnu.edu.tw";
+        hostname = "auth.wke.csie.ncnu.edu.tw";
         http-port = keycloakPort;
         http-enabled = true;
         proxy-headers = "xforwarded";
       };
+      initialAdminPassword = "keycloakadmin";
     };
 
     postgresql = {
@@ -80,6 +83,9 @@ in
     "lab/ldap/ad/username" = { };
     "lab/ldap/ad/password" = { };
     "lab/postgres/password" = { };
+    "wke/ssl/key".owner = "nginx";
+    "wke/ssl/cert".owner = "nginx";
+    "wke/ssl/ca".owner = "nginx";
   };
 
   sops.templates = {
