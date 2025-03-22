@@ -41,7 +41,7 @@ in
       };
       settings = {
         http-relative-path = "/";
-        hostname = "sso.baas.wke.csie.ncnu.edu.tw";
+        hostname = "localhost";
         http-port = keycloakPort;
         http-enabled = true;
         proxy-headers = "xforwarded";
