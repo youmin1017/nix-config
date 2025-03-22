@@ -9,19 +9,6 @@ let
 in
 {
   services = {
-
-    nginx = {
-      enable = true;
-      recommendedGzipSettings = true;
-      recommendedProxySettings = true;
-
-      virtualHosts."sso.baas.wke.csie.ncnu.edu.tw" = {
-        locations."/" = {
-          proxyPass = "http://localhost:${toString keycloakPort}/";
-        };
-      };
-    };
-
     minio = {
       enable = true;
       rootCredentialsFile = config.sops.secrets."lab/minio/credentials".path;
@@ -73,7 +60,10 @@ in
   };
 
   sops.secrets = {
-    "lab/minio/credentials" = { };
+    "lab/minio/credentials" = {
+      neededForUsers = true;
+      owner = "minio";
+    };
     "lab/keycloak/database/password" = { };
     "lab/ldap/host" = { };
     "lab/ldap/dcdomain" = { };
