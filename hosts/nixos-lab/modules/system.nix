@@ -63,9 +63,6 @@
            fnd C-f     ;; Find
            sav C-s     ;; Save
            all C-/     ;; Select all
-           rel C-r     ;; Reload
-           new C-t     ;; New tab
-           clo C-w     ;; Close tab
            lok M-l     ;; Lock Screen
 
            ;; Meta Shift Layer Specific
@@ -84,8 +81,8 @@
           (deflayer meta
             esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
             grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-            tab  q    @clo e    @rel @new y    u    i    o    p    [    ]    \
-            caps @all s    d    @fnd g    h    j    k    @lok ;    '    ret
+            tab  q    C-w  e    C-r  C-t  y    u    i    o    p    [    ]    \
+            caps @all s    d    @fnd g    h    j    k    C-l  ;    '    ret
             @mts @udo @cut @cpy @pst b    n    m    ,    .    /    rsft
             lctl lalt lmet           spc            ralt rmet rctl
           )
@@ -93,7 +90,7 @@
             esc  f1   f2   f3   f4    f5   f6   f7   f8   f9   f10  f11  f12
             grv  1    2    3    prtsc 5    6    7    8    9    0    -    =    bspc
             tab  q    w    e    r     @nwt y    u    i    o    p    @prv @nxt \
-            caps a    s    d    f     g    h    j    k    l    ;    '    ret
+            caps a    s    d    f     g    h    j    k    M-l  ;    '    ret
             lsft z    x    c    v     b    n    m    ,    .    /    rsft
             lctl lalt lmet          spc            ralt rmet rctl
           )
