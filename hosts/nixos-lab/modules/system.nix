@@ -1,10 +1,6 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 {
-  programs.zsh.enable = true;
-  users.defaultUserShell = pkgs.zsh;
-
   # Virtualization
-  # virtualisation.containers.enable = true;
   virtualisation.docker = {
     enable = true;
   };
@@ -32,4 +28,77 @@
     );
 
   sops.secrets."wke/syncwke_secret" = { };
+
+  # Keyboard remap by Kanata
+  services.kanata = {
+    enable = true;
+    keyboards = {
+      internalKeyboard = {
+        devices = [
+          "/dev/input/by-id/usb-Keychron_QingNiao_75-event-kbd"
+        ];
+        extraDefCfg = "process-unmapped-keys yes";
+        config = ''
+          (defvar
+           tap-time 100
+           hold-time 100
+          )
+          (defsrc
+            esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+            grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+            tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+            caps a    s    d    f    g    h    j    k    l    ;    '    ret
+            lsft z    x    c    v    b    n    m    ,    .    /    rsft
+            lctl lalt lmet           spc            ralt rmet rctl
+          )
+          (defalias
+           lmet (layer-toggle meta)
+           mts (layer-toggle meta-shift)
+
+           ;; Meta Layer Specific
+           cpy C-ins   ;; Copy
+           pst S-ins   ;; Paste
+           cut C-x     ;; Cut
+           udo C-z     ;; Undo
+           fnd C-f     ;; Find
+           sav C-s     ;; Save
+           all C-/     ;; Select all
+           rel C-r     ;; Reload
+           new C-t     ;; New tab
+           clo C-w     ;; Close tab
+           lok M-l     ;; Lock Screen
+
+           ;; Meta Shift Layer Specific
+           nxt C-tab   ;; Next tab
+           prv C-S-tab ;; Previous tab
+           nwt C-S-t   ;; New window
+          )
+          (deflayer base
+            esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+            grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+            tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+            caps a    s    d    f    g    h    j    k    l    ;    '    ret
+            lsft z    x    c    v    b    n    m    ,    .    /    rsft
+            lctl lalt @lmet          spc            ralt rmet rctl
+          )
+          (deflayer meta
+            esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+            grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+            tab  q    @clo e    @rel @new y    u    i    o    p    [    ]    \
+            caps @all s    d    @fnd g    h    j    k    @lok ;    '    ret
+            @mts @udo @cut @cpy @pst b    n    m    ,    .    /    rsft
+            lctl lalt lmet           spc            ralt rmet rctl
+          )
+          (deflayer meta-shift
+            esc  f1   f2   f3   f4    f5   f6   f7   f8   f9   f10  f11  f12
+            grv  1    2    3    prtsc 5    6    7    8    9    0    -    =    bspc
+            tab  q    w    e    r     @nwt y    u    i    o    p    @prv @nxt \
+            caps a    s    d    f     g    h    j    k    l    ;    '    ret
+            lsft z    x    c    v     b    n    m    ,    .    /    rsft
+            lctl lalt lmet          spc            ralt rmet rctl
+          )
+        '';
+      };
+    };
+  };
 }

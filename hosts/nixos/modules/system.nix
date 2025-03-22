@@ -8,6 +8,20 @@
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
 
+  ## Uinput
+  hardware.uinput.enable = true;
+  boot.kernelModules = [ "uinput" ];
+  users.groups.uinput = { };
+  services.udev.extraRules = ''
+    KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"
+  '';
+  systemd.services.kanata-internalKeyboard.serviceConfig = {
+    SupplementaryGroups = [
+      "input"
+      "uinput"
+    ];
+  };
+
   # Virtualization
   # virtualisation.containers.enable = true;
   virtualisation.docker = {
@@ -34,7 +48,7 @@
   ];
 
   services.keyd = {
-    enable = true;
+    enable = false;
     keyboards = {
       default = {
         ids = [ "*" ]; # what goes into the [id] section, here we select all keyboard
