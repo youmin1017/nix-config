@@ -37,7 +37,10 @@
         devices = [
           "/dev/input/by-id/usb-Keychron_QingNiao_75-event-kbd"
         ];
-        extraDefCfg = "process-unmapped-keys yes";
+        extraDefCfg = ''
+          process-unmapped-keys yes
+          concurrent-tap-hold yes
+        '';
         config = ''
           (defvar
            tap-time 100
@@ -68,7 +71,6 @@
            ;; Meta Shift Layer Specific
            nxt C-tab   ;; Next tab
            prv C-S-tab ;; Previous tab
-           nwt C-S-t   ;; New window
           )
           (deflayer base
             esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
@@ -87,11 +89,11 @@
             lctl lalt lmet           spc            ralt rmet rctl
           )
           (deflayer meta-shift
-            esc  f1   f2   f3   f4    f5   f6   f7   f8   f9   f10  f11  f12
-            grv  1    2    3    prtsc 5    6    7    8    9    0    -    =    bspc
-            tab  q    w    e    r     @nwt y    u    i    o    p    @prv @nxt \
-            caps a    s    d    f     g    h    j    k    M-l  ;    '    ret
-            lsft z    x    c    v     b    n    m    ,    .    /    rsft
+            esc  f1   f2   f3    f4    f5   f6   f7   f8   f9   f10  f11  f12
+            grv  1    2    3     prtsc 5     6    7    8    9    0    -    =    bspc
+            tab  q    w    e     r     C-S-t y    u    i    o    p    @prv @nxt \
+            caps a    s    d     f     g     h    j    k    M-l  ;    '    ret
+            lsft z    x    C-S-c v     b     n    m    ,    .    /    rsft
             lctl lalt lmet          spc            ralt rmet rctl
           )
         '';
