@@ -51,6 +51,10 @@
       address = "163.22.22.46";
       prefixLength = 24;
     }
+    {
+      address = "10.22.23.215";
+      prefixLength = 16;
+    }
   ];
   networking.nameservers = [
     "163.22.2.1"
