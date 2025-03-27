@@ -29,6 +29,7 @@
   );
 
   environment.systemPackages = with pkgs; [
+    ddcutil
     gnome-tweaks
   ];
 

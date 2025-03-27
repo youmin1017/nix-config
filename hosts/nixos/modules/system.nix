@@ -3,11 +3,18 @@
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
 
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+    settings = {
+      General = {
+        Enable = "Source,Sink,Media,Socket";
+      };
+    };
+  };
+
   # Keyboard
   hardware.keyboard.qmk.enable = true;
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
-
   ## Uinput
   hardware.uinput.enable = true;
   boot.kernelModules = [ "uinput" ];

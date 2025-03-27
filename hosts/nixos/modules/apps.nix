@@ -23,6 +23,7 @@
         bibata-cursors
         libreoffice
         hunspell
+        thunderbird
       ]
     else
       [ ];

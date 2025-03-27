@@ -39,7 +39,6 @@
         ];
         extraDefCfg = ''
           process-unmapped-keys yes
-          concurrent-tap-hold yes
         '';
         config = ''
           (defvar
@@ -67,6 +66,7 @@
            sav C-s     ;; Save
            all C-/     ;; Select all
            lok M-l     ;; Lock Screen
+           tab (multi alt tab)
 
            ;; Meta Shift Layer Specific
            nxt C-tab   ;; Next tab
@@ -81,12 +81,12 @@
             lctl lalt @lmet          spc            ralt rmet rctl
           )
           (deflayer meta
-            esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
-            grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-            tab  q    C-w  e    C-r  C-t  y    u    i    o    p    [    ]    \
-            caps @all s    d    @fnd g    h    j    k    C-l  ;    '    ret
-            @mts @udo @cut @cpy @pst b    n    m    ,    .    /    rsft
-            lctl lalt lmet           spc            ralt rmet rctl
+            esc   f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+            A-grv 1    2    3    4    5    6    7    8    9    0    -    =    bspc
+            @tab  q    C-w  e    C-r  C-t  y    u    i    o    p    [    ]    \
+            caps  @all s    C-d  @fnd g    h    j    k    C-l  ;    '    ret
+            @mts  @udo @cut @cpy @pst b    n    m    ,    .    /    rsft
+            lctl  lalt lmet           spc            ralt rmet rctl
           )
           (deflayer meta-shift
             esc  f1   f2   f3    f4    f5   f6   f7   f8   f9   f10  f11  f12
