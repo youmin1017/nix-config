@@ -81,7 +81,7 @@
   services.openssh.openFirewall = true;
 
   networking.firewall.enable = true;
-  # networking.firewall.allowedTCPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [ 3390 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
 
   networking.nameservers = [

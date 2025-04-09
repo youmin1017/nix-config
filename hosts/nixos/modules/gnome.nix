@@ -7,6 +7,10 @@
     desktopManager.gnome.enable = true;
   };
 
+  systemd.services.gnome-remote-desktop = {
+    wantedBy = [ "graphical.target" ];
+  };
+
   environment.gnome.excludePackages = (
     with pkgs;
     [
