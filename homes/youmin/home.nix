@@ -1,7 +1,5 @@
 {
   outputs,
-  config,
-  pkgs,
   isDarwin,
   ...
 }:

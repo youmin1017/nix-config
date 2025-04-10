@@ -3,6 +3,7 @@
 # TODO update hostname here!
 hostname := `if [ "$(uname)" = "Darwin" ]; then scutil --get LocalHostName; else hostname -s; fi`
 
+export IMPURITY_PATH := source_dir()
 ############################################################################
 #
 #  Darwin related commands
@@ -11,16 +12,16 @@ hostname := `if [ "$(uname)" = "Darwin" ]; then scutil --get LocalHostName; else
 [group('darwin')]
 darwin:
   nix build .#darwinConfigurations.{{hostname}}.system \
-    --extra-experimental-features 'nix-command flakes'
+   --impure --extra-experimental-features 'nix-command flakes'
 
-  ./result/sw/bin/darwin-rebuild switch --flake .#{{hostname}}
+  ./result/sw/bin/darwin-rebuild switch --flake .#{{hostname}} --impure
 
 [group('darwin')]
 darwin-debug:
   nix build .#darwinConfigurations.{{hostname}}.system --show-trace --verbose \
-    --extra-experimental-features 'nix-command flakes'
+   --impure --extra-experimental-features 'nix-command flakes'
 
-  ./result/sw/bin/darwin-rebuild switch --flake .#{{hostname}} --show-trace --verbose
+  ./result/sw/bin/darwin-rebuild switch --flake .#{{hostname}} --show-trace --verbose --impure
 
 ############################################################################
 #

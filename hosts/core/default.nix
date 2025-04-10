@@ -1,9 +1,9 @@
 {
   isDarwin,
   username,
+  config,
   inputs,
   outputs,
-  config,
   lib,
   ...
 }:
@@ -13,7 +13,7 @@ let
 in
 {
   imports = lib.flatten [
-    inputs.home-manager.${platformModules}.home-manager
+    # inputs.home-manager.${platformModules}.home-manager
 
     (map lib.custom.relativeToRoot (
       if isDarwin then
@@ -32,19 +32,6 @@ in
   sops = {
     age.keyFile = config.users.users.${username}.home + "/.config/sops/age/keys.txt";
     defaultSopsFile = lib.custom.relativeToRoot "secrets/secrets.yaml";
-  };
-
-  home-manager = {
-    extraSpecialArgs = {
-      inherit outputs inputs isDarwin;
-      utils = import ./utils.nix { inherit isDarwin username; };
-    };
-    users.${username}.imports = [
-      (lib.custom.relativeToRoot "home/home.nix")
-    ];
-    # useGlobalPkgs = true;
-    useUserPackages = true;
-    backupFileExtension = "backup";
   };
 
 }

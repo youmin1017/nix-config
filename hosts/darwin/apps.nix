@@ -39,10 +39,6 @@
     # otherwise Apple Store will refuse to install them.
     # For details, see https://github.com/mas-cli/mas
     masApps = {
-      # TODO Feel free to add your favorite apps here.
-
-      LINE = 539883307;
-      Messenger = 1480068668;
     };
 
     taps = [
