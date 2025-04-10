@@ -37,11 +37,7 @@
       ...
     }@inputs:
     let
-      username = "youmin";
-
-      hosts = import ./hosts {
-        inherit self username;
-      };
+      hosts = import ./hosts { inherit self; };
     in
     {
       overlays = import ./overlays { inherit inputs; };

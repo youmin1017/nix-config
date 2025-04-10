@@ -1,4 +1,4 @@
-{ self, username }:
+{ self }:
 let
   inherit (self) inputs outputs;
   inherit (inputs)
@@ -6,6 +6,8 @@ let
     darwin
     home-manager
     ;
+
+  username = "youmin";
 
   homeDir = self + /homes;
   hm-nixos = home-manager.nixosModules.home-manager;
@@ -57,7 +59,7 @@ in
   darwinConfigurations."Youmins-MacBook-Air" = darwin.lib.darwinSystem {
     system = "aarch64-darwin";
     specialArgs = {
-      inherit outputs inputs username;
+      inherit outputs inputs;
       isDarwin = true;
     };
     modules = [

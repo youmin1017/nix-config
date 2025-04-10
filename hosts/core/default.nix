@@ -2,7 +2,6 @@
   isDarwin,
   username,
   config,
-  inputs,
   outputs,
   lib,
   ...
