@@ -59,7 +59,7 @@ in
   darwinConfigurations."Youmins-MacBook-Air" = darwin.lib.darwinSystem {
     system = "aarch64-darwin";
     specialArgs = {
-      inherit outputs inputs;
+      inherit outputs inputs username;
       isDarwin = true;
     };
     modules = [

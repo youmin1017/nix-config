@@ -10,5 +10,6 @@
       "ghostty".source = link ../dotfiles/ghostty;
       "zed/keymap.json".source = link ../dotfiles/zed/keymap.json;
       "zed/settings.json".source = link ../dotfiles/zed/settings.json;
+      "zellij".source = link ../dotfiles/zellij;
     };
 }

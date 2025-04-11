@@ -51,10 +51,8 @@
     rust-bin.stable.latest.default
     rust-analyzer
 
-    # devops
-    kubernetes-helm
-    kubectl
-    k9s
+    helix
+    zellij
   ];
 
   programs = {
