@@ -3,12 +3,12 @@
 # TODO update hostname here!
 hostname := `if [ "$(uname)" = "Darwin" ]; then scutil --get LocalHostName; else hostname -s; fi`
 
-export IMPURITY_PATH := source_dir()
 ############################################################################
 #
 #  Darwin related commands
 #
 ############################################################################
+export IMPURITY_PATH := source_dir()
 [group('darwin')]
 darwin:
   nix build .#darwinConfigurations.{{hostname}}.system \
@@ -30,7 +30,7 @@ darwin-debug:
 ############################################################################
 [group('nixos')]
 nixos:
-  @sudo nixos-rebuild switch --upgrade --flake .#{{hostname}}
+  sudo --preserve-env=IMPURITY_PATH nixos-rebuild switch --upgrade --flake .#{{hostname}} --impure
 
 ############################################################################
 #
