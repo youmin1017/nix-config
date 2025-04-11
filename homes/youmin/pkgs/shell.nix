@@ -4,9 +4,6 @@
   ...
 }:
 {
-  # home.packages = with pkgs; [
-  #   zsh-autosuggestions
-  # ];
   programs.zsh = {
     enable = true;
     initExtraBeforeCompInit = ''
@@ -24,6 +21,8 @@
     initExtra = ''
       export PATH="$HOME/bin:$HOME/.local/bin:$HOME/go/bin:$PATH"
       export PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
+      # Currently, zellij does not follow symlink configs update
+      export ZELLIJ_CONFIG_DIR=${builtins.getEnv "IMPURITY_PATH" + "/homes/youmin/dotfiles/zellij"}
     '';
 
     autocd = true;
@@ -44,11 +43,10 @@
 
   home.shellAliases = {
     k = "kubectl";
-    pm = "podman";
-    ii = "open -a Finder.app";
     cz = "chezmoi";
-    rm = if isDarwin then "trash" else "rm";
     lg = "lazygit";
+    rm = lib.mkIf (isDarwin) "trash";
+    ii = lib.mkIf (isDarwin) "open -a Finder.app";
     zed = lib.mkIf (!isDarwin) "zeditor";
 
     urldecode = "python3 -c 'import sys, urllib.parse as ul; print(ul.unquote_plus(sys.stdin.read()))'";

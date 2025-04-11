@@ -37,6 +37,7 @@
 
     # lsp related
     nixfmt-rfc-style # Nix formatter
+    kdlfmt
     nil
     helm-ls
     hadolint # Dockerfile linter
