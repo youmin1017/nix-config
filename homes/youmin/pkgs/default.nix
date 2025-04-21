@@ -37,8 +37,8 @@
 
     # lsp related
     nixfmt-rfc-style # Nix formatter
-    kdlfmt
     nil
+    kdlfmt
     helm-ls
     hadolint # Dockerfile linter
 
@@ -51,9 +51,6 @@
     python312
     rust-bin.stable.latest.default
     rust-analyzer
-
-    helix
-    zellij
   ];
 
   programs = {
@@ -82,7 +79,11 @@
     # Basically anywhere you would want to use grep, try sk instead.
     skim = {
       enable = true;
-      enableBashIntegration = true;
+      enableZshIntegration = true;
+    };
+
+    zellij = {
+      enable = true;
     };
   };
 }
