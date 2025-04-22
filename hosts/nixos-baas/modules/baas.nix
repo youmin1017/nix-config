@@ -135,10 +135,6 @@ in
       owner = "minio";
     };
     "lab/keycloak/database/password" = { };
-    "lab/ldap/host" = { };
-    "lab/ldap/dcdomain" = { };
-    "lab/ldap/ad/username" = { };
-    "lab/ldap/ad/password" = { };
     "lab/postgres/password" = { };
     "wke/ssl/key".owner = "nginx";
     "wke/ssl/cert".owner = "nginx";

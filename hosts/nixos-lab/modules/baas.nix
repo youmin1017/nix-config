@@ -1,81 +1,68 @@
+{ config, ... }:
 {
-  pkgs,
-  config,
-  ...
-}:
-let
-  keycloak = "keycloak";
-  keycloakPort = 30080;
-in
-{
-  services = {
-    minio = {
-      enable = true;
-      rootCredentialsFile = config.sops.secrets."lab/minio/credentials".path;
-      consoleAddress = ":9000";
-      listenAddress = ":9001";
-      region = "tw-1";
-    };
-
-    keycloak = {
-      enable = true;
-      database = {
-        type = "postgresql";
-        createLocally = false;
-        name = keycloak;
-        username = keycloak;
-        passwordFile = config.sops.secrets."lab/keycloak/database/password".path;
-      };
-      settings = {
-        http-relative-path = "/";
-        hostname = "localhost";
-        http-port = keycloakPort;
-        http-enabled = true;
-        proxy-headers = "xforwarded";
-      };
-    };
-
-    postgresql = {
-      enable = true;
-      authentication = ''
-        #type database  DBuser  auth-method
-        local all all trust
-      '';
-      ensureDatabases = [
-        keycloak
-        "hasura"
-      ];
-      ensureUsers = [
-        {
-          name = keycloak;
-          ensureDBOwnership = true;
-        }
-        {
-          name = "hasura";
-          ensureDBOwnership = true;
-        }
-      ];
-      initialScript = config.sops.templates."postgres-init.sql".path;
+  # Network Configuration
+  networking.firewall.allowedTCPPorts = [
+    53
+    80
+    5432
+  ];
+  networking.nameservers = [ "127.0.0.1" ];
+  networking.resolvconf.useLocalResolver = true;
+  services.dnsmasq = {
+    enable = true;
+    settings = {
+      address = "/.baas.local/127.0.0.1";
     };
   };
+
+  # Virtualization
+  virtualisation.docker.enable = true;
+
+  # Containers
+  virtualisation.oci-containers = {
+    backend = "docker";
+
+    containers.traefik = {
+      image = "traefik:v3.3.6";
+      autoStart = true;
+      ports = [
+        "80:80"
+        "443:443"
+        "5432:5432"
+        "8080:8080"
+      ];
+
+      volumes = [
+        "/var/run/docker.sock:/var/run/docker.sock"
+        "/etc/traefik:/etc/traefik"
+        "${config.sops.secrets."lab/baas/ssl/wildcard_local/key".path}:/certs/local_key.pem"
+        "${config.sops.secrets."lab/baas/ssl/wildcard_local/cert".path}:/certs/local_cert.pem"
+      ];
+
+      cmd = [
+        "--api.insecure=true"
+        "--entrypoints.web.address=:80"
+        "--entrypoints.postgres.address=:5432"
+        "--providers.docker=true"
+        "--providers.docker.exposedbydefault=false"
+        "--providers.docker.network=traefik"
+      ];
+
+      networks = [
+        "traefik"
+      ];
+    };
+  };
+
+  environment.etc."traefik/dynamic/tls.yaml".text = ''
+    tls:
+      certificates:
+        - certFile: /certs/local_cert.pem
+          keyFile: /certs/local_key.pem
+  '';
 
   sops.secrets = {
-    "lab/minio/credentials" = {
-      neededForUsers = true;
-      owner = "minio";
-    };
-    "lab/keycloak/database/password" = { };
-    "lab/ldap/host" = { };
-    "lab/ldap/dcdomain" = { };
-    "lab/ldap/ad/username" = { };
-    "lab/ldap/ad/password" = { };
-    "lab/postgres/password" = { };
-  };
-
-  sops.templates = {
-    "postgres-init.sql".content = ''
-      alter user postgres with password ${config.sops.placeholder."lab/postgres/password"};
-      alter user ${keycloak} with password ${config.sops.placeholder."lab/keycloak/database/password"};
-    '';
+    "lab/baas/ssl/wildcard_local/key" = { };
+    "lab/baas/ssl/wildcard_local/cert" = { };
   };
 }
