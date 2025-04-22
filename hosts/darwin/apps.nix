@@ -67,6 +67,7 @@
       "karabiner-elements"
       "microsoft-teams"
       "notion"
+      "notion-calendar"
       "orbstack"
       "obsidian"
       "podman-desktop"
