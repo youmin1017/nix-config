@@ -13,6 +13,9 @@ return {
           accept_line = "<M-S-l>",
         },
       },
+      filetypes = {
+        yaml = true,
+      },
     },
   },
 }
