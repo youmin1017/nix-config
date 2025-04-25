@@ -10,12 +10,10 @@
     # utils
     age # A simple, modern and secure encryption tool
     sops
-    ripgrep # recursively searches directories for a regex pattern
     yq-go # yaml processer https://github.com/mikefarah/yq
     fzf # A command-line fuzzy finder
     just # A handy way to save and run project-specific commands
     bat # A cat(1) clone with wings
-    direnv # Unclutter your .profile
     axel # A light download accelerator
     socat # replacement of openbsd-netcat
     nmap # A utility for network discovery and security auditing
@@ -34,6 +32,7 @@
 
     # productivity
     dotenv-cli
+    direnv
     lazygit
 
     # lsp related
