@@ -47,6 +47,7 @@
   };
 
   fonts.packages = with pkgs; [
+    corefonts
     material-design-icons
     noto-fonts-cjk-sans
     noto-fonts-color-emoji

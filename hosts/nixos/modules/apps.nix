@@ -2,6 +2,7 @@
   inputs,
   config,
   pkgs,
+  lib,
   ...
 }:
 {
@@ -22,9 +23,12 @@
         jetbrains.goland
         pgadmin4
         bibata-cursors
+        thunderbird
+
+        # office
+        onlyoffice-desktopeditors
         libreoffice
         hunspell
-        thunderbird
       ]
     else
       [ ];
