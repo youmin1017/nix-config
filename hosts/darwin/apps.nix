@@ -16,7 +16,6 @@
   # Related Discussion: https://discourse.nixos.org/t/darwin-again/29331
   environment.systemPackages = with pkgs; [
     git
-    bruno # A Opensource IDE For Exploring and Testing Api's
   ];
   environment.variables.EDITOR = "nvim";
 
@@ -76,6 +75,7 @@
       "spotify"
       "squirrel"
       "utm"
+      "yaak"
       "zed"
     ];
   };
