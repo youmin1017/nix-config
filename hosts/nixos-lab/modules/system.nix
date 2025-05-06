@@ -73,7 +73,7 @@
             tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
             caps a    s    d    f    g    h    j    k    l    ;    '    ret
             lsft z    x    c    v    b    n    m    ,    .    /    rsft
-            lctl lalt @lmet          spc            ralt rmet rctl
+            lctl lalt @lmet          spc            rmet _    rctl
           )
           (deflayer meta
             esc   f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
@@ -81,7 +81,7 @@
             @tab  q    C-w  e    C-r  C-t  y    u    i    o    p    [    ]    \
             caps  @all s    C-d  @fnd g    h    j    k    C-l  ;    '    ret
             @mts  @udo @cut @cpy @pst b    n    m    ,    .    /    rsft
-            lctl  lalt lmet           spc            ralt rmet rctl
+            lctl  lalt lmet           spc            ralt _ rctl
           )
           (deflayer meta-shift
             esc  f1   f2   f3    f4    f5   f6   f7   f8   f9     f10  f11  f12
@@ -89,7 +89,7 @@
             tab  M-l  w    e     r     C-S-t y    u    i    o     p    @prv @nxt \
             caps a    s    d     f     g     h    j    k    C-S-l ;    '    ret
             lsft z    x    C-S-c v     b     n    m    ,    .     /    rsft
-            lctl lalt lmet          spc            ralt rmet rctl
+            lctl lalt lmet             spc             ralt _ rctl
           )
         '';
       };

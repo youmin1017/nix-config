@@ -12,16 +12,16 @@ return {
   { import = "configs.lang.yaml" },
   { import = "configs.lang.clangd" },
 
-  -- { import = "configs.format.deno" },
   { import = "configs.format.deno" },
   -- { import = "configs.format.prettier" },
 
   {
     "neovim/nvim-lspconfig",
-    -- event = { "VeryLazy", "BufRead" },
+    event = "User FilePost",
     dependencies = {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig",
     },
+    config = require("configs.lspconfig").defaults,
   },
 }

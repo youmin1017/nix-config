@@ -36,11 +36,16 @@
     direnv
     lazygit
 
-    # lsp related
-    nixfmt-rfc-style # Nix formatter
-    nil
-    kdlfmt
+    # lsp, formatter, linter for editors
+    # lsp
     helm-ls
+    lua-language-server
+    nil
+    # formatter
+    nixfmt-rfc-style
+    kdlfmt
+    stylua
+    # linter
     hadolint # Dockerfile linter
 
     # languages

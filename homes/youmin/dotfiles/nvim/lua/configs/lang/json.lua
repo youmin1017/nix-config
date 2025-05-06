@@ -1,20 +1,12 @@
-local function setup()
-  local lsp = require "configs.lspconfig"
-
-  require("lspconfig").jsonls.setup {
-    settings = {
-      json = {
-        schemas = require("schemastore").json.schemas(),
-        validate = { enable = true },
-      },
+vim.lsp.config("jsonls", {
+  settings = {
+    json = {
+      schemas = require("schemastore").json.schemas(),
+      validate = { enable = true },
     },
-    on_attach = function(client, bufnr)
-      lsp.on_attach(client, bufnr)
-    end,
-    capabilities = lsp.capabilities,
-    on_init = lsp.on_init,
-  }
-end
+  },
+})
+vim.lsp.enable "jsonls"
 
 --- @type NvPluginSpec
 return {
@@ -30,14 +22,5 @@ return {
       opts.ensure_installed = opts.ensure_installed or {}
       vim.list_extend(opts.ensure_installed, { "jsonls" })
     end,
-  },
-
-  {
-    "williamboman/mason-lspconfig",
-    opts = {
-      handlers = {
-        ["jsonls"] = setup,
-      },
-    },
   },
 }
