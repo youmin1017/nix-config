@@ -23,6 +23,7 @@
     # JSON utils
     jq # A lightweight and flexible command-line JSON processor
     jless
+    jose # A command-line utility for working with JWKs, JWTs, and JWE
     openssl
     mkcert
     openldap
