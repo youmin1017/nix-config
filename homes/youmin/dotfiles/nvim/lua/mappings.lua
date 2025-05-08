@@ -16,8 +16,8 @@ map("n", "<f2>", "<cmd>! just darwin<CR>", { desc = "Nix just darwin" })
 --     ╭───────────────────────────────────────────────────────────────────╮
 --     │                  Override NvChad Mappings                         │
 --     ╰───────────────────────────────────────────────────────────────────╯
--- map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { remap = true })
-map("n", "<leader>e", "<leader>fe", { desc = "Toggle neo-tree", remap = true })
+map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { remap = true })
+-- map("n", "<leader>e", "<leader>fe", { desc = "Toggle neo-tree", remap = true })
 
 --     ╭───────────────────────────────────────────────────────────────────╮
 --     │                  Telescope                                        │

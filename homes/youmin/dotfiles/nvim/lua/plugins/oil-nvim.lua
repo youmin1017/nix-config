@@ -14,6 +14,7 @@ local spec = {
       },
     },
     opts = {
+      default_file_explorer = false,
       delete_to_trash = true,
       keymaps = {
         -- ["I"] = "actions.toggle_hidden",

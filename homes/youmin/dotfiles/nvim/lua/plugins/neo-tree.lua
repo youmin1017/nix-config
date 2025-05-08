@@ -1,7 +1,7 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
   cmd = "Neotree",
-  enabled = true,
+  enabled = false,
   dependencies = {
     { "MunifTanjim/nui.nvim", lazy = true },
   },
