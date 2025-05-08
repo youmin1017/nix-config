@@ -35,6 +35,8 @@
   environment.systemPackages = with pkgs; [
     ddcutil
     gnome-tweaks
+    gnomeExtensions.dash-to-dock
+    gnomeExtensions.allow-locked-remote-desktop
+    gnomeExtensions.kimpanel
   ];
-
 }
