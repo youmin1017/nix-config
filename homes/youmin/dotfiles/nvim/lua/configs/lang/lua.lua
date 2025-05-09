@@ -5,6 +5,7 @@ local lua_lsp_settings = {
         vim.fn.expand "$VIMRUNTIME/lua",
         vim.fn.stdpath "data" .. "/lazy/ui/nvchad_types",
         vim.fn.stdpath "data" .. "/lazy/lazy.nvim/lua/lazy",
+        vim.fn.stdpath "data" .. "/lazy/snacks.nvim/lua/snacks",
         "${3rd}/luv/library",
       },
     },

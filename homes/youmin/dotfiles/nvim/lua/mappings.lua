@@ -62,8 +62,8 @@ map({ "n", "x" }, "<leader>d", '"+d', { desc = "Editor Delete to system clipboar
 map("n", "<leader>uh", function()
   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end, { desc = "lsp toggle inlay hints" })
-map("n", "[d", vim.diagnostic.goto_prev, { desc = "Prev diagnostic" })
-map("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
+-- map("n", "[d", vim.diagnostic.goto_prev, { desc = "Prev diagnostic" })
+-- map("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
 
 --     ╭───────────────────────────────────────────────────────────────────╮
 --     │                  Tabufline                                        │
