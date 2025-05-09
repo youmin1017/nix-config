@@ -7,10 +7,8 @@ return {
   opts = {
     input = { enabled = true },
     notifier = { enabled = true },
-  },
-  keys = {
-    -- stylua: ignore start
-    { "<leader>fw", function() Snacks.picker.grep() end, desc = "Grep" },
-    -- stylua: ignore end
+    picker = { enabled = true },
+    bufdelete = { enabled = true },
+    lazygit = { enabled = true },
   },
 }
