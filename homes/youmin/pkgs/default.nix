@@ -20,10 +20,10 @@
     unar # A program to extract, list, test and view the contents of archives
     unzip # A utility for unpacking zip files
     ripgrep # A line-oriented search tool that recursively searches your current directory for a regex pattern
+    fd # A simple, fast and user-friendly alternative to 'find'
     # JSON utils
     jq # A lightweight and flexible command-line JSON processor
     jless
-    jose # A command-line utility for working with JWKs, JWTs, and JWE
     openssl
     mkcert
     openldap

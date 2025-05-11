@@ -25,7 +25,7 @@ map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { remap = true })
 --     ╭───────────────────────────────────────────────────────────────────╮
 --     │                   Snacks                                          │
 --     ╰───────────────────────────────────────────────────────────────────╯
-map("n", "<leader>;", Snacks.picker.command_history, { desc = "Snacks picker command history" })
+map("n", "<leader>f;", Snacks.picker.command_history, { desc = "Snacks picker command history" })
 map("n", "<leader>fn", Snacks.picker.notifications, { desc = "Snacks picker notifications" })
 map("n", "<leader>fb", Snacks.picker.buffers, { desc = "Snacks picker buffers" })
 map("n", "<leader>fd", Snacks.picker.diagnostics, { desc = "Snacks picker diagnostics" })
