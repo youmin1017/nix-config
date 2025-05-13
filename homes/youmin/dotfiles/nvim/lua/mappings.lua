@@ -1,7 +1,5 @@
 require "nvchad.mappings"
 
--- add yours here
-
 local map = vim.keymap.set
 local del = vim.keymap.del
 
@@ -9,18 +7,37 @@ local del = vim.keymap.del
 --     │                  Delete NvChad Defaults                           │
 --     ╰───────────────────────────────────────────────────────────────────╯
 del("n", "<C-n>")
+del("i", "<C-h>")
+del("i", "<C-l>")
+del("i", "<C-j>")
+del("i", "<C-k>")
 
 --     ╭───────────────────────────────────────────────────────────────────╮
 --     │                  Nix Justfile                                     │
 --     ╰───────────────────────────────────────────────────────────────────╯
-map("n", "<f1>", "<cmd>! just home<CR>", { desc = "Nix just home-manager" })
-map("n", "<f2>", "<cmd>! just darwin<CR>", { desc = "Nix just darwin" })
+-- map("n", "<f1>", "<cmd>! just darwin<CR>", { desc = "Nix just darwin" })
 
 --     ╭───────────────────────────────────────────────────────────────────╮
 --     │                  Override NvChad Mappings                         │
 --     ╰───────────────────────────────────────────────────────────────────╯
-map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { remap = true })
--- map("n", "<leader>e", "<leader>fe", { desc = "Toggle neo-tree", remap = true })
+-- map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { remap = true })
+map("n", "<leader>E", function()
+  require("mini.files").open(vim.uv.cwd(), true)
+end, { desc = "File Explorer (cwd)" })
+map("n", "<leader>e", function()
+  local buf_name = vim.api.nvim_buf_get_name(0)
+  local dir_name = vim.fn.fnamemodify(buf_name, ":p:h")
+  if vim.fn.filereadable(buf_name) == 1 then
+    -- Pass the full file path to highlight the file
+    require("mini.files").open(buf_name, true)
+  elseif vim.fn.isdirectory(dir_name) == 1 then
+    -- If the directory exists but the file doesn't, open the directory
+    require("mini.files").open(dir_name, true)
+  else
+    -- If neither exists, fallback to the current working directory
+    require("mini.files").open(vim.uv.cwd(), true)
+  end
+end, { desc = "File Explorer" })
 
 --     ╭───────────────────────────────────────────────────────────────────╮
 --     │                   Snacks                                          │
@@ -32,6 +49,7 @@ map("n", "<leader>fd", Snacks.picker.diagnostics, { desc = "Snacks picker diagno
 map("n", "<leader>fw", Snacks.picker.grep, { desc = "Snacks picker grep" })
 map("n", "<leader>ff", Snacks.picker.files, { desc = "Snacks picker find files" })
 map("n", "<leader>fp", Snacks.picker.projects, { desc = "Snacks picker find projects" })
+map("n", "<leader>fk", Snacks.picker.keymaps, { desc = "Snacks picker keymaps" })
 map("n", "<leader>fc", function()
   Snacks.picker.files { cwd = vim.fn.stdpath "config" }
 end, { desc = "Snacks picker find config files" })
@@ -88,6 +106,7 @@ end, { desc = "Prev diagnostic" })
 --     ╭───────────────────────────────────────────────────────────────────╮
 --     │                  Tabufline                                        │
 --     ╰───────────────────────────────────────────────────────────────────╯
+map("n", "<leader>b", "", { desc = "Buffer +buffer" })
 map("n", "<leader>bO", Snacks.bufdelete.other, { desc = "Buffer Close other buffer" })
 map("n", "<leader>bo", Snacks.bufdelete.all, { desc = "Buffer Close all buffer" })
 

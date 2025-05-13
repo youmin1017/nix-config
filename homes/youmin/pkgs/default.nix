@@ -11,16 +11,13 @@
     age # A simple, modern and secure encryption tool
     sops
     yq-go # yaml processer https://github.com/mikefarah/yq
-    fzf # A command-line fuzzy finder
     just # A handy way to save and run project-specific commands
-    bat # A cat(1) clone with wings
     axel # A light download accelerator
     socat # replacement of openbsd-netcat
     nmap # A utility for network discovery and security auditing
     unar # A program to extract, list, test and view the contents of archives
     unzip # A utility for unpacking zip files
     ripgrep # A line-oriented search tool that recursively searches your current directory for a regex pattern
-    fd # A simple, fast and user-friendly alternative to 'find'
     # JSON utils
     jq # A lightweight and flexible command-line JSON processor
     jless

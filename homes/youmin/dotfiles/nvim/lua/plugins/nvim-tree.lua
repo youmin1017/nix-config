@@ -108,7 +108,7 @@ end
 --- @type NvPluginSpec
 return {
   "nvim-tree/nvim-tree.lua",
-  enabled = true,
+  enabled = false,
   keys = {
     {
       "<leader>ee",
