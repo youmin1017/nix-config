@@ -4,7 +4,7 @@ return {
     "echasnovski/mini.surround",
     version = false,
     keys = {
-      "S",
+      "as",
       "ds",
       "cs",
     },
