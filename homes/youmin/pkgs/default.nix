@@ -58,6 +58,11 @@
     python312
     rust-bin.stable.latest.default
     rust-analyzer
+
+    # DevOps
+    kubectl
+    k9s
+    kubernetes-helm
   ];
 
   programs = {

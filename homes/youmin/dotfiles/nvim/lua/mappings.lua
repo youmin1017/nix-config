@@ -101,5 +101,9 @@ end, { desc = "buffer goto prev" })
 --     ╭───────────────────────────────────────────────────────────────────╮
 --     │                   Terminal                                        │
 --     ╰───────────────────────────────────────────────────────────────────╯
--- stylua: ignore
+-- stylua: ignore start
 map("n", "<leader>lg", function() Snacks.lazygit() end, { desc = "Terminal lazygit" })
+-- stylua: ignore end
+map({ "n", "t" }, "<M-9>", function()
+  require("nvchad.term").toggle { pos = "float", id = "k9s", cmd = "k9s" }
+end, { desc = "Terminal k9s" })
