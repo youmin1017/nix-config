@@ -4,9 +4,9 @@ return {
     "echasnovski/mini.surround",
     version = false,
     keys = {
-      "as",
-      "ds",
-      "cs",
+      { "as", mode = "x" },
+      { "ds", mode = "n" },
+      { "cs", mode = "n" },
     },
     opts = {
       mappings = {
