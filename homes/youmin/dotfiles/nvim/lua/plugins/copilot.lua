@@ -9,7 +9,7 @@ return {
       suggestion = {
         auto_trigger = true,
         keymap = {
-          accept_word = "<M-S-l>",
+          accept_word = "<M-L>",
           accept_line = false,
         },
       },
