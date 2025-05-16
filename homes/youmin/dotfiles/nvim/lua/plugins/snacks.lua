@@ -14,7 +14,9 @@ return {
     bigfile = { enabled = true },
     input = { enabled = true },
     notifier = { enabled = true },
-    picker = { enabled = true },
+    picker = {
+      enabled = true,
+    },
     bufdelete = { enabled = true },
     lazygit = { enabled = true },
     indent = {

@@ -4,13 +4,13 @@ return {
     "echasnovski/mini.surround",
     version = false,
     keys = {
-      { "as", mode = "x" },
-      { "ds", mode = "n" },
-      { "cs", mode = "n" },
+      { "S", mode = "x" },
+      { "ds", mode = { "n", "x" } },
+      { "cs", mode = { "n", "x" } },
     },
     opts = {
       mappings = {
-        add = "as",
+        add = "S",
         delete = "ds", -- Delete surrounding
         replace = "cs", -- Replace surrounding
       },

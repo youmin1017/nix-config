@@ -13,6 +13,7 @@ return {
 
         { path = "snacks.nvim", words = { "Snacks", "snacks.nvim" } },
         { path = "blink.cmp", words = { "blink.cmp" } },
+        { pay = "nvim.cmp", words = { "nvim.cmp" } },
 
         { path = "copilot.lua", words = { "copilot.lua" } },
         { path = "CopilotChat.nvim", words = { "CopilotChat.nvim" } },

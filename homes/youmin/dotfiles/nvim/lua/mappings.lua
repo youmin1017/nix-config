@@ -13,14 +13,8 @@ del("i", "<C-j>")
 del("i", "<C-k>")
 
 --     ╭───────────────────────────────────────────────────────────────────╮
---     │                  Nix Justfile                                     │
+--     │                   Mini.Nvim                                       │
 --     ╰───────────────────────────────────────────────────────────────────╯
--- map("n", "<f1>", "<cmd>! just darwin<CR>", { desc = "Nix just darwin" })
-
---     ╭───────────────────────────────────────────────────────────────────╮
---     │                  Override NvChad Mappings                         │
---     ╰───────────────────────────────────────────────────────────────────╯
--- map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { remap = true })
 map("n", "<leader>E", function()
   require("mini.files").open(vim.uv.cwd(), true)
 end, { desc = "File Explorer (cwd)" })
@@ -38,6 +32,11 @@ map("n", "<leader>e", function()
     require("mini.files").open(vim.uv.cwd(), true)
   end
 end, { desc = "File Explorer" })
+
+--     ╭───────────────────────────────────────────────────────────────────╮
+--     │                  Override NvChad Mappings                         │
+--     ╰───────────────────────────────────────────────────────────────────╯
+-- map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { remap = true })
 
 --     ╭───────────────────────────────────────────────────────────────────╮
 --     │                   Snacks                                          │

@@ -50,7 +50,7 @@ M.nvdash = {
 }
 
 M.base46 = {
-  theme = "nightowl",
+  theme = "tokyonight",
 
   -- hl_override = {
   -- 	Comment = { italic = true },
