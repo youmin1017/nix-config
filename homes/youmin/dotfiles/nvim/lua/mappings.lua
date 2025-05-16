@@ -125,3 +125,22 @@ map("n", "<leader>lg", function() Snacks.lazygit() end, { desc = "Terminal lazyg
 map({ "n", "t" }, "<M-9>", function()
   require("nvchad.term").toggle { pos = "float", id = "k9s", cmd = "k9s" }
 end, { desc = "Terminal k9s" })
+-- Code Runner
+map("n", "<M-r>", function()
+  require("nvchad.term").runner {
+    id = "runner",
+    pos = "sp",
+
+    cmd = function()
+      local file = vim.fn.expand "%"
+
+      local ft_cmds = {
+        python = "python3 " .. file,
+        cpp = "clear && g++ -o out " .. file .. " && ./out",
+        go = "go run .",
+      }
+
+      return ft_cmds[vim.bo.ft]
+    end,
+  }
+end, { desc = "Terminal code runner" })

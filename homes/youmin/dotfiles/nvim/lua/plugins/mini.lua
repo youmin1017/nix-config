@@ -5,8 +5,8 @@ return {
     version = false,
     keys = {
       { "S", mode = "x" },
-      { "ds", mode = { "n", "x" } },
-      { "cs", mode = { "n", "x" } },
+      { "ds", mode = "n" },
+      { "cs", mode = "n" },
     },
     opts = {
       mappings = {
