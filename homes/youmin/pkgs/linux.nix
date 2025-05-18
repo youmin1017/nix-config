@@ -9,6 +9,7 @@ lib.mkIf (!isDarwin) {
   home.packages = with pkgs; [
     trashy
     jose # A command-line utility for working with JWKs, JWTs, and JWE
+    zathura
   ];
 
   home.shellAliases = {

@@ -8,11 +8,18 @@ return {
     config = function()
       vim.g.vimtex_mappings_disable = { ["n"] = { "K" } } -- disable `K` as it conflicts with LSP hover
       vim.g.vimtex_quickfix_method = vim.fn.executable "pplatex" == 1 and "pplatex" or "latexlog"
-      -- vim.g.vimtex_view_method = "zathura"
-      vim.g.vimtex_context_pdf_viewer = "skim" -- external PDF viewer run from vimtex menu command
+      vim.g.vimtex_mappings_enabled = 0
+
+      vim.g.vimtex_compiler_latexmk_engines = {
+        _ = "-xelatex",
+      }
     end,
     keys = {
       { "<leader>l", "", desc = "+vimtex", ft = "tex" },
+      { "<leader>lc", "<Plug>(vimtex-compile)", desc = "Tex Compile", mode = { "n", "x" }, ft = "tex" },
+      { "<leader>lq", "<Plug>(vimtex-view)", desc = "Tex View", mode = { "n", "x" }, ft = "tex" },
+      { "<leader>lt", "<Plug>(vimtex-toc-toggle)", desc = "Tex Toggle TOC", mode = { "n", "x" }, ft = "tex" },
+      { "<leader>lT", "<Plug>(vimtex-toc-focus)", desc = "Tex Focus TOC", mode = { "n", "x" }, ft = "tex" },
     },
   },
   {
