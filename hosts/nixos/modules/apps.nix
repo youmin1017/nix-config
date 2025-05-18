@@ -27,8 +27,6 @@
 
         # office
         onlyoffice-desktopeditors
-        libreoffice
-        hunspell
       ]
     else
       [ ];
