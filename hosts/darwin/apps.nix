@@ -50,6 +50,7 @@
       "bitwarden-cli"
       "ko"
       "podman"
+      "jose"
     ];
 
     # `brew install --cask`
