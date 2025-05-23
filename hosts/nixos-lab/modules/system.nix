@@ -88,7 +88,7 @@
             grv  1    2    3     prtsc 5     6    7    8    9     0    -    =    bspc
             tab  M-l  w    e     r     C-S-t y    u    i    o     p    @prv @nxt \
             caps a    s    d     f     g     h    j    k    C-S-l ;    '    ret
-            lsft z    x    C-S-c v     b     n    m    ,    .     /    rsft
+            lsft z    x    C-S-c C-S-v b     n    m    ,    .     /    rsft
             lctl lalt lmet             spc             ralt _ rctl
           )
         '';
