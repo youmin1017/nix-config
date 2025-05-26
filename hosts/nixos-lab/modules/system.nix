@@ -31,6 +31,7 @@
       internalKeyboard = {
         devices = [
           "/dev/input/by-id/usb-Keychron_QingNiao_75-event-kbd"
+          "/dev/input/by-id/usb-Keychron_QingNiao_75-if02-event-kbd"
         ];
         extraDefCfg = ''
           process-unmapped-keys yes
