@@ -1,8 +1,11 @@
 return {
   "snacks.nvim",
+  keys = {
+    { "<leader>e", false },
+    { "<leader>E", false },
+  },
   ---@type snacks.Config
   opts = {
-    explorer = { enabled = false },
     dashboard = {
       preset = {
         pick = function(cmd, opts)

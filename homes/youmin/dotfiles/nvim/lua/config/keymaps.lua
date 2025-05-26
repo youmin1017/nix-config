@@ -8,9 +8,12 @@ local del = vim.keymap.del
 --     │                    LazyVim                                        │
 --     ╰───────────────────────────────────────────────────────────────────╯
 del("n", "<leader>n")
-del("n", "<leader>e")
 map("n", "<leader>/", "gcc", { remap = true, desc = "Comment line" })
 map("x", "<leader>/", "gc", { remap = true, desc = "Comment selection" })
+
+map("i", "<C-s>", function()
+  require("blink-cmp").show()
+end, { desc = "Blink completion" })
 
 --     ╭───────────────────────────────────────────────────────────────────╮
 --     │                   Snacks                                          │
@@ -28,13 +31,33 @@ map("n", "<leader>fc", function()
   Snacks.picker.files({ cwd = vim.fn.stdpath("config") })
 end, { desc = "Snacks picker find config files" })
 
+--     ╭───────────────────────────────────────────────────────────────────╮
+--     │                   Terminal                                        │
+--     ╰───────────────────────────────────────────────────────────────────╯
+map({ "n", "t" }, "<M-i>", function()
+  Snacks.terminal(nil, {
+    win = {
+      border = "single",
+      position = "float",
+    },
+  })
+end, { desc = "Snacks float terminal" })
+map({ "n", "t" }, "<M-h>", function()
+  Snacks.terminal("zsh", {
+    win = {
+      position = "bottom",
+    },
+  })
+end, { desc = "Snacks bottom terminal" })
+
 -- Other
 -- stylua: ignore
 map("n", "<leader>z", function() Snacks.zen() end, { desc = "Snacks zen mode" })
 --     ╭───────────────────────────────────────────────────────────────────╮
 --     │                  Editor                                           │
 --     ╰───────────────────────────────────────────────────────────────────╯
-map("i", "jk", "<ESC>", { nowait = true, desc = "Editor jk to escape" })
+-- map("i", "jk", "<ESC>", { nowait = true, desc = "Editor jk to escape" })
+-- map("i", "kj", "<ESC>", { nowait = true, desc = "Editor jk to escape" })
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("n", ">", ">>", { nowait = true, desc = "Editor Indent forward easily" })
 map("n", "<", "<<", { nowait = true, desc = "Editor Indent backword easily" })
@@ -60,6 +83,7 @@ map({ "n", "x" }, "gl", "g$", { desc = "Editor Go to end of line" })
 map("n", "<leader>b", "", { desc = "Buffer +buffer" })
 map("n", "<leader>bO", Snacks.bufdelete.other, { desc = "Buffer Close other buffer" })
 map("n", "<leader>bo", Snacks.bufdelete.all, { desc = "Buffer Close all buffer" })
+map("n", "<leader>bb", Snacks.bufdelete.delete, { desc = "Buffer Close current buffer" })
 
 --     ╭───────────────────────────────────────────────────────────────────╮
 --     │                  Clipboard: Normal/Visual mode                    │
