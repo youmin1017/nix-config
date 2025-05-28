@@ -8,6 +8,7 @@
   networking.firewall.allowedTCPPorts = [
     53
     80
+    443
     5432
     6443
   ];
@@ -25,7 +26,7 @@
 
   ##### K3s #####
   services.k3s = {
-    enable = true;
+    enable = false;
     role = "server";
     extraFlags = toString [
       "--disable=traefik"
@@ -35,7 +36,7 @@
   ##### K3s Required Services #####
   # used for longhorn
   services.openiscsi = {
-    enable = true;
+    enable = false;
     name = "iqn.2025-01.tw.edu.ncnu.csie.wke.cloud:nixos-lab";
   };
 

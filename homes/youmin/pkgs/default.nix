@@ -38,10 +38,11 @@
     # lsp
     helm-ls
     lua-language-server
+    marksman
     nil
     # formatter
-    nixfmt-rfc-style
     kdlfmt
+    nixfmt-rfc-style
     stylua
     # linter
     hadolint # Dockerfile linter
