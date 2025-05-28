@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    nfs-utils
+    # nfs-utils
   ];
 
   # Network Configuration
