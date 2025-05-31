@@ -99,5 +99,5 @@ map({ "n", "x" }, "<leader>d", '"+d', { desc = "Editor Delete to system clipboar
 map("n", "<leader>l", "", { desc = "+Lazy" })
 map("n", "<leader>ll", "<cmd>Lazy<CR>", { desc = "Lazy" })
 map("n", "<leader>lg", function()
-  Snacks.lazygit()
+  Snacks.lazygit({ cwd = LazyVim.root.git() })
 end, { desc = "Lazy lazygit" })
