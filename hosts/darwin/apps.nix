@@ -73,7 +73,6 @@
       "podman-desktop"
       "raycast"
       "rider"
-      "spotify"
       "squirrel"
       "utm"
       "yaak"
@@ -97,7 +96,6 @@
     "/Applications/DataGrip.app"
     "/Applications/Podman Desktop.app"
     "/Users/youmin/Applications/iCloud.app"
-    "/Applications/Spotify.app"
     "/System/Applications/Notes.app"
   ];
 }
