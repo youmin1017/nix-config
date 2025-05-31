@@ -4,7 +4,6 @@ return {
     opts = function(_, opts)
       local remove = {
         stylua = true,
-        shfmt = true,
       }
       opts.ensure_installed = vim.tbl_filter(function(tool)
         return not remove[tool]
@@ -24,6 +23,9 @@ return {
           mason = false,
         },
         nil_ls = {
+          mason = false,
+        },
+        ruff = {
           mason = false,
         },
       },
