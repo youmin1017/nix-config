@@ -71,6 +71,7 @@ map("n", "<M-j>", ":m .+1<CR>==", { desc = "Editor move selected block up and st
 map("n", "<M-k>", ":m .-2<CR>==", { desc = "Editor move selected down and stay in visual mode" })
 map("x", "<M-j>", ":move '>+1<CR>gv-gv", { desc = "Editor move selected block up and stay in visual mode" })
 map("x", "<M-k>", ":move '<-2<CR>gv-gv", { desc = "Editor move selected down and stay in visual mode" })
+map("n", "<leader>ra", vim.lsp.buf.rename, { desc = "Editor Rename" })
 
 --     ╭───────────────────────────────────────────────────────────────────╮
 --     │                  Cursor Movement                                  │
