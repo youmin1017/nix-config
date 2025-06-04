@@ -82,6 +82,8 @@ map <leader>/         <Action>(CommentByLineComment)
 map <leader><leader>/ <Action>(CommentByBlockComment)
 
 " System Clipboard
+nnoremap yy "+yy
+vnoremap y "+y
 map <leader>y "+y
 map <leader>Y "+yy
 map <leader>p "+p
