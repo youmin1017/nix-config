@@ -12,6 +12,7 @@
       [
         inputs.zen-browser.packages."x86_64-linux".default # beta
         microsoft-edge
+        teams-for-linux
         ghostty
         discord
         (bottles.override { removeWarningPopup = true; })
