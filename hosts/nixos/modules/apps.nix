@@ -25,6 +25,7 @@
         pgadmin4
         bibata-cursors
         thunderbird
+        windsurf
 
         # office
         onlyoffice-desktopeditors
