@@ -57,6 +57,7 @@ map gl g$
 imap <C-a> <Action>(EditorLineStart)
 imap <C-e> <Action>(EditorLineEnd)
 imap <C-d> <Action>(EditorDelete)
+imap <C-s> <Action>(CodeCompletion)
 
 " Indent
 nmap > >>
