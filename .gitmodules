@@ -1,0 +1,3 @@
+[submodule "homes"]
+	path = homes
+	url = git@github.com:youmin1017/nix-homes.git
