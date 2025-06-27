@@ -29,6 +29,9 @@
 
         # office
         onlyoffice-desktopeditors
+
+        # minecraft
+        prismlauncher
       ]
     else
       [ ];
