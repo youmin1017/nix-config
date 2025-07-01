@@ -25,6 +25,7 @@
         pgadmin4
         bibata-cursors
         thunderbird
+        vlc
         windsurf
 
         # office
