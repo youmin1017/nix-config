@@ -22,11 +22,9 @@
         zed-editor
         jetbrains.datagrip
         jetbrains.goland
-        pgadmin4
         bibata-cursors
-        thunderbird
-        vlc
-        windsurf
+        thunderbird # email client
+        vlc # media player
 
         # office
         onlyoffice-desktopeditors
