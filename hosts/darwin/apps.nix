@@ -70,6 +70,7 @@
       "notion-calendar"
       "orbstack"
       "obsidian"
+      "onlyoffice"
       "podman-desktop"
       "prismlauncher"
       "raycast"
