@@ -14,7 +14,7 @@ darwin:
   nix build .?submodules=1#darwinConfigurations.{{hostname}}.system \
    --impure --extra-experimental-features 'nix-command flakes'
 
-  ./result/sw/bin/darwin-rebuild switch --flake .#{{hostname}} --impure
+  ./result/sw/bin/darwin-rebuild switch --flake .?submodules=1#{{hostname}} --impure
 
 [group('darwin')]
 darwin-debug:
