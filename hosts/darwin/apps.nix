@@ -75,7 +75,6 @@
       "prismlauncher"
       "raycast"
       "rider"
-      "squirrel"
       "steam"
       "utm"
       "yaak"
