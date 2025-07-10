@@ -40,9 +40,7 @@
     masApps = {
     };
 
-    taps = [
-      "homebrew/services"
-    ];
+    taps = [ ];
 
     # `brew install`
     # TODO Feel free to add your favorite apps here.
