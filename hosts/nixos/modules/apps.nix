@@ -25,6 +25,7 @@
         bibata-cursors
         thunderbird # email client
         vlc # media player
+        hoppscotch
 
         # office
         onlyoffice-desktopeditors
