@@ -11,17 +11,13 @@ hostname := `if [ "$(uname)" = "Darwin" ]; then scutil --get LocalHostName; else
 export IMPURITY_PATH := source_dir()
 [group('darwin')]
 darwin:
+  sudo --preserve-env darwin-rebuild switch --flake .?submodules=1#{{hostname}} --impure
+  
+install-nix-darwin:
   nix build .?submodules=1#darwinConfigurations.{{hostname}}.system \
-   --impure --extra-experimental-features 'nix-command flakes'
-
-  ./result/sw/bin/darwin-rebuild switch --flake .?submodules=1#{{hostname}} --impure
-
-[group('darwin')]
-darwin-debug:
-  nix build .?submodules=1#darwinConfigurations.{{hostname}}.system --show-trace --verbose \
-   --impure --extra-experimental-features 'nix-command flakes'
-
-  ./result/sw/bin/darwin-rebuild switch --flake .#{{hostname}} --show-trace --verbose --impure
+    --impure --extra-experimental-features 'nix-command flakes'
+  
+  sudo --preserve-env ./result/sw/bin/darwin-rebuild switch --flake .?submodules=1#{{hostname}} --impure
 
 ############################################################################
 #

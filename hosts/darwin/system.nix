@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, username, ... }:
 ###################################################################################
 #
 #  macOS's System configuration
@@ -11,7 +11,8 @@
 ###################################################################################
 {
   system = {
-    stateVersion = 5;
+    primaryUser = username;
+    stateVersion = 6;
 
     defaults = {
       # Customize dock
