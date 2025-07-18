@@ -19,7 +19,6 @@
         jetbrains.datagrip
         jetbrains.goland
         microsoft-edge
-        notion-app-enhanced
         onlyoffice-desktopeditors
         prismlauncher
         remmina

@@ -10,6 +10,7 @@
     ./modules/apps.nix
     ./modules/system.nix
     ./modules/gnome.nix
+    # ./modules/cosmic.nix
 
     (map lib.custom.relativeToRoot [
       #
