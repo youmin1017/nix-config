@@ -11,27 +11,24 @@
     if config.hardware.graphics.enable then
       [
         inputs.zen-browser.packages."x86_64-linux".default # beta
-        microsoft-edge
-        teams-for-linux
-        ghostty
-        discord
         (bottles.override { removeWarningPopup = true; })
-        spotify
-        remmina
-        wl-clipboard
-        zed-editor
+        bibata-cursors
+        discord
+        ghostty
+        hoppscotch
         jetbrains.datagrip
         jetbrains.goland
-        bibata-cursors
-        thunderbird # email client
-        vlc # media player
-        hoppscotch
-
-        # office
+        microsoft-edge
+        notion-app-enhanced
         onlyoffice-desktopeditors
-
-        # minecraft
         prismlauncher
+        remmina
+        spotify
+        teams-for-linux
+        vlc # media player
+        thunderbird # email client
+        wl-clipboard
+        zed-editor
       ]
     else
       [ ];
