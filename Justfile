@@ -13,33 +13,21 @@ export IMPURITY_PATH := source_dir()
 darwin:
   sudo --preserve-env darwin-rebuild switch --flake .?submodules=1#{{hostname}} --impure
   
+[group('darwin')]
 install-nix-darwin:
   nix build .?submodules=1#darwinConfigurations.{{hostname}}.system \
     --impure --extra-experimental-features 'nix-command flakes'
   
   sudo --preserve-env ./result/sw/bin/darwin-rebuild switch --flake .?submodules=1#{{hostname}} --impure
 
-############################################################################
 #
+############################################################################
 #  NixOS related commands
 #
 ############################################################################
 [group('nixos')]
 nixos:
   sudo --preserve-env=IMPURITY_PATH nixos-rebuild switch --upgrade --flake .?submodules=1#{{hostname}} --impure
-
-############################################################################
-#
-#  nix related commands
-#
-############################################################################
-cz_dir := "~/.local/share/chezmoi"
-[group('chezmoi')]
-czsync:
-  rsync -avr ./home-manager/dotfiles/nvim/ ~/.local/share/chezmoi/dot_config/nvim/
-  git --git-dir {{cz_dir}}/.git --work-tree {{cz_dir}} add . 
-  git --git-dir {{cz_dir}}/.git --work-tree {{cz_dir}} commit -m "update nvim configs"
-  git --git-dir {{cz_dir}}/.git --work-tree {{cz_dir}} push
 
 # List all the just commands
 default:
@@ -91,3 +79,7 @@ fmt:
 gcroot:
   ls -al /nix/var/nix/gcroots/auto/
 
+[group('git')]
+update-homes:
+  git add homes
+  git commit -m "Update homes" || echo "No changes to commit"
