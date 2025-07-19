@@ -50,23 +50,30 @@
             lctl lalt lmet           spc            ralt rmet rctl
           )
           (defalias
-           lmet (layer-toggle meta)
-           mts (layer-toggle meta-shift)
+           ;; lmet (layer-toggle meta)
+           lmet (multi lmet (layer-while-held meta))
+           lmsf (multi lsft (layer-while-held meta-shift)) ;; Meta Shift Layer
 
            ;; Meta Layer Specific
-           cpy C-ins   ;; Copy
-           pst S-ins   ;; Paste
-           cut C-x     ;; Cut
-           udo C-z     ;; Undo
-           fnd C-f     ;; Find
-           sav C-s     ;; Save
-           all C-/     ;; Select all
-           lok M-l     ;; Lock Screen
-           tab (multi alt tab)
+           ctc (multi (release-key lmet) C-c) ;; Copy
+           ctv (multi (release-key lmet) C-v) ;; Paste
+           ctx (multi (release-key lmet) C-x) ;; Cut
+           ctz (multi (release-key lmet) C-z) ;; Undo
+           ctf (multi (release-key lmet) C-f) ;; Find
+           cts (multi (release-key lmet) C-s) ;; Save
+           ctd (multi (release-key lmet) C-d) ;; Pin current window
+           ctr (multi (release-key lmet) C-r) ;; Reload current window
+           ctt (multi (release-key lmet) C-t) ;; New tab
+           ctw (multi (release-key lmet) C-w) ;; Close current window
+           all (multi (release-key lmet) C-/) ;; Select all
+           psc (unmod prtsc) ;; Print screen
+           cst (multi (release-key lmet) C-S-t) ;; Reopen last closed tab
 
-           ;; Meta Shift Layer Specific
-           nxt C-tab   ;; Next tab
-           prv C-S-tab ;; Previous tab
+           ;; Meta Shift Layer Spekcific
+           csc (multi (release-key lmet) C-S-c) ;; Copy without formatting
+           csv (multi (release-key lmet) C-S-v) ;; Paste without formatting
+           nxt (multi (release-key lmet) C-Tab) ;; Next tab
+           prv (multi (release-key lmet) C-S-Tab) ;; Previous tab
           )
           (deflayer base
             esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
@@ -79,18 +86,18 @@
           (deflayer meta
             esc   f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
             A-grv 1    2    3    4    5    6    7    8    9    0    -    =    bspc
-            @tab  q    C-w  e    C-r  C-t  y    u    i    o    p    [    ]    \
-            caps  @all s    C-d  @fnd g    h    j    k    C-l  ;    '    ret
-            @mts  @udo @cut @cpy @pst b    n    m    ,    .    /    rsft
+            tab   q    @ctw e    @ctr @ctt y    u    i    o    p    [    ]    \
+            caps  @all s    @ctd @ctf g    h    j    k    l    ;    '    ret
+            @lmsf @ctz @ctx @ctc @ctv b    n    m    ,    .    /    rsft
             lctl  lalt lmet           spc            ralt _ rctl
           )
           (deflayer meta-shift
-            esc  f1   f2   f3    f4    f5   f6   f7   f8   f9     f10  f11  f12
-            grv  1    2    3     prtsc 5     6    7    8    9     0    -    =    bspc
-            tab  M-l  w    e     r     C-S-t y    u    i    o     p    @prv @nxt \
-            caps a    s    d     f     g     h    j    k    C-S-l ;    '    ret
-            lsft z    x    C-S-c C-S-v b     n    m    ,    .     /    rsft
-            lctl lalt lmet             spc             ralt _ rctl
+            esc  f1   f2   f3   f4    f5   f6   f7   f8   f9    f10  f11  f12
+            grv  1    2    3    @psc  5    6    7    8    9     0    -    =    bspc
+            tab  q    w    e    r     @cst y    u    i    o     p    @prv @nxt \
+            caps a    s    d    f     g    h    j    k    l     ;    '    ret
+            lsft z    x    @csc @csv  b    n    m    ,    .     /    rsft
+            lctl lalt lmet           spc            ralt _ rctl
           )
         '';
       };
