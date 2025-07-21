@@ -12,6 +12,7 @@
 
   environment.systemPackages = with pkgs; [
     gcc
+    gnumake
   ];
 
   users.mutableUsers = false;

@@ -6,14 +6,8 @@
   lib,
   ...
 }:
-let
-  platform = if isDarwin then "darwin" else "nixos";
-  platformModules = "${platform}Modules";
-in
 {
   imports = lib.flatten [
-    # inputs.home-manager.${platformModules}.home-manager
-
     (map lib.custom.relativeToRoot (
       if isDarwin then
         [
@@ -21,7 +15,7 @@ in
         ]
       else
         [
-          "hosts/core/nixos.nix"
+          "hosts/core/linux.nix"
         ]
     ))
   ];

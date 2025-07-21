@@ -1,4 +1,3 @@
-{ pkgs, ... }:
 {
   ##########################################################################
   #
@@ -14,9 +13,6 @@
   # But on macOS, it's less stable than homebrew.
   #
   # Related Discussion: https://discourse.nixos.org/t/darwin-again/29331
-  environment.systemPackages = with pkgs; [
-    git
-  ];
   environment.variables.EDITOR = "nvim";
 
   # TODO To make this work, homebrew need to be installed manually, see https://brew.sh
