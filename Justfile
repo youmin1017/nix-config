@@ -82,4 +82,4 @@ gcroot:
 [group('git')]
 update-homes:
   git add homes
-  git commit -m "Update homes" || echo "No changes to commit"
+  git commit -m "feat: update homes" || echo "No changes to commit"
