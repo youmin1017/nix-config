@@ -23,8 +23,8 @@ in
           config = ./nixos-lab/configuration.nix;
         }
         {
-          name = "nixos-baas";
-          config = ./nixos-baas/configuration.nix;
+          name = "nixos-dev";
+          config = ./nixos-dev/configuration.nix;
         }
       ];
     in
@@ -42,6 +42,7 @@ in
             homeDir
             hm-nixos
             {
+              networking.hostName = host.name;
               # Impurity
               imports = [ inputs.impurity.nixosModules.impurity ];
               impurity.configRoot = self;

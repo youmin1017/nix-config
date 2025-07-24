@@ -16,9 +16,6 @@
       #
       "hosts/core"
       "hosts/nixos/modules/system.nix"
-      "hosts/nixos/modules/apps.nix"
-      # "hosts/nixos/modules/gnome.nix"
-      "hosts/nixos/modules/cosmic.nix"
 
       #
       # ========== Non-Primary Users to Create ==========
