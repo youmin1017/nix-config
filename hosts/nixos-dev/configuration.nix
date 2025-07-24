@@ -15,7 +15,6 @@
       # ========== Required Configs ==========
       #
       "hosts/core"
-      "hosts/nixos/modules/system.nix"
 
       #
       # ========== Non-Primary Users to Create ==========
