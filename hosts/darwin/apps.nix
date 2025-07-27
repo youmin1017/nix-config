@@ -73,12 +73,13 @@
       "steam"
       "utm"
       "zed"
+      "zen"
     ];
   };
 
   system.defaults.dock.persistent-apps = [
     "/System/Applications/Launchpad.app"
-    "/Applications/Arc.app"
+    "/Applications/Zen.app"
     "/Applications/Zed.app"
     "/Applications/Ghostty.app"
     "/Applications/Notion.app"
