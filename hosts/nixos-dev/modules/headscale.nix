@@ -69,6 +69,7 @@
       "--advertise-exit-node"
       "--advertise-routes=10.0.0.0/8"
       "--accept-routes"
+      "--accept-dns=false"
       "--login-server=https://vpn.youmin.dev"
     ];
   };
