@@ -23,11 +23,10 @@
     ];
   };
 
-  sops.secrets."pc/nixos-dev/zitadel/master_key".owner = "zitadel";
   sops.templates."zitadel_settings.yaml" = {
     owner = "zitadel";
     content = ''
-      ExternalDomain: ${config.sops.placeholder."pc/nixos-dev/host"}
+      ExternalDomain: ${config.sops.placeholder."pc/nixos-dev/zitadel/external_domain"}
       ExternalSecure: true
       Database:
         postgres:
@@ -63,4 +62,6 @@
   sops.secrets."pc/nixos-dev/postgresql/users/postgres/password" = { };
   sops.secrets."pc/nixos-dev/zitadel/org/ICM/username" = { };
   sops.secrets."pc/nixos-dev/zitadel/org/ICM/password" = { };
+  sops.secrets."pc/nixos-dev/zitadel/external_domain" = { };
+  sops.secrets."pc/nixos-dev/zitadel/master_key".owner = "zitadel";
 }

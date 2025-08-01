@@ -9,6 +9,16 @@
     package = pkgs.postgresql_17;
     enableTCPIP = true;
 
+    ensureDatabases = [
+      "headscale"
+    ];
+    ensureUsers = [
+      {
+        name = "headscale";
+        ensureDBOwnership = true;
+      }
+    ];
+
     authentication = ''
       host  all all 10.21.27.223/32 scram-sha-256
     '';

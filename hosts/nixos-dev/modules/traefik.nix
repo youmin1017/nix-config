@@ -1,6 +1,7 @@
 { config, ... }:
 let
   zitadelPort = toString config.services.zitadel.settings.Port;
+  headscalePort = toString config.services.headscale.port;
 in
 {
   services.traefik = {
@@ -22,10 +23,21 @@ in
             rule = "PathPrefix(`/`)";
             tls = { };
           };
+          headscale = {
+            entryPoints = [ "websecure" ];
+            service = "headscale";
+            rule = "Host(`dev_vpn.wke.csie.ncnu.edu.tw`)";
+            tls = { };
+          };
         };
         services.zitadel.loadBalancer.servers = [
           {
             url = "h2c://localhost:${zitadelPort}";
+          }
+        ];
+        services.headscale.loadBalancer.servers = [
+          {
+            url = "http://localhost:${headscalePort}";
           }
         ];
       };

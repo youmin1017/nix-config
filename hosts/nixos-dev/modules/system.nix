@@ -2,8 +2,9 @@
 {
   imports = [
     ./postgresql.nix
-    ./traefik.nix # Traefik reverse proxy
+    ./caddy.nix
     ./zitadel.nix # ZITADEL identity and access management
+    ./headscale.nix
   ];
 
   # Enable the OpenSSH daemon.
@@ -14,8 +15,18 @@
   networking.firewall.allowedTCPPorts = [
     80 # HTTP
     443 # HTTPS
-    # 8080 # Traefik dashboard
   ];
+  networking.nat = {
+    enable = true;
+    externalInterface = "eth0";
+    internalInterfaces = [ "tailscale0" ];
+    # Allow forwarding for Tailscale subnet (100.64.0.0/10)
+    internalIPs = [ "100.64.0.0/10" ];
+  };
+  boot.kernel.sysctl = {
+    "net.ipv4.ip_forward" = 1;
+    "net.ipv6.conf.all.forwarding" = 1;
+  };
 
   # Programs
   users.defaultUserShell = pkgs.zsh;
