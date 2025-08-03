@@ -23,7 +23,7 @@
           port = 5432;
           user = "headscale";
           name = "headscale";
-          password_file = config.sops.secrets."pc/nixos-dev/postgresql/users/headscale/password".path;
+          password_file = config.sops.secrets."hosts/nixos-dev/postgresql/users/headscale/password".path;
         };
       };
       dns = {
@@ -64,7 +64,7 @@
   services.tailscale = {
     useRoutingFeatures = "both";
     openFirewall = true;
-    authKeyFile = config.sops.secrets."pc/nixos-dev/tailscale/authkey".path;
+    authKeyFile = config.sops.secrets."hosts/nixos-dev/tailscale/authkey".path;
     extraUpFlags = [
       "--advertise-exit-node"
       "--advertise-routes=10.0.0.0/8"
@@ -74,6 +74,6 @@
     ];
   };
 
-  sops.secrets."pc/nixos-dev/postgresql/users/headscale/password".owner = "headscale";
-  sops.secrets."pc/nixos-dev/tailscale/authkey".mode = "0600";
+  sops.secrets."hosts/nixos-dev/postgresql/users/headscale/password".owner = "headscale";
+  sops.secrets."hosts/nixos-dev/tailscale/authkey".mode = "0600";
 }

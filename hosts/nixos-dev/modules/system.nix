@@ -3,8 +3,9 @@
   imports = [
     ./postgresql.nix
     ./caddy.nix
-    ./zitadel.nix # ZITADEL identity and access management
-    ./headscale.nix
+    ./keycloak.nix
+    # ./zitadel.nix # ZITADEL identity and access management
+    # ./headscale.nix
   ];
 
   # Enable the OpenSSH daemon.

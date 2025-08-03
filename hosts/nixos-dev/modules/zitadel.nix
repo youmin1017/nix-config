@@ -4,7 +4,7 @@
     enable = true;
 
     tlsMode = "external"; # Use "external" to use the TLS certificate from Traefik
-    masterKeyFile = config.sops.secrets."pc/nixos-dev/zitadel/master_key".path;
+    masterKeyFile = config.sops.secrets."hosts/nixos-dev/zitadel/master_key".path;
 
     settings = {
       Port = 11000;
@@ -26,18 +26,18 @@
   sops.templates."zitadel_settings.yaml" = {
     owner = "zitadel";
     content = ''
-      ExternalDomain: ${config.sops.placeholder."pc/nixos-dev/zitadel/external_domain"}
+      ExternalDomain: ${config.sops.placeholder."hosts/nixos-dev/zitadel/external_domain"}
       ExternalSecure: true
       Database:
         postgres:
           User:
             Username: zitadel
-            Password: ${config.sops.placeholder."pc/nixos-dev/postgresql/users/zitadel/password"}
+            Password: ${config.sops.placeholder."hosts/nixos-dev/postgresql/users/zitadel/password"}
             SSL:
               Mode: disable
           Admin:
             Username: postgres
-            Password: ${config.sops.placeholder."pc/nixos-dev/postgresql/users/postgres/password"}
+            Password: ${config.sops.placeholder."hosts/nixos-dev/postgresql/users/postgres/password"}
             SSL:
               Mode: disable
     '';
@@ -49,19 +49,19 @@
         Org:
           Name: ICM
           Human:
-            UserName: ${config.sops.placeholder."pc/nixos-dev/zitadel/org/ICM/username"}
-            Password: ${config.sops.placeholder."pc/nixos-dev/zitadel/org/ICM/password"}
+            UserName: ${config.sops.placeholder."hosts/nixos-dev/zitadel/org/ICM/username"}
+            Password: ${config.sops.placeholder."hosts/nixos-dev/zitadel/org/ICM/password"}
             DisplayName: ICM Admin
             FirstName: ICM
             LastName: Admin
             PasswordChangeRequired: false
     '';
   };
-  sops.secrets."pc/nixos-dev/host" = { };
-  sops.secrets."pc/nixos-dev/postgresql/users/zitadel/password" = { };
-  sops.secrets."pc/nixos-dev/postgresql/users/postgres/password" = { };
-  sops.secrets."pc/nixos-dev/zitadel/org/ICM/username" = { };
-  sops.secrets."pc/nixos-dev/zitadel/org/ICM/password" = { };
-  sops.secrets."pc/nixos-dev/zitadel/external_domain" = { };
-  sops.secrets."pc/nixos-dev/zitadel/master_key".owner = "zitadel";
+  sops.secrets."hosts/nixos-dev/host" = { };
+  sops.secrets."hosts/nixos-dev/postgresql/users/zitadel/password" = { };
+  sops.secrets."hosts/nixos-dev/postgresql/users/postgres/password" = { };
+  sops.secrets."hosts/nixos-dev/zitadel/org/ICM/username" = { };
+  sops.secrets."hosts/nixos-dev/zitadel/org/ICM/password" = { };
+  sops.secrets."hosts/nixos-dev/zitadel/external_domain" = { };
+  sops.secrets."hosts/nixos-dev/zitadel/master_key".owner = "zitadel";
 }
