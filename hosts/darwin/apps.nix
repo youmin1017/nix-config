@@ -57,7 +57,6 @@
       "goland"
       "discord"
       "ghostty"
-      "hoppscotch"
       "jordanbaird-ice"
       "karabiner-elements"
       "microsoft-teams"
@@ -72,6 +71,7 @@
       "rider"
       "steam"
       "utm"
+      "yaak"
       "zed"
       "zen"
     ];
