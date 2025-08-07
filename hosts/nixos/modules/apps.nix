@@ -14,7 +14,6 @@
         bibata-cursors
         discord
         ghostty
-        hoppscotch
         jetbrains.datagrip
         jetbrains.goland
         microsoft-edge
