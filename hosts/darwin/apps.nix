@@ -79,7 +79,7 @@
 
   system.defaults.dock.persistent-apps = [
     "/System/Applications/Launchpad.app"
-    "/Applications/Zen.app"
+    "/Applications/Arc.app"
     "/Applications/Zed.app"
     "/Applications/Ghostty.app"
     "/Applications/Notion.app"
