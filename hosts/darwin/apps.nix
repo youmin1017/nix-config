@@ -88,11 +88,10 @@
     "/Applications/Notion Calendar.app"
     "/System/Applications/Mail.app"
     "/Applications/LINE.app"
-    # "/Applications/Discord.app"
+    "/Applications/Telegram.app"
+    "/Applications/Discord.app"
     "/Applications/Messenger.app"
     "/Applications/DataGrip.app"
-    "/Applications/Podman Desktop.app"
     "/Users/youmin/Applications/iCloud.app"
-    "/System/Applications/Notes.app"
   ];
 }
