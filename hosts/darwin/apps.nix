@@ -57,6 +57,7 @@
       "goland"
       "discord"
       "ghostty"
+      "github"
       "jordanbaird-ice"
       "karabiner-elements"
       "keyboardcleantool"
