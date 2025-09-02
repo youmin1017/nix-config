@@ -57,7 +57,7 @@
       "goland"
       "discord"
       "ghostty"
-      "jordanbaird-ice"
+      "jordanbaird-ice@beta"
       "karabiner-elements"
       "keyboardcleantool"
       "microsoft-teams"
@@ -80,7 +80,7 @@
   };
 
   system.defaults.dock.persistent-apps = [
-    "/System/Applications/Launchpad.app"
+    "/System/Applications/Apps.app"
     "/Applications/Arc.app"
     "/Applications/Zed.app"
     "/Applications/Ghostty.app"
