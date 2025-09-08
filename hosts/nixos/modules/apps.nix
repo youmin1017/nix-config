@@ -30,8 +30,10 @@
         # editors
         jetbrains.datagrip
         jetbrains.goland
-        zed-editor
+        # zed-editor
       ]
     else
       [ ];
+
+  programs.steam.enable = true;
 }
