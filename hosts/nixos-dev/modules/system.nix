@@ -4,8 +4,8 @@
     ./postgresql.nix
     ./caddy.nix
     ./keycloak.nix
+    ./headscale.nix
     # ./zitadel.nix # ZITADEL identity and access management
-    # ./headscale.nix
   ];
 
   # Enable the OpenSSH daemon.

@@ -15,7 +15,7 @@
     port = 12000;
 
     settings = {
-      server_url = "https://vpn.youmin.dev";
+      server_url = "https://vpn.wke.csie.ncnu.edu.tw";
       database = {
         type = "postgres";
         postgres = {
@@ -37,8 +37,8 @@
       };
       oidc = {
         only_start_if_oidc_is_available = true;
-        issuer = "https://sso.youmin.dev";
-        client_id = "331269011104928966";
+        issuer = "https://auth.wke.csie.ncnu.edu.tw/realms/wke";
+        client_id = "vpn";
         scope = [
           "openid"
           "profile"
@@ -60,8 +60,8 @@
     };
   };
 
-  enable = true;
   services.tailscale = {
+    enable = true;
     useRoutingFeatures = "both";
     openFirewall = true;
     authKeyFile = config.sops.secrets."hosts/nixos-dev/tailscale/authkey".path;
@@ -70,7 +70,7 @@
       "--advertise-routes=10.0.0.0/8"
       "--accept-routes"
       "--accept-dns=false"
-      "--login-server=https://vpn.youmin.dev"
+      "--login-server=${config.services.headscale.settings.server_url}"
     ];
   };
 
