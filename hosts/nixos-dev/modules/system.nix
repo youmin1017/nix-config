@@ -5,7 +5,7 @@
     ./caddy.nix
     ./keycloak.nix
     ./headscale.nix
-    # ./zitadel.nix # ZITADEL identity and access management
+    ./s3.nix
   ];
 
   # Enable the OpenSSH daemon.
