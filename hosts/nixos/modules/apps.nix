@@ -25,6 +25,7 @@
         teams-for-linux
         vlc # media player
         thunderbird # email client
+        telegram-desktop
         wl-clipboard
 
         # editors
