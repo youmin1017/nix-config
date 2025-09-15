@@ -11,6 +11,9 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
+  # Virtualization
+  virtualisation.docker.enable = true;
+
   # Networking
   networking.firewall.enable = true;
   networking.firewall.allowedTCPPorts = [

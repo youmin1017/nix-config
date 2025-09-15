@@ -21,8 +21,11 @@
         };
       }) mountPoints
     );
-
   sops.secrets."wke/syncwke_secret" = { };
+
+  # Virtualization
+  virtualisation.docker.enable = true;
+  virtualisation.vmware.host.enable = true;
 
   # Keyboard remap by Kanata
   services.kanata = {

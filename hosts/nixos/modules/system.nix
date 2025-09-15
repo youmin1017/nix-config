@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ pkgs, ... }:
 {
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
@@ -27,12 +27,6 @@
       "input"
       "uinput"
     ];
-  };
-
-  # Virtualization
-  # virtualisation.containers.enable = true;
-  virtualisation.docker = {
-    enable = true;
   };
 
   i18n.inputMethod = {
