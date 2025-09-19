@@ -18,6 +18,21 @@
     region = "tw-1";
   };
 
+  virtualisation.oci-containers.containers = {
+    minio-console = {
+      image = "ghcr.io/huncrys/minio-console:v1.8.1";
+      ports = [ "127.0.0.1:9090:9090" ];
+      environmentFiles = [
+        config.sops.secrets."env/minio/console".path
+      ];
+    };
+  };
+
+  services.caddy.virtualHosts."s3.dev.wke.csie.ncnu.edu.tw" = {
+    extraConfig = ''
+      reverse_proxy http://localhost:9090
+    '';
+  };
   services.caddy.virtualHosts."s3.wke.csie.ncnu.edu.tw" = {
     extraConfig = ''
       handle /minio/ui* {
@@ -31,6 +46,9 @@
   };
 
   sops.secrets."env/minio/root_credentials" = {
+    sopsFile = lib.custom.relativeToRoot "secrets/minio.yaml";
+  };
+  sops.secrets."env/minio/console" = {
     sopsFile = lib.custom.relativeToRoot "secrets/minio.yaml";
   };
 }
