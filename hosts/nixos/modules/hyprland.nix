@@ -13,6 +13,7 @@
   programs.waybar.enable = true;
 
   environment.systemPackages = with pkgs; [
+    blueberry
     networkmanagerapplet
     rofi
     swww
