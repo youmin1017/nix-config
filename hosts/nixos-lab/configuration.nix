@@ -18,7 +18,8 @@
       "hosts/nixos/modules/system.nix"
       "hosts/nixos/modules/apps.nix"
       # "hosts/nixos/modules/gnome.nix"
-      "hosts/nixos/modules/cosmic.nix"
+      # "hosts/nixos/modules/cosmic.nix"
+      "hosts/nixos/modules/hyprland.nix"
 
       #
       # ========== Non-Primary Users to Create ==========

@@ -43,6 +43,7 @@ in
             hm-nixos
             {
               networking.hostName = host.name;
+
               # Impurity
               imports = [ inputs.impurity.nixosModules.impurity ];
               impurity.configRoot = self;
