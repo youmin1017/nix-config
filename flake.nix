@@ -27,6 +27,11 @@
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
 
     impurity.url = "github:outfoxxed/impurity.nix";
+
+    hyprland-contrib = {
+      url = "github:hyprwm/contrib";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

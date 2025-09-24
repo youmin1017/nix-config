@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
   services.displayManager.gdm.enable = true;
   programs.hyprland = {
@@ -13,11 +13,15 @@
   programs.waybar.enable = true;
 
   environment.systemPackages = with pkgs; [
-    blueberry
+    inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
     networkmanagerapplet
     rofi
     swww
     wlogout
+
+    # sound
+    blueberry
+    pavucontrol
   ];
 
   # Optional, hint electron apps to use wayland:
