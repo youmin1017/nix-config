@@ -28,8 +28,13 @@
 
     impurity.url = "github:outfoxxed/impurity.nix";
 
+    # Hyprland related packages
     hyprland-contrib = {
       url = "github:hyprwm/contrib";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    hyprland-virtual-desktops = {
+      url = "github:levnikmyskin/hyprland-virtual-desktops";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

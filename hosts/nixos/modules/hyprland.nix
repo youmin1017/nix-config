@@ -1,4 +1,8 @@
-{ inputs, pkgs, ... }:
+{
+  inputs,
+  pkgs,
+  ...
+}:
 {
   services.displayManager.gdm.enable = true;
   programs.hyprland = {
@@ -22,8 +26,15 @@
     # sound
     blueberry
     pavucontrol
+
+    # system apps
+    kdePackages.dolphin
   ];
 
   # Optional, hint electron apps to use wayland:
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
+  systemd.user.services.waybar.path = [
+    "/run/current-system/sw"
+  ];
 }
