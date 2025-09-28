@@ -16,6 +16,11 @@
   programs.nm-applet.enable = true;
   programs.waybar.enable = true;
 
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = with pkgs; [
+    xdg-desktop-portal-gtk
+  ];
+
   environment.systemPackages = with pkgs; [
     inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
     networkmanagerapplet

@@ -96,7 +96,7 @@
           )
           (deflayer meta-shift
             esc  f1   f2   f3   f4    f5   f6   f7   f8   f9    f10  f11  f12
-            grv  1    2    3    @psc  5    6    7    8    9     0    -    =    bspc
+            grv  1    2    3    4     5    6    7    8    9     0    -    =    bspc
             tab  q    w    e    r     @cst y    u    i    o     p    @prv @nxt \
             caps a    s    d    f     g    h    j    k    l     ;    '    ret
             lsft z    x    @csc @csv  b    n    m    ,    .     /    rsft
