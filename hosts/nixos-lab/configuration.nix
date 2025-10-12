@@ -8,7 +8,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./modules/system.nix
-    # ./modules/baas.nix
+    ./modules/baas.nix
 
     (map lib.custom.relativeToRoot [
       #

@@ -1,48 +1,37 @@
-{ pkgs, ... }:
+{ ... }:
 {
-  environment.systemPackages = with pkgs; [
-    # nfs-utils
-  ];
 
   # Network Configuration
   networking.firewall.allowedTCPPorts = [
     53
     80
     443
-    5432
-    6443
   ];
   networking.nameservers = [ "127.0.0.1" ];
   networking.resolvconf.useLocalResolver = true;
   services.dnsmasq = {
     enable = true;
     settings = {
-      address = "/.baas.local/127.0.0.1";
+      address = [
+        "/.baas.local/127.0.0.1"
+        "/.auth.local/127.0.0.1"
+      ];
     };
   };
 
-  # Virtualization
-  virtualisation.docker.enable = true;
-
-  ##### K3s #####
-  services.k3s = {
-    enable = false;
-    role = "server";
-    extraFlags = toString [
-      "--disable=traefik"
-    ];
+  services.caddy = {
+    enable = true;
+    virtualHosts."baas.local" = {
+      extraConfig = ''
+        reverse_proxy /api/auth* http://localhost:3000
+        reverse_proxy http://localhost:5173
+      '';
+    };
   };
 
-  ##### K3s Required Services #####
-  # used for longhorn
-  services.openiscsi = {
-    enable = false;
-    name = "iqn.2025-01.tw.edu.ncnu.csie.wke.cloud:nixos-lab";
-  };
-
-  sops.secrets = {
-    # The cert files will be placed in /run/secrets/lab/ssl/wildcard_local/cert
-    "lab/baas/ssl/wildcard_local/key" = { };
-    "lab/baas/ssl/wildcard_local/cert" = { };
-  };
+  # sops.secrets = {
+  #   # The cert files will be placed in /run/secrets/lab/ssl/wildcard_local/cert
+  #   "domain/baas.local/ssl/key" = { };
+  #   "domain/baas.local/ssl/cert" = { };
+  # };
 }
