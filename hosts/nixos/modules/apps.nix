@@ -22,6 +22,7 @@
         prismlauncher
         remmina
         spotify
+        sticky
         teams-for-linux
         vlc # media player
         thunderbird # email client
