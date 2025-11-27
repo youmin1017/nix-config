@@ -8,7 +8,6 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./modules/system.nix
-    ./modules/baas.nix
 
     (map lib.custom.relativeToRoot [
       #
@@ -35,21 +34,18 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  nix.settings.auto-optimise-store = true;
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 7d";
+  nix = {
+    settings.auto-optimise-store = true;
+    settings.experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+    };
   };
-
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Enable networking
-  networking.networkmanager.enable = true;
 
   # Set your time zone. time.timeZone = "Asia/Taipei";
   time.timeZone = "Asia/Taipei";
@@ -80,16 +76,21 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
-  networking.firewall.enable = true;
-  networking.firewall.allowedTCPPorts = [ 3390 ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking = {
+    # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+    # Enable networking
+    networkmanager.enable = true;
+    firewall.enable = true;
+    firewall.allowedTCPPorts = [ 3390 ];
+    # networking.firewall.allowedUDPPorts = [ ... ];
 
-  networking.nameservers = [
-    "163.22.21.44"
-    "1.1.1.1"
-    "163.22.2.1"
-    "163.22.2.2"
-  ];
+    nameservers = [
+      "163.22.21.44"
+      "1.1.1.1"
+      "163.22.2.1"
+      "163.22.2.2"
+    ];
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

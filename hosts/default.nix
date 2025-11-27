@@ -12,6 +12,31 @@ let
   homeDir = self + /homes;
   hm-nixos = home-manager.nixosModules.home-manager;
   hm-darwin = home-manager.darwinModules.home-manager;
+
+  mkLinuxHost =
+    { name, config }:
+    nixpkgs.lib.nixosSystem {
+      specialArgs = {
+        inherit outputs inputs username;
+        isDarwin = false;
+      };
+      system = "x86_64-linux";
+      lib = nixpkgs.lib.extend (self: super: { custom = import ../lib { inherit (nixpkgs) lib; }; });
+      modules = [
+        {
+          # Hostname
+          networking.hostName = name;
+
+          # Impurity
+          imports = [ inputs.impurity.nixosModules.impurity ];
+          impurity.configRoot = self;
+          impurity.enable = true;
+        }
+        config
+        homeDir
+        hm-nixos
+      ];
+    };
 in
 {
 
@@ -30,31 +55,8 @@ in
     in
     builtins.listToAttrs (
       map (host: {
-        name = host.name;
-        value = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit outputs inputs username;
-            isDarwin = false;
-          };
-          system = "x86_64-linux";
-          modules = [
-            host.config
-            homeDir
-            hm-nixos
-            {
-              networking.hostName = host.name;
-
-              # Impurity
-              imports = [ inputs.impurity.nixosModules.impurity ];
-              impurity.configRoot = self;
-              impurity.enable = true;
-            }
-          ];
-          # ========== Extend lib with lib.custom ==========
-          # NOTE: This approach allows lib.custom to propagate into hm
-          # see: https://github.com/nix-community/home-manager/pull/3454
-          lib = nixpkgs.lib.extend (self: super: { custom = import ../lib { inherit (nixpkgs) lib; }; });
-        };
+        inherit (host) name;
+        value = mkLinuxHost host;
       }) hosts
     );
 
