@@ -31,10 +31,7 @@
     # Hyprland related packages
     hyprland.url = "github:hyprwm/Hyprland";
     nix-colors.url = "github:misterio77/nix-colors";
-    hyprland-contrib = {
-      url = "github:hyprwm/contrib";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    vicinae.url = "github:vicinaehq/vicinae"; # App Launcher
   };
 
   outputs =

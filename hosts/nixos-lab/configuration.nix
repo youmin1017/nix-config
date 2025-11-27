@@ -16,6 +16,7 @@
       "hosts/core"
       "hosts/nixos/modules/system.nix"
       "hosts/nixos/modules/apps.nix"
+      "hosts/nixos/modules/cachix.nix"
       # "hosts/nixos/modules/gnome.nix"
       # "hosts/nixos/modules/cosmic.nix"
       "hosts/nixos/modules/hyprland.nix"
