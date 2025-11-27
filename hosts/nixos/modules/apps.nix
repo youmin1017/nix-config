@@ -28,11 +28,13 @@
         thunderbird # email client
         telegram-desktop
         wl-clipboard
+        dbeaver-bin
 
         # editors
         jetbrains.datagrip
         jetbrains.goland
         zed-editor
+        antigravity
       ]
     else
       [ ];

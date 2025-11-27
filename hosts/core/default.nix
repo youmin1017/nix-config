@@ -2,7 +2,7 @@
   isDarwin,
   username,
   config,
-  outputs,
+  inputs,
   lib,
   ...
 }:
@@ -19,8 +19,6 @@
         ]
     ))
   ];
-
-  nixpkgs.overlays = [ outputs.overlays.default ];
 
   sops = {
     age.keyFile = config.users.users.${username}.home + "/.config/sops/age/keys.txt";
