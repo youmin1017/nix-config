@@ -3,20 +3,22 @@
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
 
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-    settings = {
-      General = {
-        Enable = "Source,Sink,Media,Socket";
+  hardware = {
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+      settings = {
+        General = {
+          Enable = "Source,Sink,Media,Socket";
+        };
       };
     };
-  };
 
-  # Keyboard
-  hardware.keyboard.qmk.enable = true;
-  ## Uinput
-  hardware.uinput.enable = true;
+    # Keyboard
+    keyboard.qmk.enable = true;
+    ## Uinput
+    uinput.enable = true;
+  };
   boot.kernelModules = [ "uinput" ];
   users.groups.uinput = { };
   services.udev.extraRules = ''
@@ -32,16 +34,17 @@
   i18n.inputMethod = {
     type = "fcitx5";
     enable = true;
-    fcitx5.waylandFrontend = true;
-    fcitx5.addons = with pkgs; [
-      fcitx5-gtk
-      libsForQt5.fcitx5-qt
-      fcitx5-rime
-      rime-data
-    ];
 
-    fcitx5.settings = {
-      inputMethod = {
+    fcitx5 = {
+      waylandFrontend = true;
+      addons = with pkgs; [
+        fcitx5-gtk
+        libsForQt5.fcitx5-qt
+        fcitx5-rime
+        rime-data
+      ];
+
+      settings.inputMethod = {
         "Groups/0" = {
           Name = "Default";
           "Default Layout" = "us";
@@ -51,6 +54,7 @@
         "Groups/0/Items/1".Name = "rime";
       };
     };
+
   };
 
   fonts.packages = with pkgs; [

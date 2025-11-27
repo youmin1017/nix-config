@@ -25,15 +25,13 @@
     };
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
-
     impurity.url = "github:outfoxxed/impurity.nix";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
     # Hyprland related packages
-    hyprland-contrib = {
-      url = "github:hyprwm/contrib";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    hyprland.url = "github:hyprwm/Hyprland";
+    nix-colors.url = "github:misterio77/nix-colors";
+    vicinae.url = "github:vicinaehq/vicinae"; # App Launcher
   };
 
   outputs =
