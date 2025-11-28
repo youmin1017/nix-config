@@ -5,8 +5,12 @@
     hyprland = {
       enable = true;
       package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-      portalPackage = pkgs.xdg-desktop-portal-hyprland;
-      # inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+      # portalPackage = pkgs.xdg-desktop-portal-hyprland;
+      portalPackage =
+        inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     };
   };
+  xdg.portal.extraPortals = with pkgs; [
+    xdg-desktop-portal-gtk
+  ];
 }
