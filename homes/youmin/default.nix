@@ -30,5 +30,6 @@ in
     ./modules/waybar.nix
     ./modules/color.nix
     ./modules/vicinae.nix
+    ./modules/swayosd.nix
   ];
 }

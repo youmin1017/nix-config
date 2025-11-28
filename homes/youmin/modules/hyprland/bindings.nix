@@ -50,12 +50,23 @@
       "SUPER SHIFT, 9, movetoworkspace, 9"
       "SUPER SHIFT, 0, movetoworkspace, 10"
 
-      # Screenshot
-      ", Print, exec, grimblast copy area"
-
-      # Example special workspace (scratchpad)
+      # Special Workspace (scratchpad)
       "SUPER, S, togglespecialworkspace, magic"
       "SUPER SHIFT, S, movetoworkspace, special:magic"
+
+      # Media Controls
+      # Audio Volume Controls
+      ", XF86AudioMute, exec, swayosd-client --output-volume mute-toggle"
+      ", XF86AudioMicMute, exec, swayosd-client --input-volume mute-toggle"
+      # Volume with custom values
+      ", XF86AudioRaiseVolume, exec, swayosd-client --output-volume 1"
+      ", XF86AudioLowerVolume, exec, swayosd-client --output-volume -1"
+      # Brightness Controls
+      ", XF86MonBrightnessUp, exec, swayosd-client --brightness raise"
+      ", XF86MonBrightnessDown, exec, swayosd-client --brightness lower"
+      # Brightness with custom values
+      ", XF86MonBrightnessUp, exec, swayosd-client --brightness +10"
+      ", XF86MonBrightnessDown, exec, swayosd-client --brightness -10"
     ];
 
     bindm = [
