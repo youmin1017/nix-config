@@ -18,6 +18,8 @@ in
     inputs.nix-colors.homeManagerModules.default
     inputs.vicinae.homeManagerModules.default
     ./modules/dconf.nix
+    ./modules/cursor.nix
+    ./modules/gtk.nix
     ./modules/omarchy.nix
     ./modules/hyprland
     ./modules/hyprlock.nix
