@@ -10,6 +10,7 @@
     ./input.nix
     ./looknfeel.nix
     ./rules.nix
+    ./plugins.nix
   ];
 
   wayland.windowManager.hyprland = {

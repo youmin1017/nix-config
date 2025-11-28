@@ -13,14 +13,14 @@ export IMPURITY_PATH := source_dir()
 
 [group('darwin')]
 darwin:
-    sudo --preserve-env darwin-rebuild switch --flake .?submodules=1#{{ hostname }} --impure
+    sudo --preserve-env darwin-rebuild switch --flake .#{{ hostname }} --impure
 
 [group('darwin')]
 install-nix-darwin:
-    nix build .?submodules=1#darwinConfigurations.{{ hostname }}.system \
+    nix build .#darwinConfigurations.{{ hostname }}.system \
       --impure --extra-experimental-features 'nix-command flakes'
 
-    sudo --preserve-env ./result/sw/bin/darwin-rebuild switch --flake .?submodules=1#{{ hostname }} --impure
+    sudo --preserve-env ./result/sw/bin/darwin-rebuild switch --flake .#{{ hostname }} --impure
 
 #
 ############################################################################
@@ -30,7 +30,7 @@ install-nix-darwin:
 # ###########################################################################
 [group('nixos')]
 nixos:
-    sudo --preserve-env=IMPURITY_PATH nixos-rebuild switch --upgrade --flake .?submodules=1#{{ hostname }} --impure
+    sudo --preserve-env=IMPURITY_PATH nixos-rebuild switch --upgrade --flake .#{{ hostname }} --impure
 
 # List all the just commands
 default:

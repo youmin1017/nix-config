@@ -28,8 +28,15 @@
     impurity.url = "github:outfoxxed/impurity.nix";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
-    # Hyprland related packages
+    # Hyprland
     hyprland.url = "github:hyprwm/Hyprland";
+    # Hyprland Plugins
+    split-monitor-workspaces = {
+      url = "github:Duckonaut/split-monitor-workspaces";
+      inputs.hyprland.follows = "hyprland"; # <- make sure this line is present for the plugin to work as intended
+    };
+
+    # utilities
     nix-colors.url = "github:misterio77/nix-colors";
     vicinae.url = "github:vicinaehq/vicinae"; # App Launcher
   };
