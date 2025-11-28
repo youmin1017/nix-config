@@ -11,6 +11,7 @@ let
 in
 {
   home.file = {
+    ".config/waybar/style.css".source = ../dotfiles/waybar/style.css;
     ".config/waybar/theme.css" = {
       text = ''
         @define-color background ${backgroundRgb};
