@@ -17,7 +17,7 @@
 
       settings = {
         addons.classicui.globalSection = {
-          Theme = "rose-pine";
+          Theme = "Tokyonight-Storm";
         };
 
         inputMethod = {

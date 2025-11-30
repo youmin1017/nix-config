@@ -28,7 +28,6 @@
         thunderbird # email client
         telegram-desktop
         wl-clipboard
-        dbeaver-bin
         nautilus # file manager
 
         # editors
