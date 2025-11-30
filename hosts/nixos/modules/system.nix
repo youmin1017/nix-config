@@ -31,30 +31,19 @@
     ];
   };
 
+  # disable here, config is moved to home-manager modules
   i18n.inputMethod = {
     type = "fcitx5";
-    enable = true;
-
+    enable = false;
     fcitx5 = {
       waylandFrontend = true;
       addons = with pkgs; [
         fcitx5-gtk
-        libsForQt5.fcitx5-qt
+        qt6Packages.fcitx5-qt
         fcitx5-rime
         rime-data
       ];
-
-      settings.inputMethod = {
-        "Groups/0" = {
-          Name = "Default";
-          "Default Layout" = "us";
-          DefaultIM = "keyboard-us";
-        };
-        "Groups/0/Items/0".Name = "keyboard-us";
-        "Groups/0/Items/1".Name = "rime";
-      };
     };
-
   };
 
   fonts.packages = with pkgs; [

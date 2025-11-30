@@ -32,7 +32,7 @@
         "open-settings" = "control+,";
         "toggle-action-panel" = "control+K";
       };
-      popToRootOnClose = true;
+      popToRootOnClose = false;
       rootSearch = {
         searchFiles = false;
       };

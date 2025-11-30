@@ -14,6 +14,12 @@ return {
         explorer = {
           include = { ".env*", "config.yaml" },
         },
+        files = {
+          cmd = "rg",
+          exclude = { "node_modules", ".git", "dist", "build", "__pycache__", ".svelte-kit" },
+          hidden = true,
+          ignored = true,
+        },
       },
     },
     notifier = {

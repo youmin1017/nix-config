@@ -1,7 +1,7 @@
 {
   wayland.windowManager.hyprland.settings = {
     exec-once = [
-      "fcitx5 -d"
+      # "fcitx5 -d"
     ];
   };
 }

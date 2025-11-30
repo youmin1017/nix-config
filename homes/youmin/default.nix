@@ -21,6 +21,7 @@ in
     ./modules/cursor.nix
     ./modules/gtk.nix
     ./modules/omarchy.nix
+    ./modules/fcitx5.nix
     ./modules/hyprland
     ./modules/hyprlock.nix
     ./modules/hypridle.nix

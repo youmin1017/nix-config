@@ -1,6 +1,7 @@
 {
   inputs,
   config,
+  lib,
   ...
 }:
 let
@@ -37,6 +38,7 @@ in
         height = 26;
         modules-left = [
           "hyprland/workspaces"
+          "memory"
         ];
         modules-center = [
           "clock"
@@ -51,33 +53,67 @@ in
           "power-profiles-daemon"
           "battery"
         ];
+        # "hyprland/workspaces" = {
+        #   on-click = "activate";
+        #   format = "{icon}";
+        #   format-icons = {
+        #     default = "";
+        #     "1" = "1";
+        #     "2" = "2";
+        #     "3" = "3";
+        #     "4" = "4";
+        #     "5" = "5";
+        #     "6" = "6";
+        #     "7" = "7";
+        #     "8" = "8";
+        #     "9" = "9";
+        #     active = "󱓻";
+        #   };
+        #   persistent-workspaces = {
+        #     "1" = [ ];
+        #     "2" = [ ];
+        #     "3" = [ ];
+        #     "4" = [ ];
+        #     "5" = [ ];
+        #   };
+        # };
+
         "hyprland/workspaces" = {
-          on-click = "activate";
           format = "{icon}";
           format-icons = {
-            default = "";
-            "1" = "1";
-            "2" = "2";
-            "3" = "3";
-            "4" = "4";
-            "5" = "5";
-            "6" = "6";
-            "7" = "7";
-            "8" = "8";
-            "9" = "9";
+            urgent = "";
+            # active = "";
             active = "󱓻";
-          };
+            # visible = "";
+            default = "";
+            empty = "";
+          }
+          // builtins.listToAttrs (
+            map (
+              n:
+              let
+                mod = a: b: a - (b * (a / b));
+                value = if mod n 10 == 0 then 10 else mod n 10;
+              in
+              {
+                name = toString n;
+                value = toString value;
+              }
+            ) (lib.range 1 30)
+          );
           persistent-workspaces = {
-            "1" = [ ];
-            "2" = [ ];
-            "3" = [ ];
-            "4" = [ ];
-            "5" = [ ];
           };
+          all-outputs = false;
         };
+
         cpu = {
           interval = 5;
           format = "󰍛";
+          on-click = "ghostty -e btop";
+        };
+        memory = {
+          format = "  {}%";
+          tooltip = true;
           on-click = "ghostty -e btop";
         };
         clock = {
