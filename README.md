@@ -2,6 +2,8 @@
 
 This repository contains my personal NixOS and Nix Darwin configurations.
 
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/9bd16a1b-c92c-437a-bb27-0d757b35cbef" />
+
 ## Project Overview
 
 This repository is structured to manage configurations for both NixOS (Linux) and Nix Darwin (macOS) systems.
@@ -29,9 +31,6 @@ This configuration leverages the following key technologies:
 - **Neovim**: A powerful and extensible text editor, with configurations under `homes/youmin/dotfiles/nvim`.
 - **Tmux**: A terminal multiplexer, configured under `homes/youmin/core/tmux.nix`.
 - **Starship**: A cross-shell prompt, configured under `homes/youmin/core/starship.nix`.
-
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/9bd16a1b-c92c-437a-bb27-0d757b35cbef" />
-
 
 ## Download this project
 
