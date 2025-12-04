@@ -26,9 +26,9 @@
         teams-for-linux
         vlc # media player
         thunderbird # email client
-        telegram-desktop
         wl-clipboard
         nautilus # file manager
+        telegram-desktop
 
         # editors
         jetbrains.datagrip

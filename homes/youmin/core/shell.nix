@@ -46,8 +46,8 @@
     k = "kubectl";
     cz = "chezmoi";
     lg = "lazygit";
-    rm = lib.mkIf (isDarwin) "trash";
-    ii = lib.mkIf (isDarwin) "open -a Finder.app";
+    rm = lib.mkIf isDarwin "trash";
+    ii = lib.mkIf isDarwin "open -a Finder.app";
     zed = lib.mkIf (!isDarwin) "zeditor";
 
     urldecode = "python3 -c 'import sys, urllib.parse as ul; print(ul.unquote_plus(sys.stdin.read()))'";

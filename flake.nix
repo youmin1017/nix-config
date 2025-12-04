@@ -42,17 +42,12 @@
   };
 
   outputs =
-    {
-      self,
-      nixpkgs,
-      darwin,
-      ...
-    }@inputs:
+    { self, ... }:
     let
       hosts = import ./hosts { inherit self; };
     in
     {
-      nixosConfigurations = hosts.nixosConfigurations;
-      darwinConfigurations = hosts.darwinConfigurations;
+      inherit (hosts) nixosConfigurations;
+      inherit (hosts) darwinConfigurations;
     };
 }
