@@ -638,6 +638,26 @@
         "type": "github"
       }
     },
+    "noctalia": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1764920477,
+        "narHash": "sha256-X2Ll//pVOC7AagJw8hk/DwyJreNWvjlWw308vKaRNAo=",
+        "owner": "noctalia-dev",
+        "repo": "noctalia-shell",
+        "rev": "d7745c28bd2d8e3b8e39d7bbe2d8cf1ea345424b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "noctalia-dev",
+        "repo": "noctalia-shell",
+        "type": "github"
+      }
+    },
     "pre-commit-hooks": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -670,6 +690,7 @@
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nix-colors": "nix-colors",
         "nixpkgs": "nixpkgs_3",
+        "noctalia": "noctalia",
         "rust-overlay": "rust-overlay",
         "sops-nix": "sops-nix",
         "split-monitor-workspaces": "split-monitor-workspaces",

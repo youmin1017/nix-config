@@ -1,0 +1,75 @@
+{
+  # programs.quickshell = {
+  #   enable = true;
+  #   systemd.enable = true;
+  # };
+  programs.noctalia-shell = {
+    enable = true;
+    systemd.enable = true;
+    settings = {
+      bar = {
+        density = "compact";
+        position = "top";
+        showCapsule = false;
+        widgets = {
+          left = [
+            {
+              id = "ControlCenter";
+              useDistroLogo = true;
+            }
+            {
+              hideUnoccupied = false;
+              id = "Workspace";
+              labelMode = "none";
+            }
+          ];
+          center = [
+            {
+              formatHorizontal = "HH:mm";
+              formatVertical = "HH mm";
+              id = "Clock";
+              useMonospacedFont = true;
+              usePrimaryColor = true;
+            }
+          ];
+          right = [
+            {
+              id = "Tray";
+            }
+            # {
+            #   alwaysShowPercentage = false;
+            #   id = "Battery";
+            #   warningThreshold = 30;
+            # }
+            {
+              id = "WiFi";
+            }
+            {
+              id = "Bluetooth";
+            }
+            {
+              id = "SystemMonitor";
+              showCpuUsage = true;
+              showCpuTemp = true;
+              showMemoryUsage = true;
+              showDiskUsage = true;
+            }
+          ];
+        };
+      };
+      colorSchemes.predefinedScheme = "Catppuccin";
+      ui = {
+        fontDefault = "DejaVu Sans";
+        fontFixed = "DejaVuSansM Nerd Font Mono";
+      };
+      general = {
+        avatarImage = "/home/drfoobar/.face";
+        radiusRatio = 0.2;
+      };
+      location = {
+        name = "Puli, Nantou";
+        monthBeforeDay = true;
+      };
+    };
+  };
+}

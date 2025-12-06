@@ -17,6 +17,7 @@ in
   ++ lib.optionals isLinux [
     inputs.nix-colors.homeManagerModules.default
     inputs.vicinae.homeManagerModules.default
+    inputs.noctalia.homeModules.default
     ./modules/dconf.nix
     ./modules/cursor.nix
     ./modules/gtk.nix
@@ -26,11 +27,19 @@ in
     ./modules/hyprlock.nix
     ./modules/hypridle.nix
     ./modules/hyprpaper.nix
+    ./modules/hyprshot.nix
     ./modules/pkgs.nix
-    ./modules/rofi.nix
-    ./modules/waybar.nix
     ./modules/color.nix
+
+    # status bar
+    # ./modules/waybar.nix
+    ./modules/noctalia.nix
+
+    # launcher
+    # ./modules/rofi.nix
     ./modules/vicinae.nix
-    ./modules/swayosd.nix
+
+    # osd
+    # ./modules/swayosd.nix
   ];
 }

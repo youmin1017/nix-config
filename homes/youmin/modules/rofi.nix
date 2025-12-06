@@ -5,7 +5,7 @@ let
 in
 {
   programs.rofi = {
-    enable = false;
+    enable = true;
 
     # 1. General Configuration Block
     extraConfig = {

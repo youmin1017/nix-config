@@ -39,6 +39,12 @@
     # utilities
     nix-colors.url = "github:misterio77/nix-colors";
     vicinae.url = "github:vicinaehq/vicinae"; # App Launcher
+
+    # Quick Shell Config
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

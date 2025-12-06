@@ -3,6 +3,7 @@
   home.packages = with pkgs; [
     blueberry
     pavucontrol
-    hyprshot
+    brightnessctl
+    wget
   ];
 }
