@@ -21,6 +21,7 @@
     stylua
     biome
     ruff
+    dprint
 
     # linter
     hadolint # Dockerfile linter

@@ -9,18 +9,6 @@ return {
     bigfile = {
       enabled = true,
     },
-    picker = {
-      sources = {
-        explorer = {
-          include = { ".env*", "config.yaml" },
-        },
-        files = {
-          exclude = { "node_modules", ".git", "dist", "build", "__pycache__", ".svelte-kit" },
-          hidden = true,
-          ignored = true,
-        },
-      },
-    },
     notifier = {
       filter = function(n)
         if n.msg == "No information available" then
@@ -28,6 +16,13 @@ return {
         end
         return true
       end,
+    },
+    picker = {
+      sources = {
+        explorer = {
+          include = { ".env*", "config.yaml" },
+        },
+      },
     },
     dashboard = {
       preset = {

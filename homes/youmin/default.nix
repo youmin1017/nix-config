@@ -30,6 +30,7 @@ in
     ./modules/hyprshot.nix
     ./modules/pkgs.nix
     ./modules/color.nix
+    ./modules/udiskie.nix
 
     # status bar
     # ./modules/waybar.nix

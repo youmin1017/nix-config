@@ -31,20 +31,8 @@
     ];
   };
 
-  # disable here, config is moved to home-manager modules
-  # i18n.inputMethod = {
-  #   type = "fcitx5";
-  #   enable = false;
-  #   fcitx5 = {
-  #     waylandFrontend = true;
-  #     addons = with pkgs; [
-  #       fcitx5-gtk
-  #       qt6Packages.fcitx5-qt
-  #       fcitx5-rime
-  #       rime-data
-  #     ];
-  #   };
-  # };
+  # UDisks2 for better disk management (e.g., for GNOME Disks)
+  services.udisks2.enable = true;
 
   fonts.packages = with pkgs; [
     corefonts
