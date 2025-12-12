@@ -29,6 +29,7 @@
         wl-clipboard
         nautilus # file manager
         telegram-desktop
+        spotify
 
         # editors
         jetbrains.datagrip

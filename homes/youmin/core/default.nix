@@ -18,6 +18,7 @@
     ripgrep # A line-oriented search tool that recursively searches your current directory for a regex pattern
     yq-go # yaml processer https://github.com/mikefarah/yq
     jq # A lightweight and flexible command-line JSON processor
+    inkscape # vector graphics utility
     httpie
     jless
     btop
@@ -42,7 +43,6 @@
     nodejs_22
     bun
     pnpm
-    deno
     python312
     rust-bin.stable.latest.default
     rust-analyzer

@@ -14,9 +14,9 @@
       "SUPER, SPACE, exec, vicinae toggle"
 
       # Screenshot
-      ", PRINT, exec, hyprshot -m region"
-      "SHIFT, PRINT, exec, hyprshot -m window"
-      "CTRL, PRINT, exec, hyprshot -m output"
+      ", PRINT, exec, hyprshot -m region --freeze"
+      "SHIFT, PRINT, exec, hyprshot -m window --freeze"
+      "CTRL, PRINT, exec, hyprshot -m output --freeze"
 
       # Move focus with mod + arrow keys
       "SUPER, h, movefocus, l"
