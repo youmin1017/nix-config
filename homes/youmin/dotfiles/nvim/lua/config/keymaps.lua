@@ -54,6 +54,7 @@ end, { desc = "Snacks bottom terminal" })
 -- Other
 -- stylua: ignore
 map("n", "<leader>z", function() Snacks.zen() end, { desc = "Snacks zen mode" })
+
 --     ╭───────────────────────────────────────────────────────────────────╮
 --     │                  Editor                                           │
 --     ╰───────────────────────────────────────────────────────────────────╯
@@ -72,6 +73,9 @@ map("n", "<M-k>", ":m .-2<CR>==", { desc = "Editor move selected down and stay i
 map("x", "<M-j>", ":move '>+1<CR>gv-gv", { desc = "Editor move selected block up and stay in visual mode" })
 map("x", "<M-k>", ":move '<-2<CR>gv-gv", { desc = "Editor move selected down and stay in visual mode" })
 map("n", "<leader>ra", vim.lsp.buf.rename, { desc = "Editor Rename" })
+map("n", "gX", function()
+  vim.ui.open(vim.fn.expand("%:p"))
+end, { desc = "Editor Open current file in OS" })
 
 --     ╭───────────────────────────────────────────────────────────────────╮
 --     │                  Cursor Movement                                  │

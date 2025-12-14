@@ -1,3 +1,4 @@
+---@type LazySpec
 return {
   "nvim-mini/mini.files",
   keys = {
@@ -53,4 +54,17 @@ return {
       use_as_default_explorer = true,
     },
   },
+  config = function(_, opts)
+    require("mini.files").setup(opts)
+
+    vim.api.nvim_create_autocmd("User", {
+      pattern = "MiniFilesBufferCreate",
+      callback = function(args)
+        local b = args.data.buf_id
+
+        -- stylua: ignore
+        vim.keymap.set("n", "gX", function() vim.ui.open(MiniFiles.get_fs_entry().path) end, { buffer = b, desc = "OS open" })
+      end,
+    })
+  end,
 }

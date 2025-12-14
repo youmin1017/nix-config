@@ -7,6 +7,7 @@ return {
     opts.library = opts.library or {}
     vim.list_extend(opts.library, {
       { path = "lazy.nvim", words = { "LazySpec" } },
+      { path = "conform.nvim", words = { "conform" } },
     })
   end,
 }
