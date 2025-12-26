@@ -1,8 +1,12 @@
 {
   services.vicinae = {
     enable = true; # default: false
-    autoStart = true; # default: true
     # package = # specify package to use here. Can be omitted.
+
+    systemd = {
+      enable = true;
+      autoStart = true;
+    };
 
     settings = {
       closeOnFocusLoss = false;

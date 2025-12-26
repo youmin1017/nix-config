@@ -10,7 +10,7 @@
       listener = [
         {
           timeout = 300;
-          on-timeout = "loginctl lock-session";
+          on-timeout = "noctalia-shell ipc call lockScreen lock";
         }
         {
           timeout = 330;

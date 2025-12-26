@@ -6,6 +6,9 @@ vim.opt.clipboard = ""
 vim.opt.relativenumber = false
 
 vim.filetype.add({
+  extension = {
+    gotmpl = "gotmpl",
+  },
   pattern = {
     [".env.*"] = "sh",
   },

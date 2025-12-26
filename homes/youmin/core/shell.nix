@@ -22,8 +22,6 @@
       (lib.mkOrder 1200 ''
         export PATH="$HOME/bin:$HOME/.local/bin:$HOME/go/bin:$PATH"
         export PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
-        # Currently, zellij does not follow symlink configs update
-        export ZELLIJ_CONFIG_DIR=${builtins.getEnv "IMPURITY_PATH" + "/homes/youmin/dotfiles/zellij"}
       '')
     ];
 

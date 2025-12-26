@@ -4,5 +4,6 @@
     blueberry
     pavucontrol
     wget
+    trashy
   ];
 }

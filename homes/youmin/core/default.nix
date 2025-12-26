@@ -52,6 +52,7 @@
     kubectl
     k9s
     kubernetes-helm
+    telepresence2
 
     # AI
     claude-code

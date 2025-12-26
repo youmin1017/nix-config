@@ -1,8 +1,4 @@
 {
-  # programs.quickshell = {
-  #   enable = true;
-  #   systemd.enable = true;
-  # };
   programs.noctalia-shell = {
     enable = true;
     systemd.enable = true;
@@ -36,16 +32,14 @@
             {
               id = "Tray";
             }
-            # {
-            #   alwaysShowPercentage = false;
-            #   id = "Battery";
-            #   warningThreshold = 30;
-            # }
             {
               id = "WiFi";
             }
             {
               id = "Bluetooth";
+            }
+            {
+              id = "ScreenRecorder";
             }
             {
               id = "SystemMonitor";

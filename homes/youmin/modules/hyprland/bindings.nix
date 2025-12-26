@@ -3,8 +3,11 @@
     bind = [
       "SUPER, Q, killactive,"
       "SUPER, G, togglefloating"
-      "SUPER CTRL, Q, exec, hyprlock"
 
+      # Lock Screen
+      "SUPER CTRL, Q, exec, noctalia-shell ipc call lockScreen lock"
+
+      # Noctalia Related
       "SUPER SHIFT, comma, exec, noctalia-shell ipc call settings toggle"
 
       # Launcher

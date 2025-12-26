@@ -30,6 +30,7 @@
         nautilus # file manager
         telegram-desktop
         spotify
+        bruno
 
         # editors
         jetbrains.datagrip

@@ -24,7 +24,7 @@ in
     ./modules/omarchy.nix
     ./modules/fcitx5.nix
     ./modules/hyprland
-    ./modules/hyprlock.nix
+    # ./modules/hyprlock.nix
     ./modules/hypridle.nix
     ./modules/hyprpaper.nix
     ./modules/hyprshot.nix
