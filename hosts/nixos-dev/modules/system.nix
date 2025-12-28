@@ -6,6 +6,7 @@
     ./keycloak.nix
     ./headscale.nix
     ./s3.nix
+    ./github.nix
   ];
 
   # Enable the OpenSSH daemon.
