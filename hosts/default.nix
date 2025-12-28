@@ -14,10 +14,19 @@ let
   hm-darwin = home-manager.darwinModules.home-manager;
 
   mkLinuxHost =
-    { name, config }:
+    {
+      name,
+      config,
+      minimal ? false,
+    }:
     nixpkgs.lib.nixosSystem {
       specialArgs = {
-        inherit outputs inputs username;
+        inherit
+          outputs
+          inputs
+          username
+          minimal
+          ;
         isDarwin = false;
       };
       system = "x86_64-linux";
@@ -46,10 +55,12 @@ in
         {
           name = "nixos-lab";
           config = ./nixos-lab/configuration.nix;
+          minimal = false; # with desktop environment
         }
         {
           name = "nixos-dev";
           config = ./nixos-dev/configuration.nix;
+          minimal = true; # no desktop environment
         }
       ];
     in

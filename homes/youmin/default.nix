@@ -1,5 +1,6 @@
 {
   isDarwin,
+  minimal,
   inputs,
   lib,
   ...
@@ -14,7 +15,7 @@ in
     ./core
   ]
   # Linux specific
-  ++ lib.optionals isLinux [
+  ++ lib.optionals (isLinux && !minimal) [
     inputs.nix-colors.homeManagerModules.default
     inputs.vicinae.homeManagerModules.default
     inputs.noctalia.homeModules.default
