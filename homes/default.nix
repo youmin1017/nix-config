@@ -3,6 +3,7 @@
   inputs,
   impurity,
   isDarwin,
+  minimal,
   ...
 }:
 {
@@ -13,6 +14,7 @@
         inputs
         impurity
         isDarwin
+        minimal
         ;
     };
     users = {
