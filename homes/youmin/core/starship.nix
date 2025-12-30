@@ -1,4 +1,3 @@
-{ ... }:
 {
   programs.starship = {
     enable = true;
@@ -11,8 +10,9 @@
       container.disabled = true;
       add_newline = false;
       character = {
-        success_symbol = "[➜](bold green)";
-        error_symbol = "[➜](bold red)";
+        success_symbol = "[➜](bold #9ece6a)";
+        error_symbol = "[➜](bold #f7768e)";
+        vimcmd_symbol = "[](bold #7aa2f7)";
       };
       aws = {
         symbol = "🅰 ";
