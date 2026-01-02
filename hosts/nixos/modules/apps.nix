@@ -11,12 +11,9 @@
       [
         # browsers
         inputs.zen-browser.packages."x86_64-linux".default # beta
-        microsoft-edge
         brave
+        vivaldi
 
-        (bottles.override { removeWarningPopup = true; })
-        bibata-cursors
-        discord
         ghostty
         onlyoffice-desktopeditors
         prismlauncher
@@ -37,6 +34,15 @@
         jetbrains.goland
         zed-editor
         antigravity
+
+        # overrides
+        (bottles.override { removeWarningPopup = true; })
+        (discord.overrideAttrs (oldAttrs: {
+          postInstall = (oldAttrs.postInstall or "") + ''
+            wrapProgram $out/bin/discord \
+              --add-flags "--enable-wayland-ime"
+          '';
+        }))
       ]
     else
       [ ];

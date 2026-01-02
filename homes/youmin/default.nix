@@ -25,13 +25,13 @@ in
     ./modules/omarchy.nix
     ./modules/fcitx5.nix
     ./modules/hyprland
-    # ./modules/hyprlock.nix
     ./modules/hypridle.nix
     ./modules/hyprpaper.nix
     ./modules/hyprshot.nix
     ./modules/pkgs.nix
     ./modules/color.nix
     ./modules/udiskie.nix
+    ./modules/sessionvars.nix
 
     # status bar
     # ./modules/waybar.nix
