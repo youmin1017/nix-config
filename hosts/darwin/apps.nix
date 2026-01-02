@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   ##########################################################################
   #
@@ -13,7 +14,8 @@
   # But on macOS, it's less stable than homebrew.
   #
   # Related Discussion: https://discourse.nixos.org/t/darwin-again/29331
-  environment.variables.EDITOR = "nvim";
+  environment.systemPackages = with pkgs; [
+  ];
 
   # TODO To make this work, homebrew need to be installed manually, see https://brew.sh
   #
@@ -52,7 +54,7 @@
     casks = [
       "arc"
       "appcleaner"
-      "chatgpt"
+      "capcut"
       "datagrip"
       "goland"
       "discord"
@@ -64,12 +66,14 @@
       "notion"
       "notion-calendar"
       "orbstack"
+      "obs"
       "obsidian"
       "onlyoffice"
       "podman-desktop"
       "prismlauncher"
       "raycast"
       "rider"
+      "spotify"
       "steam"
       "telegram"
       "utm"
