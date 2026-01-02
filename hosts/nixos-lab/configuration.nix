@@ -14,12 +14,11 @@
       # ========== Required Configs ==========
       #
       "hosts/core"
-      "hosts/nixos/modules/system.nix"
-      "hosts/nixos/modules/apps.nix"
-      "hosts/nixos/modules/cachix.nix"
-      # "hosts/nixos/modules/gnome.nix"
-      # "hosts/nixos/modules/cosmic.nix"
-      "hosts/nixos/modules/hyprland.nix"
+      "hosts/modules/nixos/system.nix"
+      "hosts/modules/nixos/apps.nix"
+      "hosts/modules/nixos/cachix.nix"
+      # "hosts/modules/nixos/gnome.nix"
+      "hosts/modules/nixos/hyprland.nix"
 
       #
       # ========== Non-Primary Users to Create ==========

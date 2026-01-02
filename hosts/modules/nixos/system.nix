@@ -3,15 +3,13 @@
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
 
+  # Enable nix-ld for better compatibility with Nix packages that require FHS
+  programs.nix-ld.enable = true;
+
   hardware = {
     bluetooth = {
       enable = true;
       powerOnBoot = true;
-      settings = {
-        General = {
-          Enable = "Source,Sink,Media,Socket";
-        };
-      };
     };
 
     # Keyboard
