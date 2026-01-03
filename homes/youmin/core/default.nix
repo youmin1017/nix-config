@@ -40,6 +40,7 @@
     # languages
     go
     go-migrate
+    air
     nodejs_22
     bun
     pnpm
