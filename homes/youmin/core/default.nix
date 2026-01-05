@@ -51,7 +51,7 @@
 
     # DevOps
     kubectl
-    k9s
+    kubectl-cnpg
     kubernetes-helm
     telepresence2
 

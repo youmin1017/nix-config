@@ -3,7 +3,7 @@
 
   virtualisation.oci-containers.containers = {
     wke-drive = {
-      image = "ghcr.io/wkebaas/wkedrive:v0.1.4";
+      image = "ghcr.io/wkebaas/wkedrive:v0.2.0";
       ports = [ "127.0.0.1:8080:3000" ];
       environmentFiles = [
         config.sops.secrets."env/wkedrive".path
