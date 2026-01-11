@@ -54,7 +54,6 @@
     casks = [
       "arc"
       "appcleaner"
-      "capcut"
       "datagrip"
       "goland"
       "discord"
