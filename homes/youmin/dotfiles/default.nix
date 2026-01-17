@@ -9,9 +9,8 @@
       "nvim".source = link ./nvim;
       "nvim-vscode".source = link ./nvim-vscode;
       "ghostty".source = link ./ghostty;
-      "wlogout".source = link ./wlogout;
+      "opencode/opencode.json".source = link ./opencode/opencode.json;
       "zed/keymap.json".source = link ./zed/keymap.json;
       "zed/settings.json".source = link ./zed/settings.json;
-      "zellij".source = link ./zellij;
     };
 }

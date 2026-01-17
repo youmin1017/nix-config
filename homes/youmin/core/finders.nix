@@ -17,7 +17,7 @@
       defaultCommand = "fd --hiden --strip-cwd-prefix";
       defaultOptions = [
         "--color=dark"
-        "--height 50%"
+        "--height 100%"
         "--layout=default"
         "--border"
       ];

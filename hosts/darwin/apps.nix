@@ -53,10 +53,12 @@
     # TODO Feel free to add your favorite apps here.
     casks = [
       "arc"
+      "antigravity"
       "appcleaner"
       "datagrip"
       "goland"
       "discord"
+      "google-chrome"
       "ghostty"
       "jordanbaird-ice@beta"
       "karabiner-elements"
@@ -70,6 +72,8 @@
       "onlyoffice"
       "podman-desktop"
       "prismlauncher"
+      "proton-mail"
+      "proton-pass"
       "raycast"
       "rider"
       "spotify"

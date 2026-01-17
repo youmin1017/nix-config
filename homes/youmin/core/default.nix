@@ -56,7 +56,7 @@
     telepresence2
 
     # AI
-    claude-code
+    opencode
     gemini-cli
     github-copilot-cli
   ];
