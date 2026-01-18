@@ -37,6 +37,15 @@
     direnv
     lazygit
 
+    # latex
+    (texlive.combine {
+      inherit (pkgs.texlive)
+        scheme-medium
+        biblatex
+        xecjk
+        ;
+    })
+
     # languages
     go
     go-migrate

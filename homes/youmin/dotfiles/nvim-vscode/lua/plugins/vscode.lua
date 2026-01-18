@@ -29,20 +29,6 @@ vim.g.snacks_animate = false
 ---@type LazySpec
 return {
 	{
-		"snacks.nvim",
-		opts = {
-			bigfile = { enabled = false },
-			dashboard = { enabled = false },
-			indent = { enabled = false },
-			input = { enabled = false },
-			notifier = { enabled = false },
-			picker = { enabled = false },
-			quickfile = { enabled = false },
-			scroll = { enabled = false },
-			statuscolumn = { enabled = false },
-		},
-	},
-	{
 		"LazyVim/LazyVim",
 		config = function(_, opts)
 			opts = opts or {}

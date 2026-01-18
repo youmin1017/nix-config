@@ -9,22 +9,21 @@
 
   home.packages = with pkgs; [
     # lsp
-    helm-ls
-    lua-language-server
-    marksman
-    nil
-    statix
+    # helm-ls
+    # lua-language-server
+    # marksman
+    # nil
+    # statix
 
     # formatter
-    kdlfmt
-    nixfmt-rfc-style
-    stylua
-    biome
-    ruff
-    dprint
+    # kdlfmt
+    # nixfmt-rfc-style
+    # stylua
+    # ruff
+    # dprint
 
     # linter
-    hadolint # Dockerfile linter
+    # hadolint # Dockerfile linter
 
     # misc
     unzip # for mason.nvim

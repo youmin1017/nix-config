@@ -72,8 +72,6 @@
       "onlyoffice"
       "podman-desktop"
       "prismlauncher"
-      "proton-mail"
-      "proton-pass"
       "raycast"
       "rider"
       "spotify"
