@@ -9,12 +9,12 @@
     user = {
       name = lib.mkOption {
         description = "Username for Git commits";
-        type = lib.types.nullor lib.types.str;
+        type = lib.types.nullOr lib.types.str;
         default = null;
       };
       email = lib.mkOption {
         description = "Email address for Git commits";
-        type = lib.types.nullor lib.types.str;
+        type = lib.types.nullOr lib.types.str;
         default = null;
       };
     };
@@ -49,12 +49,12 @@
             update = "submodule update --init --recursive";
             foreach = "submodule foreach";
           };
-          ignores = [
-            ".DS_Store"
-            "Thumbs.db"
-            ".idea"
-          ];
         };
+        ignores = [
+          ".DS_Store"
+          "Thumbs.db"
+          ".idea"
+        ];
       };
 
       delta = {
