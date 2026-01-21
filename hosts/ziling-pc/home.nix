@@ -10,6 +10,7 @@
         nix.enable = true;
       };
       programs = {
+        impurity.enable = true;
         neovim.enable = true;
       };
     };

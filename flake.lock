@@ -596,6 +596,21 @@
         "type": "github"
       }
     },
+    "impurity": {
+      "locked": {
+        "lastModified": 1689836741,
+        "narHash": "sha256-82KeRg2sAqDXCdzVs8P8GoqVaPsZjkWgrfsj6kgOLTY=",
+        "owner": "outfoxxed",
+        "repo": "impurity.nix",
+        "rev": "bbc41b69ab5485cd55aa315d08cff865781d3913",
+        "type": "github"
+      },
+      "original": {
+        "owner": "outfoxxed",
+        "repo": "impurity.nix",
+        "type": "github"
+      }
+    },
     "neovim-nightly-overlay": {
       "inputs": {
         "flake-parts": "flake-parts_2",
@@ -775,6 +790,7 @@
         "flake-parts": "flake-parts",
         "home-manager": "home-manager_2",
         "hyprland": "hyprland",
+        "impurity": "impurity",
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nixpkgs": "nixpkgs_3",
         "noctalia": "noctalia",

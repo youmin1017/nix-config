@@ -14,8 +14,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland.url = "github:hyprwm/Hyprland";
+    impurity.url = "github:outfoxxed/impurity.nix";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
-
     # Quick Shell Config
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";

@@ -15,6 +15,7 @@
       etc."nixos".source = self;
 
       systemPackages = with pkgs; [
+        gcc
         headsetcontrol
         lm_sensors
         wget

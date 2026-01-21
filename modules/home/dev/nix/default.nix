@@ -3,7 +3,8 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+{
   options.myHome.dev.nix.enable = lib.mkEnableOption "Enable Nix development environment";
 
   config = lib.mkIf config.myHome.dev.nix.enable {
@@ -11,6 +12,7 @@
       nil
       nixd
       nixfmt
+      statix
     ];
   };
 }

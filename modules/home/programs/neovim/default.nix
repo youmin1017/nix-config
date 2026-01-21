@@ -1,4 +1,6 @@
 {
+  self,
+  impurity,
   config,
   lib,
   pkgs,
@@ -17,5 +19,7 @@
     home.packages = with pkgs; [
       tree-sitter
     ];
+
+    home.file.".config/nvim".source = impurity.link "${self}/dotfiles/nvim";
   };
 }
