@@ -1,47 +1,44 @@
 {
-  isDarwin,
-  minimal,
-  inputs,
+  self,
+  pkgs,
   lib,
   ...
 }:
-let
-  isLinux = !isDarwin;
-in
 {
   imports = [
-    ./home.nix
-    ./dotfiles
-    ./core
-  ]
-  # Linux specific
-  ++ lib.optionals (isLinux && !minimal) [
-    inputs.nix-colors.homeManagerModules.default
-    inputs.vicinae.homeManagerModules.default
-    inputs.noctalia.homeModules.default
-    ./modules/dconf.nix
-    ./modules/cursor.nix
-    ./modules/gtk.nix
-    ./modules/omarchy.nix
-    ./modules/fcitx5.nix
-    ./modules/hyprland
-    ./modules/hypridle.nix
-    ./modules/hyprpaper.nix
-    ./modules/hyprshot.nix
-    ./modules/pkgs.nix
-    ./modules/color.nix
-    ./modules/udiskie.nix
-    ./modules/sessionvars.nix
+    self.homeModules.default
+    self.inputs.vicinae.homeManagerModules.default
+    self.inputs.noctalia.homeModules.default
+  ];
 
-    # status bar
-    # ./modules/waybar.nix
-    ./modules/noctalia.nix
-
-    # launcher
-    # ./modules/rofi.nix
-    ./modules/vicinae.nix
-
-    # osd
-    # ./modules/swayosd.nix
+  config = lib.mkMerge [
+    {
+      home.username = "youmin";
+      home.stateVersion = "25.11";
+      nix = {
+        gc = {
+          automatic = true;
+          options = "--delete-older-than 3d";
+          persistent = true;
+          randomizedDelaySec = "60min";
+        };
+      };
+      myHome = {
+        programs.git = {
+          enable = true;
+          user.name = "youmin1017";
+          user.email = "youmin.main@gmail.com";
+        };
+      };
+    }
+    (lib.mkIf pkgs.stdenv.isDarwin {
+      home = {
+        homeDirectory = "/Users/youmin";
+      };
+      # myHome.youmin.desktop.macos.enable = true;
+    })
+    (lib.mkIf pkgs.stdenv.isLinux {
+      home.homeDirectory = "/home/youmin";
+    })
   ];
 }
