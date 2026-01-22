@@ -6,7 +6,10 @@
     ./impurity
     ./neovim
     ./noctalia
+    ./starship
+    ./tmux
     ./utils
     ./zed
+    ./zsh
   ];
 }

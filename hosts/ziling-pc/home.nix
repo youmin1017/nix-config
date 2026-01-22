@@ -14,7 +14,10 @@
       programs = {
         impurity.enable = true;
         neovim.enable = true;
+        starship.enable = true;
+        tmux.enable = true;
         zed.enable = true;
+        zsh.enable = true;
       };
     };
   };
