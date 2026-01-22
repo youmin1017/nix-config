@@ -7,5 +7,6 @@
     ./neovim
     ./noctalia
     ./utils
+    ./zed
   ];
 }

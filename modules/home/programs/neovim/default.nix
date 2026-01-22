@@ -70,11 +70,11 @@
     xdg.configFile =
       lib.genAttrs
         [
-          "nvim/lua"
           "nvim/init.lua"
           "nvim/.neoconf.json"
           "nvim/lazy-lock.json"
           "nvim/stylua.toml"
+          "nvim/lua"
         ]
         (name: {
           source = impurity.link "${self}/dotfiles/${name}";

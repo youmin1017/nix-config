@@ -14,6 +14,7 @@
       programs = {
         impurity.enable = true;
         neovim.enable = true;
+        zed.enable = true;
       };
     };
   };
