@@ -27,6 +27,16 @@
       };
     };
 
+    fonts.packages = with pkgs; [
+      corefonts
+      material-design-icons
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
+      noto-fonts-color-emoji
+      font-awesome
+      nerd-fonts.dejavu-sans-mono
+    ];
+
     hardware = {
       keyboard.qmk.enable = true;
     };

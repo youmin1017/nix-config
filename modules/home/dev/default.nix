@@ -3,5 +3,6 @@
     ./ai
     ./devops
     ./nix
+    ./node
   ];
 }

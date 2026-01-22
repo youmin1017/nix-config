@@ -14,5 +14,11 @@
       nixfmt
       statix
     ];
+
+    myHome = {
+      programs.neovim.lazyvim.extras = [
+        "lazyvim.plugins.extras.lang.nix"
+      ];
+    };
   };
 }

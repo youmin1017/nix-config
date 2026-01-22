@@ -7,6 +7,8 @@
 
     myHome = {
       dev = {
+        ai.enable = true;
+        node.enable = true;
         nix.enable = true;
       };
       programs = {

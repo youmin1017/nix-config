@@ -1,4 +1,4 @@
-{ self, ... }:
+{ self, pkgs, ... }:
 {
   imports = [
     ./home.nix
@@ -9,6 +9,10 @@
   networking.hostName = "ziling-pc";
   system.stateVersion = "25.11";
   time.timeZone = "Asia/Taipei";
+
+  environment.systemPackages = with pkgs; [
+    brave
+  ];
 
   myHardware = {
     amd.cpu.enable = true;
