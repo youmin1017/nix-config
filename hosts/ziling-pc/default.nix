@@ -24,6 +24,15 @@
     ];
   };
 
+  services = {
+    hardware = {
+      openrgb = {
+        enable = true;
+        motherboard = "amd";
+      };
+    };
+  };
+
   myHardware = {
     amd.cpu.enable = true;
     nvidia.gpu.enable = true;
