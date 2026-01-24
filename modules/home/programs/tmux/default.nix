@@ -61,6 +61,10 @@
         '';
     in
     lib.mkIf config.myHome.programs.tmux.enable {
+      myHome = {
+        # required by sesh
+        programs.zoxide.enable = true;
+      };
 
       home.packages = [
         tmuxPopup

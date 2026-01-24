@@ -12,6 +12,7 @@
 
   environment.systemPackages = with pkgs; [
     brave
+    onlyoffice-desktopeditors
   ];
 
   myHardware = {
@@ -30,12 +31,17 @@
 
     programs = {
       nix.enable = true;
-      firefox.enable = true;
       systemd-boot.enable = true;
+
+      # browsers
+      chromium.enable = true;
+      firefox.enable = true;
+      zen-browser.enable = true;
     };
 
     services = {
       greetd.enable = true;
+      kanata.enable = true;
     };
   };
 

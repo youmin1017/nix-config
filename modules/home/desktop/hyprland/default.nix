@@ -3,6 +3,9 @@
   lib,
   ...
 }:
+let
+  cfg = config.myHome.desktop.hyprland;
+in
 {
   options.myHome.desktop.hyprland = {
     enable = lib.mkEnableOption "hyprland desktop environment";
@@ -24,7 +27,7 @@
     ./settings
   ];
 
-  config = lib.mkIf config.myHome.desktop.hyprland.enable {
+  config = lib.mkIf cfg.enable {
     wayland.windowManager.hyprland = {
       enable = true;
       package = null;
