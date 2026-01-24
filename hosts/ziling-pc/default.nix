@@ -13,7 +13,16 @@
   environment.systemPackages = with pkgs; [
     brave
     onlyoffice-desktopeditors
+    telegram-desktop
+    networkmanagerapplet
   ];
+
+  networking.networkmanager = {
+    enable = true;
+    plugins = with pkgs; [
+      networkmanager-openconnect
+    ];
+  };
 
   myHardware = {
     amd.cpu.enable = true;

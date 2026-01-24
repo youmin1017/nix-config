@@ -1,7 +1,8 @@
 {
   imports = [
-    ./hypridle.nix
-    ./udiskie.nix
-    ./vicinae.nix
+    ./hypridle
+    ./nm-applet
+    ./udiskie
+    ./vicinae
   ];
 }

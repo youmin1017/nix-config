@@ -49,14 +49,11 @@ in
       programs = {
         ghostty.enable = true;
         hyprshot.enable = true;
-        noctalia.enable = true;
-        utils.enable = true;
       };
 
       services = {
         hypridle.enable = true;
         udiskie.enable = true;
-        vicinae.enable = true;
       };
     };
   };
