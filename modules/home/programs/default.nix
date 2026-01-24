@@ -10,6 +10,7 @@
     ./tmux
     ./utils
     ./zed
+    ./zoxide
     ./zsh
   ];
 }
