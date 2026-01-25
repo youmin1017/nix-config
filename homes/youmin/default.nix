@@ -8,7 +8,6 @@
   imports = [
     self.homeModules.default
     self.inputs.vicinae.homeManagerModules.default
-    self.inputs.noctalia.homeModules.default
   ];
 
   config = lib.mkMerge [
