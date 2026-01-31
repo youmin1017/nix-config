@@ -1,12 +1,20 @@
 {
+  self,
   lib,
   config,
   ...
 }:
+let
+  cfg = config.myHome.services.vicinae;
+in
 {
   options.myHome.services.vicinae.enable = lib.mkEnableOption "vicinae home service";
 
-  config = lib.mkIf config.myHome.services.vicinae.enable {
+  imports = [
+    self.inputs.vicinae.homeManagerModules.default
+  ];
+
+  config = lib.mkIf cfg.enable {
     services.vicinae = {
       enable = true; # default: false
       # package = # specify package to use here. Can be omitted.

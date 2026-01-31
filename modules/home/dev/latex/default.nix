@@ -11,12 +11,10 @@
     home.packages = with pkgs; [
       (texlive.combine {
         inherit (pkgs.texlive)
-          scheme-medium
-          biblatex
-          xecjk
+          scheme-full
           ;
       })
-      texlab
+      tex-fmt
     ];
   };
 }

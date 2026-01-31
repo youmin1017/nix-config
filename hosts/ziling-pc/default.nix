@@ -11,25 +11,23 @@
   time.timeZone = "Asia/Taipei";
 
   environment.systemPackages = with pkgs; [
+    antigravity
     brave
     onlyoffice-desktopeditors
+    nautilus
+    remmina
+    spotify
     telegram-desktop
-    networkmanagerapplet
+
+    jetbrains.datagrip
   ];
 
-  networking.networkmanager = {
-    enable = true;
-    plugins = with pkgs; [
-      networkmanager-openconnect
-    ];
-  };
-
-  services = {
-    hardware = {
-      openrgb = {
-        enable = true;
-        motherboard = "amd";
-      };
+  networking = {
+    networkmanager = {
+      enable = true;
+      plugins = with pkgs; [
+        networkmanager-openconnect
+      ];
     };
   };
 
@@ -60,6 +58,7 @@
     services = {
       greetd.enable = true;
       kanata.enable = true;
+      tailscale.enable = true;
     };
   };
 

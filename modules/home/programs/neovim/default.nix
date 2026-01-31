@@ -75,6 +75,8 @@
           "nvim/lazy-lock.json"
           "nvim/stylua.toml"
           "nvim/lua"
+
+          "nvim-vscode"
         ]
         (name: {
           source = impurity.link "${self}/dotfiles/${name}";

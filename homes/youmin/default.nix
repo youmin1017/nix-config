@@ -7,7 +7,6 @@
 {
   imports = [
     self.homeModules.default
-    self.inputs.vicinae.homeManagerModules.default
   ];
 
   config = lib.mkMerge [

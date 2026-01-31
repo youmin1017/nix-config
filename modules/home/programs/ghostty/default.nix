@@ -12,6 +12,8 @@
 
       settings = {
         theme = "TokyoNight";
+        font-family = "DejaVuSansM Nerd Font Mono";
+        font-size = 15;
       };
     };
   };

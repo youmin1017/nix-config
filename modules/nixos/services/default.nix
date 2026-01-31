@@ -4,6 +4,7 @@
     ./greetd
     ./openssh
     ./kanata
+    ./tailscale
     ./udisk2
   ];
 }
