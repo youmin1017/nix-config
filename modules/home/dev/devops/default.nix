@@ -11,8 +11,9 @@
     home.packages = with pkgs; [
       # DevOps
       kubectl
-      kubernetes-helm
-      telepresence2
+      # kubernetes-helm
+      k9s
+      # telepresence2
     ];
   };
 }

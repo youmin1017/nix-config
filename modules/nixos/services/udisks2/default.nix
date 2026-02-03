@@ -8,5 +8,11 @@
 
   config = lib.mkIf config.myNixOS.services.udisks2.enable {
     services.udisks2.enable = true;
+
+    home-manager.sharedModules = [
+      {
+        myHome.services.udiskie.enable = true;
+      }
+    ];
   };
 }

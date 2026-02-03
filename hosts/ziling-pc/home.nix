@@ -8,6 +8,7 @@
     myHome = {
       dev = {
         ai.enable = true;
+        devops.enable = true;
         node.enable = true;
         nix.enable = true;
         latex.enable = true;
@@ -19,6 +20,7 @@
 
       programs = {
         impurity.enable = true;
+        ideavim.enable = true;
         neovim.enable = true;
         noctalia.enable = true;
         utils.enable = true;

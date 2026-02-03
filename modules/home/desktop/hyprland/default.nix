@@ -53,7 +53,6 @@ in
 
       services = {
         hypridle.enable = true;
-        udiskie.enable = true;
       };
     };
   };

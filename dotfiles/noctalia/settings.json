@@ -111,7 +111,9 @@
                         "systray_22474",
                         "systray_30942",
                         "systray_2166",
-                        "systray_1861"
+                        "systray_1861",
+                        "systray_1979",
+                        "nm-applet"
                     ]
                 },
                 {
@@ -458,12 +460,12 @@
         "fontDefaultScale": 1,
         "fontFixed": "DejaVuSansM Nerd Font Mono",
         "fontFixedScale": 1,
-        "networkPanelView": "wifi",
+        "networkPanelView": "ethernet",
         "panelBackgroundOpacity": 0.93,
         "panelsAttachedToBar": true,
         "settingsPanelMode": "attached",
         "tooltipsEnabled": true,
-        "wifiDetailsViewMode": "list"
+        "wifiDetailsViewMode": "grid"
     },
     "wallpaper": {
         "automationEnabled": false,

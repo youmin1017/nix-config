@@ -5,6 +5,6 @@
     ./openssh
     ./kanata
     ./tailscale
-    ./udisk2
+    ./udisks2
   ];
 }

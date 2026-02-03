@@ -3,6 +3,7 @@
     ./ghostty
     ./git
     ./hyprshot
+    ./ideavim
     ./impurity
     ./neovim
     ./noctalia
