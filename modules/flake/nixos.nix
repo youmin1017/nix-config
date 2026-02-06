@@ -44,6 +44,7 @@
                 nixpkgs = {
                   overlays = [
                     self.overlays.default
+                    self.inputs.rust-overlay.overlays.default
                     self.inputs.neovim-nightly-overlay.overlays.default
                   ];
 

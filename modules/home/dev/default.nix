@@ -5,5 +5,6 @@
     ./latex
     ./nix
     ./node
+    ./rust
   ];
 }

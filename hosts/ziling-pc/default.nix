@@ -1,4 +1,9 @@
-{ self, pkgs, ... }:
+{
+  self,
+  config,
+  pkgs,
+  ...
+}:
 {
   imports = [
     ./home.nix
@@ -13,10 +18,9 @@
   environment.systemPackages = with pkgs; [
     antigravity
     brave
+    dioxus-cli
     onlyoffice-desktopeditors
-    k6
     nautilus
-    pandoc
     remmina
     spotify
     telegram-desktop
@@ -43,8 +47,8 @@
     desktop.hyprland = {
       enable = true;
       monitors = [
-        "desc:ASUSTek COMPUTER INC XG27ACS TALMTF024962,2560x1440@180,0x0,1"
-        "desc:Microstep MSI MPG341CQR 0x00000098,3440x1440@144,-3440x-360,1"
+        "desc:ASUSTek COMPUTER INC XG27ACS TALMTF024962,2560x1440@180,1440x1600,1"
+        "desc:Microstep MSI MPG341CQR 0x00000098,3440x1440@144,0x0,1,transform,1"
       ];
     };
 
