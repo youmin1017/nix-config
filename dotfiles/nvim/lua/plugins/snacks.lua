@@ -24,6 +24,9 @@ return {
         },
       },
     },
+    explorer = {
+      trash = true,
+    },
     dashboard = {
       preset = {
         pick = function(cmd, opts)

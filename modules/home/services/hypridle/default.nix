@@ -22,8 +22,8 @@
           }
           {
             timeout = 330;
-            on-timeout = "hyprctl dispatch dpms off";
-            on-resume = "hyprctl dispatch dpms on && brightnessctl -r";
+            on-timeout = "noctalia-shell ipc call sessionMenu lockAndSuspend";
+            # on-resume = "hyprctl dispatch dpms on && brightnessctl -r";
           }
         ];
       };

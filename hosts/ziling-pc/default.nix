@@ -2,6 +2,7 @@
   self,
   config,
   pkgs,
+  lib,
   ...
 }:
 {
@@ -14,6 +15,7 @@
   networking.hostName = "ziling-pc";
   system.stateVersion = "25.11";
   time.timeZone = "Asia/Taipei";
+  time.hardwareClockInLocalTime = true;
 
   environment.systemPackages = with pkgs; [
     antigravity
@@ -24,6 +26,7 @@
     remmina
     spotify
     telegram-desktop
+    teams-for-linux
 
     jetbrains.datagrip
   ];

@@ -1,6 +1,7 @@
 {
   imports = [
     ./avahi
+    ./gdm.nix
     ./greetd
     ./openssh
     ./kanata

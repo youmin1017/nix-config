@@ -4,6 +4,9 @@
   pkgs,
   ...
 }:
+let
+  cfg = config.myNixOS.services.greetd;
+in
 {
   options.myNixOS.services.greetd = {
     enable = lib.mkEnableOption "greetd display manager";
@@ -19,19 +22,27 @@
       default = lib.getExe config.programs.hyprland.package;
       type = lib.types.str;
     };
+
+    defaultSession = lib.mkOption {
+      description = "Default greeter session command.";
+      default = "${pkgs.cage}/bin/cage -s -m last -- ${lib.getExe config.programs.regreet.package}";
+      defaultText = lib.literalExpression ''"''${pkgs.cage}/bin/cage -s -m last -- ''${lib.getExe config.programs.regreet.package}"'';
+      type = lib.types.str;
+    };
+
+    greeterUser = lib.mkOption {
+      description = "User to run the greeter as.";
+      default = "greeter";
+      type = lib.types.str;
+    };
   };
 
-  config = lib.mkIf config.myNixOS.services.greetd.enable {
+  config = lib.mkIf cfg.enable {
     # 1. Enable ReGreet and configure its look/feel
     programs.regreet = {
       enable = true;
-      # Optional: Fix for theming issues if ReGreet cannot find the cursor/theme
-      # theme = { name = "Adwaita-dark"; package = pkgs.gnome.gnome-themes-extra; };
-      # cursorTheme = { name = "Adwaita"; package = pkgs.gnome.adwaita-icon-theme; };
-
       settings = {
         background = {
-          # path = "/path/to/your/wallpaper.png";
           fit = "Cover";
         };
         GTK = {
@@ -46,23 +57,21 @@
     # 3. Configure Greetd
     services.greetd = {
       enable = true;
-
       settings = {
         default_session = {
-          # ReGreet must run inside a Wayland compositor. We use Cage.
-          command = "${pkgs.cage}/bin/cage -s -- ${lib.getExe config.programs.regreet.package}";
-          user = "greeter";
+          command = cfg.defaultSession;
+          user = cfg.greeterUser;
         };
       }
-      // (lib.optionalAttrs (config.myNixOS.services.greetd.autoLogin != null) {
+      // lib.optionalAttrs (cfg.autoLogin != null) {
         initial_session = {
-          command = config.myNixOS.services.greetd.session;
-          user = config.myNixOS.services.greetd.autoLogin;
+          command = cfg.session;
+          user = cfg.autoLogin;
         };
-      });
+      };
     };
 
-    # 4. Security / PAM (Unchanged)
+    # 4. Security / PAM
     security.pam.services.greetd = {
       enableGnomeKeyring = true;
       fprintAuth = false;

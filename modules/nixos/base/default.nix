@@ -16,6 +16,7 @@
 
       systemPackages = with pkgs; [
         gcc
+        glib
         headsetcontrol
         lm_sensors
         wget
