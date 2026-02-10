@@ -460,7 +460,7 @@
         "fontDefaultScale": 1,
         "fontFixed": "DejaVuSansM Nerd Font Mono",
         "fontFixedScale": 1,
-        "networkPanelView": "ethernet",
+        "networkPanelView": "wifi",
         "panelBackgroundOpacity": 0.93,
         "panelsAttachedToBar": true,
         "settingsPanelMode": "attached",

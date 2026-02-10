@@ -17,6 +17,11 @@
   time.timeZone = "Asia/Taipei";
   time.hardwareClockInLocalTime = true;
 
+  hardware = {
+    # enable the firmware for redistributable devices, such as Wi-Fi and Bluetooth adapters
+    enableRedistributableFirmware = true;
+  };
+
   environment.systemPackages = with pkgs; [
     antigravity
     brave

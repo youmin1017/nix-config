@@ -38,6 +38,7 @@
         ];
 
         substituters = [
+          "https://mirrors.cernet.edu.cn/nix-channels/store"
           "https://hyprland.cachix.org"
           "https://vicinae.cachix.org"
           "https://nix-community.cachix.org"

@@ -12,9 +12,5 @@
       enable = true;
       powerOnBoot = true;
     };
-    # hardware.enableRedistributableFirmware = true;
-    # hardware.firmware = with pkgs; [
-    #   linux-firmware
-    # ];
   };
 }
