@@ -1,7 +1,7 @@
 { lib, ... }:
 {
   imports = [
-    ./base
+    ./base.nix
     ./desktop
     ./profiles
     ./services

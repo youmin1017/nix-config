@@ -6,7 +6,7 @@
 }:
 {
   imports = [
-    ./youmin
+    ./youmin.nix
     ./options.nix
   ];
 

@@ -5,7 +5,7 @@
 }:
 {
   imports = [
-    ./hyprland
+    ./hyprland.nix
   ];
 
   options.myNixOS.desktop.enable = lib.mkEnableOption "minimal graphical desktop configuration";

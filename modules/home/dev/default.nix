@@ -1,10 +1,10 @@
 {
   imports = [
-    ./ai
-    ./devops
-    ./latex
-    ./nix
-    ./node
-    ./rust
+    ./ai.nix
+    ./devops.nix
+    ./latex.nix
+    ./nix.nix
+    ./node.nix
+    ./rust.nix
   ];
 }

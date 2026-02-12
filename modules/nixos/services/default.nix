@@ -1,11 +1,11 @@
 {
   imports = [
-    ./avahi
+    ./avahi.nix
     ./gdm.nix
-    ./greetd
-    ./openssh
+    ./greetd.nix
+    ./openssh.nix
     ./kanata
-    ./tailscale
-    ./udisks2
+    ./tailscale.nix
+    ./udisks2.nix
   ];
 }

@@ -1,9 +1,9 @@
 {
   imports = [
-    ./chromium
-    ./firefox
-    ./nix
-    ./systemd-boot
-    ./zen-browser
+    ./chromium.nix
+    ./firefox.nix
+    ./nix.nix
+    ./systemd-boot.nix
+    ./zen-browser.nix
   ];
 }

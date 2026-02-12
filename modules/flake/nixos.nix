@@ -7,7 +7,7 @@
   flake = {
     nixosModules = {
       hardware = ../hardware;
-      locale-zh-tw = ../locale/zh-tw;
+      locale-zh-tw = ../locale/zh-tw.nix;
       nixos = ../nixos;
       users = ../users;
     };

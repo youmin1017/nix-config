@@ -1,5 +1,5 @@
 {
   imports = [
-    ./cpu
+    ./cpu.nix
   ];
 }

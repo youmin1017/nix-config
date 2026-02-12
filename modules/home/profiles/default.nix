@@ -1,8 +1,8 @@
 {
   imports = [
-    ./cursor
-    ./dconf
-    ./fcitx5
-    ./gtk
+    ./cursor.nix
+    ./dconf.nix
+    ./fcitx5.nix
+    ./gtk.nix
   ];
 }

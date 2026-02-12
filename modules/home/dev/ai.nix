@@ -10,6 +10,7 @@
   config = lib.mkIf config.myHome.dev.ai.enable {
     home.packages = with pkgs; [
       # CLI Tools
+      claude-code
       opencode
       gemini-cli
       github-copilot-cli

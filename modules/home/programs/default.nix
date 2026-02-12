@@ -1,17 +1,17 @@
 {
   imports = [
-    ./ghostty
-    ./git
-    ./hyprshot
-    ./ideavim
-    ./impurity
-    ./neovim
-    ./noctalia
-    ./starship
-    ./tmux
-    ./utils
-    ./zed
-    ./zoxide
-    ./zsh
+    ./ghostty.nix
+    ./git.nix
+    ./hyprshot.nix
+    ./ideavim.nix
+    ./impurity.nix
+    ./neovim.nix
+    ./noctalia.nix
+    ./starship.nix
+    ./tmux.nix
+    ./utils.nix
+    ./zed.nix
+    ./zoxide.nix
+    ./zsh.nix
   ];
 }
