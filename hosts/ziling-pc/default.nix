@@ -1,10 +1,4 @@
-{
-  self,
-  config,
-  pkgs,
-  lib,
-  ...
-}:
+{ self, pkgs, ... }:
 {
   imports = [
     ./home.nix
@@ -25,6 +19,7 @@
   environment.systemPackages = with pkgs; [
     antigravity
     brave
+    discord
     dioxus-cli
     onlyoffice-desktopeditors
     nautilus
@@ -32,6 +27,7 @@
     spotify
     telegram-desktop
     teams-for-linux
+    wl-clipboard
 
     jetbrains.datagrip
   ];
@@ -62,7 +58,9 @@
 
     programs = {
       nix.enable = true;
-      systemd-boot.enable = true;
+      # systemd-boot.enable = true;
+      # lanzaboote.enable = true;
+      limine.enable = true;
 
       # browsers
       chromium.enable = true;

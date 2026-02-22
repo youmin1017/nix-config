@@ -2,7 +2,8 @@
   config,
   lib,
   ...
-}: {
+}:
+{
   options.myNixOS.programs.firefox.enable = lib.mkEnableOption "firefox browser";
 
   config = lib.mkIf config.myNixOS.programs.firefox.enable {
@@ -10,7 +11,7 @@
       enable = true;
 
       policies = {
-        Cookies.Behavior = "reject-foreign";
+        # Cookies.Behavior = "reject-tracker";
         DisableAppUpdate = true;
         DisableFirefoxStudies = true;
         DisableMasterPasswordCreation = true;

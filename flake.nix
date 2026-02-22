@@ -15,6 +15,10 @@
     };
     hyprland.url = "github:hyprwm/Hyprland";
     impurity.url = "github:outfoxxed/impurity.nix";
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v1.0.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     # Quick Shell Config
     noctalia = {

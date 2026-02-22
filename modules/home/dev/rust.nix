@@ -11,11 +11,13 @@ in
   options.myHome.dev.rust = {
     enable = lib.mkEnableOption "Rust development environment configuration.";
     package = lib.mkPackageOption pkgs "rust-bin.stable.latest.default" { };
+    rust-analyzer = lib.mkPackageOption pkgs "rust-analyzer" { };
   };
 
   config = lib.mkIf cfg.enable {
     home.packages = [
       cfg.package
+      cfg.rust-analyzer
     ];
 
     myHome = {
