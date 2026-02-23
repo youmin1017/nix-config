@@ -23,6 +23,7 @@
     dioxus-cli
     onlyoffice-desktopeditors
     nautilus
+    quickemu
     remmina
     spotify
     telegram-desktop

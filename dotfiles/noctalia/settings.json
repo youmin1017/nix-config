@@ -114,7 +114,8 @@
                         "systray_1861",
                         "systray_1979",
                         "nm-applet",
-                        "systray_2109"
+                        "systray_2109",
+                        "systray_2210"
                     ]
                 },
                 {
@@ -249,7 +250,7 @@
         "colorizeIcons": false,
         "deadOpacity": 0.6,
         "displayMode": "auto_hide",
-        "enabled": true,
+        "enabled": false,
         "floatingRatio": 1,
         "inactiveIndicators": false,
         "monitors": [
