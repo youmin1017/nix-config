@@ -9,7 +9,7 @@
       dev = {
         ai.enable = true;
         # devops.enable = true;
-        # node.enable = true;
+        node.enable = true;
         nix.enable = true;
         # latex.enable = true;
         # rust = {
