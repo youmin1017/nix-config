@@ -18,10 +18,6 @@
 
     # Dependencies
     myHome = {
-      dev = {
-        node.enable = true;
-      };
-
       programs.neovim.lazyvim.extras = [
         "lazyvim.plugins.extras.ai.copilot-native"
         "lazyvim.plugins.extras.ai.sidekick"

@@ -31,6 +31,10 @@
     wl-clipboard
 
     jetbrains.datagrip
+
+    protonvpn-gui
+    proton-pass
+    proton-pass-cli
   ];
 
   networking = {
@@ -60,8 +64,8 @@
     programs = {
       nix.enable = true;
       # systemd-boot.enable = true;
-      # lanzaboote.enable = true;
-      limine.enable = true;
+      lanzaboote.enable = true;
+      # limine.enable = true;
 
       # browsers
       chromium.enable = true;

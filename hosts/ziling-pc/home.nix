@@ -8,16 +8,16 @@
     myHome = {
       dev = {
         ai.enable = true;
-        devops.enable = true;
-        node.enable = true;
+        # devops.enable = true;
+        # node.enable = true;
         nix.enable = true;
         # latex.enable = true;
-        rust = {
-          enable = true;
-          package = pkgs.rust-bin.stable.latest.default.override {
-            targets = [ "wasm32-unknown-unknown" ];
-          };
-        };
+        # rust = {
+        #   enable = true;
+        #   package = pkgs.rust-bin.stable.latest.default.override {
+        #     targets = [ "wasm32-unknown-unknown" ];
+        #   };
+        # };
       };
 
       profiles = {
