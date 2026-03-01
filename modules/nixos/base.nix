@@ -32,6 +32,7 @@
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
       noto-fonts-color-emoji
+      ubuntu-sans
       font-awesome
       nerd-fonts.dejavu-sans-mono
     ];

@@ -11,6 +11,7 @@
         # devops.enable = true;
         node.enable = true;
         nix.enable = true;
+        go.enable = true;
         # latex.enable = true;
         # rust = {
         #   enable = true;

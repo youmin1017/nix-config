@@ -26,6 +26,9 @@
         settings = {
           addons.classicui.globalSection = {
             Theme = "Tokyonight-Storm";
+            Font = "DejavuSansM Nerd Font 10";
+            MenuFont = "DejavuSansM Nerd Font 10";
+            TrayFont = "DejavuSansM Nerd Font Bold 10";
           };
 
           inputMethod = {

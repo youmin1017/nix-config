@@ -16,9 +16,14 @@
     enableRedistributableFirmware = true;
   };
 
+  virtualisation = {
+    vmware.host.enable = true;
+  };
+
   environment.systemPackages = with pkgs; [
     antigravity
     brave
+    cobang
     discord
     dioxus-cli
     onlyoffice-desktopeditors
@@ -35,6 +40,8 @@
     protonvpn-gui
     proton-pass
     proton-pass-cli
+
+    open-vm-tools
   ];
 
   networking = {
@@ -56,8 +63,8 @@
     desktop.hyprland = {
       enable = true;
       monitors = [
-        "desc:ASUSTek COMPUTER INC XG27ACS TALMTF024962,2560x1440@180,1440x1600,1"
-        "desc:Microstep MSI MPG341CQR 0x00000098,3440x1440@144,0x0,1,transform,1"
+        "desc:ASUSTek COMPUTER INC XG27ACS TALMTF024962,2560x1440@180,2560x0,1"
+        "desc:ASUSTek COMPUTER INC XG27ACS TALMTF023861,2560x1440@180,0x0,1"
       ];
     };
 
