@@ -22,6 +22,7 @@
       lsof # A utility that lists information about files opened by processes
       mkcert # A simple tool for making locally-trusted development certificates
       nmap # A utility for network discovery and security auditing
+      ncdu # A disk usage analyzer with an ncurses interface
       openssl # A robust toolkit for TLS and general-purpose cryptography
       pwgen # A password generator that creates easy-to-memorize, secure passwords
       ripgrep # A fast, line-oriented search tool (recursive regex search)
@@ -49,6 +50,7 @@
       yazi = {
         enable = true;
         enableZshIntegration = true;
+        shellWrapperName = "y";
         settings = {
           manager = {
             show_hidden = true;

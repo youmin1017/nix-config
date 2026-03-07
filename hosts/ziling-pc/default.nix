@@ -17,6 +17,7 @@
   };
 
   virtualisation = {
+    docker.enable = true;
     vmware.host.enable = true;
   };
 

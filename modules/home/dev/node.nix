@@ -21,6 +21,8 @@
         "lazyvim.plugins.extras.lang.json"
         "lazyvim.plugins.extras.lang.toml"
         "lazyvim.plugins.extras.lang.yaml"
+        "lazyvim.plugins.extras.lang.tailwind"
+        "lazyvim.plugins.extras.lang.markdown"
       ];
     };
   };

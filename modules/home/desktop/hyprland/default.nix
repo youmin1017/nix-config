@@ -55,10 +55,6 @@ in
         ghostty.enable = true;
         hyprshot.enable = true;
       };
-
-      services = {
-        hypridle.enable = true;
-      };
     };
   };
 }

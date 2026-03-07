@@ -1,15 +1,16 @@
 ---@type LazySpec
 return {
-    { import = "plugins.lang.typescript" },
-    { import = "plugins.lang.just" },
+  { import = "plugins.lang.go" },
+  { import = "plugins.lang.typescript" },
+  { import = "plugins.lang.just" },
 
-    {
-        "LazyVim/LazyVim",
-        opts = {
-            news = {
-                lazyvim = false,
-                neovim = false,
-            },
-        }
-    }
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      news = {
+        lazyvim = false,
+        neovim = false,
+      },
+    },
+  },
 }
