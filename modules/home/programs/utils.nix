@@ -13,11 +13,11 @@
       age # A simple, modern and secure encryption tool
       axel # A light download accelerator
       btop # A customizable resource monitor (CPU, memory, disks, network)
-      hey # A tiny program for HTTP benchmarking and load testing
       inkscape # A professional vector graphics editor and utility
       jless # A command-line JSON viewer and pager for interactive exploration
       jq # A lightweight and flexible command-line JSON processor
       just # A handy way to save and run project-specific commands
+      lazydocker # A simple terminal UI for docker and docker-compose
       lazygit # A simple terminal UI for git commands
       lsof # A utility that lists information about files opened by processes
       mkcert # A simple tool for making locally-trusted development certificates

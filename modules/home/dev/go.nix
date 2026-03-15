@@ -10,6 +10,7 @@
   config = lib.mkIf config.myHome.dev.go.enable {
     home.packages = with pkgs; [
       go
+      air # Live reload for Go apps
     ];
 
     myHome = {
