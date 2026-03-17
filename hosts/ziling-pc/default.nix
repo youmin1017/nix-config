@@ -24,11 +24,8 @@
   environment.systemPackages = with pkgs; [
     antigravity
     brave
-    cobang
     discord
-    dioxus-cli
     onlyoffice-desktopeditors
-    nautilus
     quickemu
     remmina
     spotify
@@ -42,7 +39,10 @@
     proton-pass
     proton-pass-cli
 
-    open-vm-tools
+    # Gnome apps
+    baobab
+    nautilus
+    gnome-disk-utility
   ];
 
   networking = {
@@ -73,7 +73,6 @@
       nix.enable = true;
       # systemd-boot.enable = true;
       lanzaboote.enable = true;
-      # limine.enable = true;
 
       # browsers
       chromium.enable = true;
