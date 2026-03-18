@@ -129,16 +129,8 @@
                     "hidePassive": false,
                     "id": "Tray",
                     "pinned": [
-                        "systray_22474",
-                        "systray_30942",
-                        "systray_2166",
-                        "systray_1861",
-                        "systray_1979",
-                        "systray_2109",
-                        "systray_2210",
-                        "systray_2094",
-                        "systray_2174",
-                        "nm-applet"
+                        "nm-applet",
+                        "dev.deedles.Trayscale"
                     ]
                 },
                 {

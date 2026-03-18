@@ -37,7 +37,8 @@ in
 
     home-manager.sharedModules = lib.mkIf config.myNixOS.desktop.enable [
       {
-        services.tailscale-systray.enable = true;
+        # services.tailscale-systray.enable = true;
+        services.trayscale.enable = true;
       }
     ];
   };
