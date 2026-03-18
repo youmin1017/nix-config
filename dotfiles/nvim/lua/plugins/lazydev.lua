@@ -6,8 +6,8 @@ return {
   opts = function(_, opts)
     opts.library = opts.library or {}
     vim.list_extend(opts.library, {
-      { path = "lazy.nvim", words = { "LazySpec" } },
-      { path = "conform.nvim", words = { "conform" } },
+      { path = "lazy.nvim", words = { "LazyVim", "LazySpec" } },
+      -- { path = "conform.nvim", words = { "conform" } },
     })
   end,
 }

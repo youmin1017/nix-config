@@ -44,7 +44,7 @@ map({ "n", "t" }, "<M-i>", function()
   })
 end, { desc = "Snacks float terminal" })
 map({ "n", "t" }, "<M-h>", function()
-  Snacks.terminal("zsh", {
+  Snacks.terminal(vim.env.SHELL, {
     win = {
       position = "bottom",
     },
