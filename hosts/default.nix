@@ -41,6 +41,7 @@ let
           impurity.configRoot = self;
           impurity.enable = true;
         }
+        inputs.agenix.nixosModules.default
         config
         homeDir
         hm-nixos

@@ -6,7 +6,8 @@
     ./keycloak.nix
     ./headscale.nix
     ./s3.nix
-    ./wkedrive.nix
+    ./syncwke.nix
+    # ./wkedrive.nix
   ];
 
   # Enable the OpenSSH daemon.

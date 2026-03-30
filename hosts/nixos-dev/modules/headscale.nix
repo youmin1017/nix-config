@@ -23,12 +23,12 @@
           port = 5432;
           user = "headscale";
           name = "headscale";
-          password_file = config.sops.secrets."hosts/nixos-dev/postgresql/users/headscale/password".path;
+          password_file = config.age.secrets."headscale-db-password".path;
         };
       };
       dns = {
         magic_dns = false;
-        override_local_dns = true;
+        override_local_dns = false;
         nameservers.global = [
           "163.22.21.44"
           "163.22.2.1"
@@ -64,7 +64,7 @@
     enable = true;
     useRoutingFeatures = "both";
     openFirewall = true;
-    authKeyFile = config.sops.secrets."hosts/nixos-dev/tailscale/authkey".path;
+    authKeyFile = config.age.secrets."headscale-authkey".path;
     extraUpFlags = [
       "--advertise-exit-node"
       "--advertise-routes=10.0.0.0/8"
@@ -74,6 +74,16 @@
     ];
   };
 
-  sops.secrets."hosts/nixos-dev/postgresql/users/headscale/password".owner = "headscale";
-  sops.secrets."hosts/nixos-dev/tailscale/authkey".mode = "0600";
+  # sops.secrets."hosts/nixos-dev/postgresql/users/headscale/password".owner = "headscale";
+  # sops.secrets."hosts/nixos-dev/tailscale/authkey".mode = "0600";
+  age.secrets = {
+    "headscale-db-password" = {
+      file = ../../../secrets/headscale-db-password.age;
+      owner = "headscale";
+    };
+    "headscale-authkey" = {
+      file = ../../../secrets/headscale-authkey.age;
+      owner = "headscale";
+    };
+  };
 }

@@ -25,19 +25,20 @@ in
     };
 
     extraConfig = ''
-      youmin.dev *.youmin.dev {
-        tls ${config.sops.secrets."domains/youmin.dev/ssl/cert".path} ${
-          config.sops.secrets."domains/youmin.dev/ssl/key".path
-        }
-      }
       *.wke.csie.ncnu.edu.tw {
-        tls ${config.sops.secrets."wke/ssl/cert".path} ${config.sops.secrets."wke/ssl/key".path}
+        tls ${config.age.secrets."wke-ssl.cert".path} ${config.age.secrets."wke-ssl.key".path}
       }
     '';
   };
 
-  sops.secrets."domains/youmin.dev/ssl/key".mode = "0644";
-  sops.secrets."domains/youmin.dev/ssl/cert".mode = "0644";
-  sops.secrets."wke/ssl/cert".mode = "0644";
-  sops.secrets."wke/ssl/key".mode = "0644";
+  age.secrets = {
+    "wke-ssl.cert" = {
+      file = ../../../secrets/wke-ssl.cert.age;
+      owner = "caddy";
+    };
+    "wke-ssl.key" = {
+      file = ../../../secrets/wke-ssl.key.age;
+      owner = "caddy";
+    };
+  };
 }

@@ -12,7 +12,7 @@
 
   services.minio = {
     enable = true;
-    rootCredentialsFile = config.sops.secrets."env/minio/root_credentials".path;
+    rootCredentialsFile = config.age.secrets."minio-root-credentials".path;
     listenAddress = ":9000";
     consoleAddress = ":9001";
     region = "tw-1";
@@ -23,7 +23,7 @@
       image = "ghcr.io/huncrys/minio-console:v1.8.1";
       ports = [ "127.0.0.1:9090:9090" ];
       environmentFiles = [
-        config.sops.secrets."env/minio/console".path
+        config.age.secrets."minio-console".path
       ];
     };
   };
@@ -45,10 +45,12 @@
     '';
   };
 
-  sops.secrets."env/minio/root_credentials" = {
-    sopsFile = lib.custom.relativeToRoot "secrets/minio.yaml";
-  };
-  sops.secrets."env/minio/console" = {
-    sopsFile = lib.custom.relativeToRoot "secrets/minio.yaml";
+  age.secrets = {
+    "minio-root-credentials" = {
+      file = ../../../secrets/minio-root-credentials.age;
+    };
+    "minio-console" = {
+      file = ../../../secrets/minio-console.age;
+    };
   };
 }

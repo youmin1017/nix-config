@@ -7,7 +7,7 @@
       createLocally = true;
       name = "keycloak";
       username = "keycloak";
-      passwordFile = config.sops.secrets."hosts/nixos-dev/postgresql/users/keycloak/password".path;
+      passwordFile = config.age.secrets."keycloak-db-password".path;
     };
     settings = {
       http-relative-path = "/";
@@ -19,5 +19,10 @@
     initialAdminPassword = "keycloakadmin";
   };
 
-  sops.secrets."hosts/nixos-dev/postgresql/users/keycloak/password" = { };
+  # sops.secrets."hosts/nixos-dev/postgresql/users/keycloak/password" = { };
+  age.secrets = {
+    "keycloak-db-password" = {
+      file = ../../../secrets/keycloak-db-password.age;
+    };
+  };
 }
