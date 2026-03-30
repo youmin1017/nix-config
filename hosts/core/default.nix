@@ -1,8 +1,5 @@
 {
   isDarwin,
-  username,
-  config,
-  inputs,
   lib,
   ...
 }:
@@ -19,10 +16,4 @@
         ]
     ))
   ];
-
-  sops = {
-    age.keyFile = config.users.users.${username}.home + "/.config/sops/age/keys.txt";
-    defaultSopsFile = lib.custom.relativeToRoot "secrets/secrets.yaml";
-  };
-
 }

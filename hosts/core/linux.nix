@@ -1,15 +1,10 @@
 {
   config,
   username,
-  inputs,
   pkgs,
   ...
 }:
 {
-  imports = [
-    inputs.sops-nix.nixosModules.sops
-  ];
-
   environment.systemPackages = with pkgs; [
     gcc
     gnumake
@@ -26,7 +21,7 @@
       "wheel"
       "docker"
     ];
-    hashedPasswordFile = config.sops.secrets."personal/password".path;
+    hashedPasswordFile = config.age.secrets."user-youmin-password".path;
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINpjPAzjBx02LUyLps546KtLHBHVmH3JtRZLeDx+4Rjo youmin@ziling-pc"
     ];
@@ -46,9 +41,7 @@
     }
   ];
 
-  sops.secrets = {
-    "personal/password" = {
-      neededForUsers = true;
-    };
+  age.secrets = {
+    "user-youmin-password".file = ../../secrets/user-youmin-password.age;
   };
 }
