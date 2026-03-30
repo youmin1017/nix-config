@@ -26,6 +26,7 @@
       openssl # A robust toolkit for TLS and general-purpose cryptography
       pwgen # A password generator that creates easy-to-memorize, secure passwords
       ripgrep # A fast, line-oriented search tool (recursive regex search)
+      ragenix # A simple tool for managing age encryption keys
       socat # A multipurpose relay (bidirectional data transfer) and netcat replacement
       termscp # A terminal file explorer with support for SCP, SFTP, FTP, and S3
       unar # A program to extract, list, and view contents of various archive formats

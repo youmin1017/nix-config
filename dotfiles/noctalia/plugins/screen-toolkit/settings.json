@@ -1,0 +1,17 @@
+{
+  "stateIsRunning": false,
+  "stateActiveTool": "",
+  "transAvailable": true,
+  "stateMirrorVisible": false,
+  "paletteColors": [],
+  "ocrResult": "高 紙 簣 孩 E 茹 # 桂",
+  "ocrCapturePath": "/tmp/screen-toolkit-ocr.png",
+  "translateResult": "",
+  "qrResult": "https://idemia-mobile-id.com/testqr-success",
+  "qrCapturePath": "/tmp/screen-toolkit-qr.png",
+  "installedLangs": [
+    "chi_tra",
+    "eng"
+  ],
+  "selectedOcrLang": "chi_tra"
+}

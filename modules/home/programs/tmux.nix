@@ -108,6 +108,9 @@
           set -sg escape-time 10                    # faster command sequence
           set -sg repeat-time 400                   # increase repeat timeout
           set-option -g renumber-windows on         # renumber windows when a window is closed
+          set -g extended-keys always
+          set -as terminal-features 'xterm*:extkeys'
+
 
           set -s set-clipboard on
           set -g allow-passthrough on

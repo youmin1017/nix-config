@@ -50,6 +50,7 @@ map({ "n", "t" }, "<M-h>", function()
     },
   })
 end, { desc = "Snacks bottom terminal" })
+map("t", "<S-CR>", "<S-CR>", { noremap = true })
 
 -- Other
 -- stylua: ignore

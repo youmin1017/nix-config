@@ -1,5 +1,5 @@
 let
-  youmin = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAJG6OSYPAJ/58ZP7RrXmsxLEhlQ6RvlBoDlbrusjXBY youmin@nixos";
+  youmin = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINpjPAzjBx02LUyLps546KtLHBHVmH3JtRZLeDx+4Rjo youmin@ziling-pc";
   # users = [ youmin ];
 in
 {
