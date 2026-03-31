@@ -18,12 +18,19 @@ return {
       local util = require("conform.util")
       opts.formatters = opts.formatters or {}
 
-      ---@type conform.FileFormatterConfig
+      opts.formatters_by_ft = opts.formatters_by_ft or {}
+
+      -- dprint
       opts.formatters.dprint = {
         require_cwd = true,
       }
-
-      opts.formatters_by_ft = opts.formatters_by_ft or {}
+      local dprint_languages = {
+        "dockerfile",
+        -- "go",
+      }
+      for _, ft in ipairs(dprint_languages) do
+        opts.formatters_by_ft[ft] = { "dprint" }
+      end
 
       local oxfmt_supported = {
         "javascript",
@@ -39,15 +46,12 @@ return {
         "html",
         "css",
 
-        "dockerfile",
         "graphql",
       }
 
       for _, ft in ipairs(oxfmt_supported) do
         opts.formatters_by_ft[ft] = { "oxfmt" }
       end
-
-      -- "svelte",
 
       opts.formatters_by_ft = vim.tbl_deep_extend("force", opts.formatters_by_ft, {
         ["markdown"] = { "oxfmt", "markdownlint-cli2", "markdown-toc" },

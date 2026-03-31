@@ -24,13 +24,13 @@
   environment.systemPackages = with pkgs; [
     antigravity
     brave
-    discord
     onlyoffice-desktopeditors
     quickemu
     remmina
     spotify
     telegram-desktop
     teams-for-linux
+    vesktop # Alternative Discord Client
     wl-clipboard
 
     jetbrains.datagrip
@@ -43,6 +43,7 @@
     baobab
     nautilus
     gnome-disk-utility
+
   ];
 
   networking = {

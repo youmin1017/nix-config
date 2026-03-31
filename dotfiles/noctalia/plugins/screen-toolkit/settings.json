@@ -13,5 +13,6 @@
     "chi_tra",
     "eng"
   ],
-  "selectedOcrLang": "chi_tra"
+  "selectedOcrLang": "chi_tra",
+  "detectedRecorder": "wf-recorder"
 }
