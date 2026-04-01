@@ -10,6 +10,7 @@
     gtk = {
       enable = true;
       colorScheme = "dark";
+      gtk4.theme = null;
     };
   };
 }

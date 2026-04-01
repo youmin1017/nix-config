@@ -35,7 +35,7 @@
 
     jetbrains.datagrip
 
-    protonvpn-gui
+    proton-vpn
     proton-pass
     proton-pass-cli
 

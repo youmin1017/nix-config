@@ -1,18 +1,19 @@
 {
-  "stateIsRunning": false,
-  "stateActiveTool": "",
-  "transAvailable": true,
-  "stateMirrorVisible": false,
+  "colorHistory": [],
   "paletteColors": [],
-  "ocrResult": "高 紙 簣 孩 E 茹 # 桂",
-  "ocrCapturePath": "/tmp/screen-toolkit-ocr.png",
-  "translateResult": "",
-  "qrResult": "https://idemia-mobile-id.com/testqr-success",
-  "qrCapturePath": "/tmp/screen-toolkit-qr.png",
   "installedLangs": [
     "chi_tra",
     "eng"
   ],
+  "transAvailable": true,
   "selectedOcrLang": "chi_tra",
-  "detectedRecorder": "wf-recorder"
+  "detectedRecorder": "wf-recorder",
+  "stateIsRunning": false,
+  "stateActiveTool": "",
+  "stateMirrorVisible": false,
+  "ocrResult": "高 紙 簣 孩 E 茹 # 桂",
+  "ocrCapturePath": "/tmp/screen-toolkit-ocr.png",
+  "translateResult": "",
+  "qrResult": "https://idemia-mobile-id.com/testqr-success",
+  "qrCapturePath": "/tmp/screen-toolkit-qr.png"
 }
