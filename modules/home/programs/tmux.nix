@@ -99,9 +99,6 @@
           tmuxPlugins.resurrect
         ];
 
-        # set -s copy-command ${
-        #   if isDarwin then "pbcopy" else "wl-copy"
-        # }  # use pbcopy on macOS, wl-copy on Linux
         extraConfig = ''
           set -g mouse on
           set -wg mode-keys vi
@@ -111,9 +108,9 @@
           set -g extended-keys always
           set -as terminal-features 'xterm*:extkeys'
 
-
           set -s set-clipboard on
           set -g allow-passthrough on
+          set -s copy-command wl-copy
 
           bind "'" if-shell "[[ $(tmux display-message -p '#S') = floating* ]]" {
               detach-client

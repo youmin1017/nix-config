@@ -10,7 +10,11 @@ in
 {
   options.myHome.dev.rust = {
     enable = lib.mkEnableOption "Rust development environment configuration.";
-    package = lib.mkPackageOption pkgs "rust-bin.stable.latest.default" { };
+    package = lib.mkOption {
+      type = lib.types.package;
+      inherit (pkgs.rust-bin.stable.latest) default;
+      description = "The Rust toolchain package to use.";
+    };
     rust-analyzer = lib.mkPackageOption pkgs "rust-analyzer" { };
   };
 
