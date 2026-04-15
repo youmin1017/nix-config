@@ -1,4 +1,4 @@
-{ self, ... }:
+{ self, pkgs, ... }:
 {
   home-manager.users.youmin = {
     imports = [
@@ -13,7 +13,10 @@
         nix.enable = true;
         go.enable = true;
         # latex.enable = true;
-        rust.enable = true;
+        rust = {
+          enable = true;
+          package = pkgs.rust-bin.selectLatestNightlyWith (toolchain: toolchain.default);
+        };
         #   enable = true;
         #   package = pkgs.rust-bin.stable.latest.default.override {
         #     targets = [ "wasm32-unknown-unknown" ];
