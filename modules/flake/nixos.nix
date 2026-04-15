@@ -18,7 +18,7 @@
       in
       inputs.nixpkgs.lib.genAttrs
         [
-          "ziling-pc"
+          "nixos-lab"
         ]
         (
           host:

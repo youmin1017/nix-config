@@ -6,7 +6,7 @@
     self.nixosModules.locale-zh-tw
   ];
 
-  networking.hostName = "ziling-pc";
+  networking.hostName = "nixos-lab";
   system.stateVersion = "25.11";
   time.timeZone = "Asia/Taipei";
   time.hardwareClockInLocalTime = true;
@@ -56,8 +56,12 @@
   };
 
   myHardware = {
-    amd.cpu.enable = true;
-    nvidia.gpu.enable = true;
+    # amd.cpu.enable = true;
+    # nvidia.gpu.enable = true;
+    intel = {
+      cpu.enable = true;
+      gpu.enable = true;
+    };
   };
 
   myNixOS = {
@@ -65,8 +69,9 @@
     desktop.hyprland = {
       enable = true;
       monitors = [
-        "desc:ASUSTek COMPUTER INC XG27ACS TALMTF024962,2560x1440@180,2560x0,1"
-        "desc:ASUSTek COMPUTER INC XG27ACS TALMTF023861,2560x1440@180,0x0,1"
+        "DP-6,1920x1080@143.85,-1920x0,1"
+        "DP-4,1920x1080@100.00,0x0,1"
+        "DP-5,1920x1080@100.00,1920x-420,1,transform,3"
       ];
     };
 
