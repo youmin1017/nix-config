@@ -43,7 +43,6 @@
     baobab
     nautilus
     gnome-disk-utility
-
   ];
 
   networking = {

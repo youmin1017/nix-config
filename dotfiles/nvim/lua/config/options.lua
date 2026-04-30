@@ -13,3 +13,9 @@ vim.filetype.add({
     [".env.*"] = "sh",
   },
 })
+
+-- LazyVim  Options
+
+-- LSP Server to use for TypeScript.
+---@type "vtsls" | "tsgo"
+vim.g.lazyvim_ts_lsp = "tsgo"
