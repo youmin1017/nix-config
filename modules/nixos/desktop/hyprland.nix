@@ -8,20 +8,6 @@
 {
   options.myNixOS.desktop.hyprland = {
     enable = lib.mkEnableOption "hyprland desktop environment";
-
-    laptopMonitor = lib.mkOption {
-      description = "Internal laptop monitor.";
-      default = null;
-      type = lib.types.nullOr lib.types.str;
-    };
-
-    monitors = lib.mkOption {
-      description = "List of external monitors.";
-
-      default = [ ];
-
-      type = lib.types.listOf lib.types.str;
-    };
   };
 
   config = lib.mkIf config.myNixOS.desktop.hyprland.enable {
@@ -29,8 +15,6 @@
       {
         myHome.desktop.hyprland = {
           enable = true;
-          inherit (config.myNixOS.desktop.hyprland) laptopMonitor;
-          inherit (config.myNixOS.desktop.hyprland) monitors;
         };
       }
     ];

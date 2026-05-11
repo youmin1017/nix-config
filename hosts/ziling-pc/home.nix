@@ -8,11 +8,10 @@
     myHome = {
       dev = {
         ai.enable = true;
-        # devops.enable = true;
         node.enable = true;
+        python.enable = true;
         nix.enable = true;
         go.enable = true;
-        # latex.enable = true;
         rust = {
           enable = true;
           # using nightly to support -Z flag

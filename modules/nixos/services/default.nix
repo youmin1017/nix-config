@@ -5,6 +5,7 @@
     ./greetd.nix
     ./openssh.nix
     ./kanata
+    ./ly.nix
     ./tailscale.nix
     ./udisks2.nix
   ];

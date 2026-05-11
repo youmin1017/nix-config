@@ -1,7 +1,8 @@
 {
+  self,
+  impurity,
   config,
   lib,
-  pkgs,
   ...
 }:
 let
@@ -10,36 +11,24 @@ in
 {
   options.myHome.desktop.hyprland = {
     enable = lib.mkEnableOption "hyprland desktop environment";
-
-    laptopMonitor = lib.mkOption {
-      description = "Internal laptop monitor.";
-      default = null;
-      type = lib.types.nullOr lib.types.str;
-    };
-
-    monitors = lib.mkOption {
-      description = "List of external monitors.";
-      default = [ ];
-      type = lib.types.listOf lib.types.str;
-    };
   };
 
   imports = [
-    ./settings
+    ./settings/plugins.nix
   ];
 
   config = lib.mkIf cfg.enable {
     wayland.windowManager.hyprland = {
-      enable = true;
+      enable = false;
       package = null;
       portalPackage = null;
     };
-    xdg.configFile."uwsm/env".source =
-      "${config.home.sessionVariablesPackage}/etc/profile.d/hm-session-vars.sh";
 
-    home.packages = with pkgs; [
-      nwg-displays
-    ];
+    # xdg.configFile."uwsm/env".source =
+    #   "${config.home.sessionVariablesPackage}/etc/profile.d/hm-session-vars.sh";
+    xdg.configFile = {
+      "hypr".source = impurity.link "${self}/dotfiles/hypr";
+    };
 
     myHome = {
       desktop.enable = true;

@@ -41,13 +41,20 @@ in
     # 1. Enable ReGreet and configure its look/feel
     programs.regreet = {
       enable = true;
+
+      cageArgs = [
+        "-s"
+        "-m"
+        "last"
+      ];
+
       settings = {
         background = {
           fit = "Cover";
         };
-        GTK = {
-          application_prefer_dark_theme = true;
-        };
+        # GTK = {
+        #   application_prefer_dark_theme = true;
+        # };
       };
     };
 
@@ -57,18 +64,18 @@ in
     # 3. Configure Greetd
     services.greetd = {
       enable = true;
-      settings = {
-        default_session = {
-          command = cfg.defaultSession;
-          user = cfg.greeterUser;
-        };
-      }
-      // lib.optionalAttrs (cfg.autoLogin != null) {
-        initial_session = {
-          command = cfg.session;
-          user = cfg.autoLogin;
-        };
-      };
+      # settings = {
+      #   default_session = {
+      # command = cfg.defaultSession;
+      # user = cfg.greeterUser;
+      # };
+      # }
+      # // lib.optionalAttrs (cfg.autoLogin != null) {
+      #   initial_session = {
+      #     command = cfg.session;
+      #     user = cfg.autoLogin;
+      #   };
+      # };
     };
 
     # 4. Security / PAM

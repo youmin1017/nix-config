@@ -1,4 +1,9 @@
-{ self, pkgs, ... }:
+{
+  self,
+  config,
+  pkgs,
+  ...
+}:
 {
   imports = [
     ./home.nix
@@ -22,7 +27,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    antigravity
     brave
     onlyoffice-desktopeditors
     quickemu
@@ -31,7 +35,7 @@
     telegram-desktop
     teams-for-linux
     vesktop # Alternative Discord Client
-    wl-clipboard
+    nwg-displays
 
     jetbrains.datagrip
 
@@ -43,6 +47,8 @@
     baobab
     nautilus
     gnome-disk-utility
+
+    sqlite
   ];
 
   networking = {
@@ -61,13 +67,7 @@
 
   myNixOS = {
     base.enable = true;
-    desktop.hyprland = {
-      enable = true;
-      monitors = [
-        "desc:ASUSTek COMPUTER INC XG27ACS TALMTF024962,2560x1440@180,2560x0,1"
-        "desc:ASUSTek COMPUTER INC XG27ACS TALMTF023861,2560x1440@180,0x0,1"
-      ];
-    };
+    desktop.hyprland.enable = true;
 
     programs = {
       nix.enable = true;
@@ -81,7 +81,8 @@
     };
 
     services = {
-      greetd.enable = true;
+      # greetd.enable = true;
+      ly.enable = true;
       kanata.enable = true;
       tailscale.enable = true;
       udisks2.enable = true;
@@ -90,6 +91,10 @@
 
   myUsers.youmin = {
     enable = true;
-    password = "$y$j9T$y/RoOCq.7l3Z9FVgcYH9b1$qU9U9Nzs8y4o1VRnYA2.SHBCSeW71RSCzJSXc96rz.4";
+    hashedPasswordFile = config.age.secrets."youmin-password".path;
+  };
+
+  age.secrets = {
+    "youmin-password".file = "${self}/secrets/youmin-password.age";
   };
 }

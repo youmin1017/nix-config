@@ -8,7 +8,7 @@
     users.users.youmin = {
       description = "Youmin";
       extraGroups = config.myUsers.defaultGroups;
-      hashedPassword = config.myUsers.youmin.password;
+      hashedPasswordFile = config.myUsers.youmin.hashedPasswordFile;
       isNormalUser = true;
 
       openssh.authorizedKeys.keys = [

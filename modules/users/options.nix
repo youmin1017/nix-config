@@ -5,9 +5,9 @@
       mkUser = user: {
         enable = lib.mkEnableOption "${user}.";
 
-        password = lib.mkOption {
+        hashedPasswordFile = lib.mkOption {
           default = null;
-          description = "the hashed password for user ${user}.";
+          description = "The full path to a file that contains the hash of the user’s password for user ${user}.";
           type = lib.types.nullOr lib.types.str;
         };
       };

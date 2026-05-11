@@ -11,6 +11,7 @@
     home.packages = with pkgs; [
       # CLI Tools
       claude-code
+      codex
       opencode
       gemini-cli
       github-copilot-cli
