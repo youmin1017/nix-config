@@ -28,7 +28,7 @@ for i = 1, 9 do
     smw.workspace(i)
   end)
   hl.bind("SUPER + SHIFT + " .. i, function()
-    smw.move_to_workspace_silent(i)
+    smw.move_to_workspace(i)
   end)
 end
 
@@ -36,7 +36,7 @@ hl.bind("SUPER + 0", function()
   smw.workspace(10)
 end)
 hl.bind("SUPER + SHIFT + 0", function()
-  smw.move_to_workspace_silent(10)
+  smw.move_to_workspace(10)
 end)
 
 hl.bind("SUPER + S", hl.dsp.workspace.toggle_special())

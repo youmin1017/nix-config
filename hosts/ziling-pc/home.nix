@@ -12,6 +12,7 @@
         python.enable = true;
         nix.enable = true;
         go.enable = true;
+        docker.enable = true;
         rust = {
           enable = true;
           # using nightly to support -Z flag

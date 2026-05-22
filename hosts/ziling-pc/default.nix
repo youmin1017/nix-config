@@ -48,7 +48,9 @@
     nautilus
     gnome-disk-utility
 
+    # dev
     sqlite
+    act
   ];
 
   networking = {

@@ -2,6 +2,7 @@
   imports = [
     ./ai.nix
     ./devops.nix
+    ./docker.nix
     ./go.nix
     ./latex.nix
     ./nix.nix
