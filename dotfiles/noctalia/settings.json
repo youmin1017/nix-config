@@ -197,9 +197,6 @@
                     "id": "plugin:tailscale"
                 },
                 {
-                    "defaultSettings": {
-                        "refreshInterval": 5000
-                    },
                     "id": "plugin:mini-docker"
                 }
             ]
