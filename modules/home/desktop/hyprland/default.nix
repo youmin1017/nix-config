@@ -13,10 +13,6 @@ in
     enable = lib.mkEnableOption "hyprland desktop environment";
   };
 
-  imports = [
-    ./settings/plugins.nix
-  ];
-
   config = lib.mkIf cfg.enable {
     wayland.windowManager.hyprland = {
       enable = false;
@@ -24,8 +20,6 @@ in
       portalPackage = null;
     };
 
-    # xdg.configFile."uwsm/env".source =
-    #   "${config.home.sessionVariablesPackage}/etc/profile.d/hm-session-vars.sh";
     xdg.configFile = {
       "hypr".source = impurity.link "${self}/dotfiles/hypr";
     };

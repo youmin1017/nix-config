@@ -1,3 +1,5 @@
+package.path = package.path .. ";./?.lua;./?/init.lua"
+
 hl.monitor({
   output = "DP-3",
   mode = "2560x1440@180",

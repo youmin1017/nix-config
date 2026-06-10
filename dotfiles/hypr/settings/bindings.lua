@@ -21,23 +21,15 @@ hl.bind("SUPER + SHIFT + l", hl.dsp.window.move({ direction = "r" }))
 hl.bind("SUPER + SHIFT + k", hl.dsp.window.move({ direction = "u" }))
 hl.bind("SUPER + SHIFT + j", hl.dsp.window.move({ direction = "d" }))
 
--- Plugin: Split Monitor Workspaces
-local smw = hl.plugin.split_monitor_workspaces
-for i = 1, 9 do
-  hl.bind("SUPER + " .. i, function()
-    smw.workspace(i)
-  end)
-  hl.bind("SUPER + SHIFT + " .. i, function()
-    smw.move_to_workspace(i)
-  end)
+local smw = require("plugins.split-monitor-workspaces")
+for i = 1, smw.get_amount_of_workspaces() do
+  local n = tostring(i)
+  if n == "10" then
+    n = "0"
+  end
+  hl.bind("SUPER + " .. n, smw.workspace(n))
+  hl.bind("SUPER + SHIFT + " .. n, smw.move_to_workspace(n))
 end
-
-hl.bind("SUPER + 0", function()
-  smw.workspace(10)
-end)
-hl.bind("SUPER + SHIFT + 0", function()
-  smw.move_to_workspace(10)
-end)
 
 hl.bind("SUPER + S", hl.dsp.workspace.toggle_special())
 hl.bind("SUPER + SHIFT + S", hl.dsp.window.move({ workspace = "special" }))

@@ -112,7 +112,7 @@
           set -g allow-passthrough on
           set -s copy-command wl-copy
 
-          bind "'" if-shell "[[ $(tmux display-message -p '#S') = floating* ]]" {
+          bind -n M-o if-shell "[[ $(tmux display-message -p '#S') = floating* ]]" {
               detach-client
           } {
             run-shell tmux-popup

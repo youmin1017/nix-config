@@ -13,6 +13,7 @@
         nix.enable = true;
         go.enable = true;
         docker.enable = true;
+        dotnet.enable = true;
         rust = {
           enable = true;
           # using nightly to support -Z flag

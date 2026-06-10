@@ -1,0 +1,3 @@
+[submodule "dotfiles/hypr/plugins/split-monitor-workspaces"]
+	path = dotfiles/hypr/plugins/split-monitor-workspaces
+	url = https://github.com/zjeffer/split-monitor-workspaces

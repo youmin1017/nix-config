@@ -3,6 +3,7 @@
     ./ai.nix
     ./devops.nix
     ./docker.nix
+    ./dotnet.nix
     ./go.nix
     ./latex.nix
     ./nix.nix

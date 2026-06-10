@@ -13,7 +13,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland.url = "github:hyprwm/Hyprland";
     impurity.url = "github:outfoxxed/impurity.nix";
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v1.0.0";
@@ -22,7 +21,7 @@
     # neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     # Quick Shell Config
     noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
+      url = "github:noctalia-dev/noctalia/legacy-v4";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     rust-overlay = {
@@ -34,12 +33,6 @@
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    # Hyprland Plugins
-    split-monitor-workspaces = {
-      url = "github:Duckonaut/split-monitor-workspaces";
-      inputs.hyprland.follows = "hyprland"; # <- make sure this line is present for the plugin to work as intended
     };
   };
 
