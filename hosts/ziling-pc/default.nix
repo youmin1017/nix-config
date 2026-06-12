@@ -38,6 +38,7 @@
     nwg-displays
 
     jetbrains.datagrip
+    jetbrains.rider
 
     proton-vpn
     proton-pass
