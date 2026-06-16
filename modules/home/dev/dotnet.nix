@@ -10,12 +10,17 @@ in
 {
   options.myHome.dev.dotnet = {
     enable = lib.mkEnableOption "dotnet development environment configuration.";
+    sdk = lib.mkPackageOption pkgs "dotnet-sdk_10" { };
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = with pkgs; [
-      dotnet-sdk_10
+    home.packages = [
+      cfg.sdk
     ];
+
+    home.sessionVariables = {
+      DOTNET_ROOT = "${cfg.sdk}/share/dotnet";
+    };
 
     myHome = {
       programs.neovim.lazyvim.extras = [

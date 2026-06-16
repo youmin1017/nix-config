@@ -70,8 +70,8 @@ nmap < <<
 xmap > >gv
 xmap < <gv
 
-imap <M-l> <Action>(copilot.applyInlays)
-imap <M-S-l> <Action>(copilot.applyInlaysNextLine)
+imap <M-l> <Action>(InsertInlineCompletionAction)
+imap <M-S-l> <Action>(InsertInlineCompletionLineAction)
 
 " Move Line
 map <M-k> <Action>(MoveLineUp)
