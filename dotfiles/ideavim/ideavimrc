@@ -57,6 +57,7 @@ nmap <S-h> <Action>(PreviousTab)
 nmap <S-l> <Action>(NextTab)
 nmap <leader>bb <Action>(CloseEditor)
 nmap <leader>bo <Action>(CloseAllEditors)
+nmap <leader>o <Action>(GotoFile)
 
 # Editor
 imap <C-a> <Action>(EditorLineStart)
@@ -154,3 +155,4 @@ let g:WhichKeyDesc_Goto_Beginning     = "gh Goto beginning"
 let g:WhichKeyDesc_Goto_Ending        = "gl Goto ending"
 let g:WhichKeyDesc_NextDiagnostic     = "]d Goto Next diagnostic"
 let g:WhichKeyDesc_PreviousDiagnostic = "[d Goto Previous diagnostic"
+let g:WhichKeyDesc_GotoFile           = "<leader>o Goto file"
