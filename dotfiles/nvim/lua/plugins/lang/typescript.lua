@@ -4,6 +4,7 @@ return {
   opts = {
     servers = {
       tsgo = {
+        ---@type lspconfig.settings.ts_ls
         settings = {
           typescript = {
             inlayHints = {
