@@ -25,7 +25,7 @@ in
       };
 
       settings = {
-        closeOnFocusLoss = false;
+        closeOnFocusLoss = true;
         considerPreedit = false;
         faviconService = "twenty";
         font = {

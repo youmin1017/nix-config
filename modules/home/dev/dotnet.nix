@@ -21,11 +21,5 @@ in
     home.sessionVariables = {
       DOTNET_ROOT = "${cfg.sdk}/share/dotnet";
     };
-
-    myHome = {
-      programs.neovim.lazyvim.extras = [
-        "lazyvim.plugins.extras.lang.dotnet"
-      ];
-    };
   };
 }

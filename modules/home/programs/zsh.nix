@@ -24,10 +24,10 @@
             eval "$(fzf --zsh)"
           }
         '')
-        (lib.mkOrder 1200 ''
-          export PATH="$HOME/bin:$HOME/.local/bin:$HOME/go/bin:$PATH"
-          export PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
-        '')
+        # (lib.mkOrder 1200 ''
+        #   export PATH="$HOME/bin:$HOME/.local/bin:$HOME/go/bin:$PATH"
+        #   export PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
+        # '')
       ];
 
       autocd = true;
@@ -44,6 +44,11 @@
         ];
       };
     };
+
+    home.sessionPath = [
+      "$HOME/.dotnet/tools"
+      "$HOME/go/bin"
+    ];
 
     home.shellAliases = lib.mkMerge [
       {

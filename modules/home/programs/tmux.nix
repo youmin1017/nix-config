@@ -159,7 +159,7 @@
             xargs tmux select-window -t"
 
           # sesh integration
-          bind s run-shell "sesh connect \"$(
+          bind -n M-s run-shell "sesh connect \"$(
             sesh list --icons | fzf-tmux -p 80%,70% \
               --no-sort --ansi --border-label ' sesh ' --prompt '⚡  ' \
               --header '  ^a all ^t tmux ^g configs ^x zoxide ^d tmux kill ^f find' \
