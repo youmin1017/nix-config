@@ -11,7 +11,20 @@
     self.nixosModules.locale-zh-tw
   ];
 
-  networking.hostName = "ziling-pc";
+  networking = {
+    hostName = "ziling-pc";
+    networkmanager = {
+      enable = true;
+      plugins = with pkgs; [
+        networkmanager-openconnect
+      ];
+    };
+    nameservers = [
+      "1.1.1.1"
+      "8.8.8.8"
+    ];
+  };
+
   system.stateVersion = "25.11";
   time.timeZone = "Asia/Taipei";
   time.hardwareClockInLocalTime = true;
@@ -42,7 +55,6 @@
 
     proton-vpn
     proton-pass
-    proton-pass-cli
 
     # Gnome apps
     baobab
@@ -53,15 +65,6 @@
     sqlite
     act
   ];
-
-  networking = {
-    networkmanager = {
-      enable = true;
-      plugins = with pkgs; [
-        networkmanager-openconnect
-      ];
-    };
-  };
 
   myHardware = {
     amd.cpu.enable = true;
