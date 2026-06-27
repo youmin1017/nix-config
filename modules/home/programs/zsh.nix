@@ -12,22 +12,22 @@
       enable = true;
       initContent = lib.mkMerge [
         (lib.mkOrder 550 ''
+          stty -ixon -ixoff
+          setopt noflowcontrol
+
           zstyle ':completion:*' matcher-list '''''' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
           zstyle ':fzf-tab:*' fzf-pad 4
           function zvm_config() {
             ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
             ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
             ZVM_KEYTIMEOUT=0.03
+            ZVM_SYSTEM_CLIPBOARD_ENABLED=true
           }
 
           function zvm_after_init() {
             eval "$(fzf --zsh)"
           }
         '')
-        # (lib.mkOrder 1200 ''
-        #   export PATH="$HOME/bin:$HOME/.local/bin:$HOME/go/bin:$PATH"
-        #   export PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
-        # '')
       ];
 
       autocd = true;

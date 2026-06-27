@@ -6,6 +6,7 @@ set nu
 " set whichwrap+=h,l
 set scrolloff=5
 set incsearch
+set ignorecase
 set smartcase
 
 """ Handlers
@@ -57,6 +58,7 @@ nmap <S-h> <Action>(PreviousTab)
 nmap <S-l> <Action>(NextTab)
 nmap <leader>bb <Action>(CloseEditor)
 nmap <leader>bo <Action>(CloseAllEditors)
+nmap <leader>bO <Action>(CloseAllEditorsButActive)
 nmap <leader>o <Action>(GotoFile)
 
 # Editor
@@ -109,10 +111,11 @@ nmap [d <Action>(GotoPreviousError)
 " Refactoring and formatting
 nmap <leader>ra <Action>(RenameElement)
 nmap <leader>ca <Action>(ShowIntentionActions)
-nmap <leader>fm <Action>(ReformatCode)
+nmap <leader>cf <Action>(ReformatCode)
 
 nmap <leader>x <Action>(CloseActiveTab)
 nmap <leader>bo <Action>(CloseAllEditors)
+xmap vis <Action>(sql.SelectCurrentStatement)
 
 # Debugging
 nmap <leader>dd <Action>(Debug)
@@ -146,7 +149,7 @@ let g:WhichKeyDesc_YankLine           = "<leader>Y Yank line to system clipboard
 let g:WhichKeyDesc_P_after            = "<leader>p Paste from system clipboard after cursor"
 let g:WhichKeyDesc_P_before           = "<leader>P Paste from system clipboard before cursor"
 let g:WhichKeyDesc_RenameElement      = "<leader>r Rename element"
-let g:WhichKeyDesc_ReformatCode       = "<leader>fm Reformat Code"
+let g:WhichKeyDesc_ReformatCode       = "<leader>cf Reformat Code"
 let g:WhichKeyDesc_FoldCollapse       = "<leader>ff Fold region"
 let g:WhichKeyDesc_FoldExpand         = "<leader>fo Unfold region"
 let g:WhichKeyDesc_Refactoring        = "<leader>c Prefix: Refactoring and formatting"

@@ -63,6 +63,7 @@ hl.config({
   misc = {
     disable_hyprland_logo = true,
     disable_splash_rendering = true,
+    mouse_move_focuses_monitor = false,
   },
 })
 
