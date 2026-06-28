@@ -9,7 +9,7 @@
 
   config = lib.mkIf config.myHome.dev.node.enable {
     home.packages = with pkgs; [
-      nodejs_24
+      nodejs
       pnpm
       bun
     ];

@@ -12,13 +12,6 @@ in
   options.myHome.programs.ideavim.enable = lib.mkEnableOption "IdeaVim plugin for JetBrains IDEs";
 
   config = lib.mkIf cfg.enable {
-    xdg.configFile =
-      lib.genAttrs
-        [
-          "ideavim"
-        ]
-        (name: {
-          source = impurity.link "${self}/dotfiles/${name}";
-        });
+    xdg.configFile."ideavim".source = impurity.link "${self}/dotfiles/ideavim";
   };
 }

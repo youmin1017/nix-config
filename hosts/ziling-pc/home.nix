@@ -26,6 +26,7 @@
       };
 
       programs = {
+        herdr.enable = true;
         impurity.enable = true;
         ideavim.enable = true;
         neovim.enable = true;
@@ -33,13 +34,13 @@
         utils.enable = true;
         starship.enable = true;
         tmux.enable = true;
+        vicinae.enable = true;
         zed.enable = true;
         zoxide.enable = true;
         zsh.enable = true;
       };
 
       services = {
-        vicinae.enable = true;
         nm-applet.enable = true;
       };
     };

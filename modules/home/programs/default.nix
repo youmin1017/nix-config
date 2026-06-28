@@ -2,6 +2,7 @@
   imports = [
     ./ghostty.nix
     ./git.nix
+    ./herdr.nix
     ./hyprshot.nix
     ./ideavim.nix
     ./impurity.nix
@@ -10,6 +11,7 @@
     ./starship.nix
     ./tmux.nix
     ./utils.nix
+    ./vicinae.nix
     ./zed.nix
     ./zoxide.nix
     ./zsh.nix

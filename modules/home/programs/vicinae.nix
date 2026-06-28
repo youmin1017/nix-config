@@ -5,17 +5,17 @@
   ...
 }:
 let
-  cfg = config.myHome.services.vicinae;
+  cfg = config.myHome.programs.vicinae;
 in
 {
-  options.myHome.services.vicinae.enable = lib.mkEnableOption "vicinae home service";
+  options.myHome.programs.vicinae.enable = lib.mkEnableOption "vicinae";
 
   imports = [
     self.inputs.vicinae.homeManagerModules.default
   ];
 
   config = lib.mkIf cfg.enable {
-    services.vicinae = {
+    programs.vicinae = {
       enable = true; # default: false
       # package = # specify package to use here. Can be omitted.
 

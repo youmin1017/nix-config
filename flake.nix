@@ -15,7 +15,7 @@
     };
     impurity.url = "github:outfoxxed/impurity.nix";
     lanzaboote = {
-      url = "github:nix-community/lanzaboote/v1.0.0";
+      url = "github:nix-community/lanzaboote/v1.1.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";

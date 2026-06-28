@@ -49,6 +49,11 @@
                   ];
 
                   config.allowUnfree = true;
+
+                  # vesktop needed
+                  config.permittedInsecurePackages = [
+                    "pnpm-10.29.2"
+                  ];
                 };
               }
             ];

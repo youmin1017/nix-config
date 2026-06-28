@@ -21,3 +21,7 @@ darwin-init:
 nixos:
     git add .
     sudo --preserve-env=IMPURITY_PATH nixos-rebuild switch --flake .#{{ hostname }} --impure
+
+[group('nixos')]
+nixos-debug:
+    sudo --preserve-env=IMPURITY_PATH nixos-rebuild switch --flake .#{{ hostname }} --impure --show-trace
