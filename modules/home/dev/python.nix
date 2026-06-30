@@ -10,6 +10,7 @@
   config = lib.mkIf config.myHome.dev.python.enable {
     home.packages = with pkgs; [
       python3
+      uv
     ];
 
     myHome = {

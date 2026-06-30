@@ -42,6 +42,7 @@
   environment.systemPackages = with pkgs; [
     brave
     onlyoffice-desktopeditors
+    gitbutler
     quickemu
     remmina
     spotify
@@ -77,7 +78,6 @@
 
     programs = {
       nix.enable = true;
-      # systemd-boot.enable = true;
       lanzaboote.enable = true;
 
       # browsers
@@ -87,8 +87,8 @@
     };
 
     services = {
-      # greetd.enable = true;
       ly.enable = true;
+      netbird.enable = true;
       kanata.enable = true;
       tailscale.enable = true;
       udisks2.enable = true;

@@ -6,6 +6,7 @@
     ./openssh.nix
     ./kanata
     ./ly.nix
+    ./netbird.nix
     ./tailscale.nix
     ./udisks2.nix
   ];

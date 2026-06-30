@@ -115,9 +115,11 @@ nmap <leader>cf <Action>(ReformatCode)
 
 nmap <leader>x <Action>(CloseActiveTab)
 nmap <leader>bo <Action>(CloseAllEditors)
+" forward search words
+nmap # *N
 xmap vis <Action>(sql.SelectCurrentStatement)
 
-# Debugging
+" Debugging
 nmap <leader>dd <Action>(Debug)
 nmap <C-h> <Action>(StepOut)
 nmap <C-j> <Action>(StepOver)

@@ -9,8 +9,6 @@
   config = lib.mkIf config.myNixOS.services.openssh.enable {
     services.openssh = {
       enable = true;
-      openFirewall = true;
-      settings.PasswordAuthentication = false;
     };
   };
 }
