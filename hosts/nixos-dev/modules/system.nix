@@ -1,10 +1,11 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   imports = [
     ./postgresql.nix
     ./caddy.nix
     ./keycloak.nix
     ./headscale.nix
+    ./netbird.nix
     ./s3.nix
     ./syncwke.nix
     # ./wkedrive.nix

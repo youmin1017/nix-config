@@ -27,6 +27,7 @@
     termscp
     pwgen
     lsof
+    ragenix
 
     # misc
     onefetch # Git repository summary generator

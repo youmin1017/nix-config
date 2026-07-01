@@ -31,8 +31,7 @@
         override_local_dns = false;
         nameservers.global = [
           "163.22.21.44"
-          "163.22.2.1"
-          "163.22.2.2"
+          "1.1.1.1"
         ];
       };
       oidc = {
