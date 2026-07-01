@@ -23,6 +23,10 @@
       "1.1.1.1"
       "8.8.8.8"
     ];
+
+    # firewall =  {
+    #   allowedTCPPorts = [ 22022 ];
+    # };
   };
 
   system.stateVersion = "25.11";
@@ -88,12 +92,37 @@
 
     services = {
       ly.enable = true;
-      netbird.enable = true;
       kanata.enable = true;
       tailscale.enable = true;
       udisks2.enable = true;
     };
   };
+
+  services.resolved.enable = true;
+  services.netbird = {
+    # useRoutingFeatures = "both";
+    clients.default = {
+      name = "netbird";
+      port = 51820;
+      interface = "wt0";
+      hardened = false;
+      openFirewall = true;
+      openInternalFirewall = true;
+    };
+  };
+
+  # clients.default = {
+  #   name = "netbird";
+  #   port = 51820;
+  #   interface = "wt0";
+  #   hardened = false;
+  #   openFirewall = true;
+  #   openInternalFirewall = true;
+  #   login = {
+  #     enable = true;
+  #     setupKeyFile = config.age.secrets."netbird-wt0-setup-key".path;
+  #   };
+  # };
 
   myUsers.youmin = {
     enable = true;
