@@ -3,6 +3,7 @@
     devices = [
       "/dev/input/by-id/usb-Keychron_QingNiao_75-event-kbd"
       "/dev/input/by-id/usb-Keychron_QingNiao_75-if02-event-kbd"
+      "/dev/input/by-id/usb-SKN_Wireless_Link-if02-event-kbd"
     ];
     extraDefCfg = ''
       process-unmapped-keys yes

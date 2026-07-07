@@ -69,6 +69,7 @@
     # dev
     sqlite
     act
+    duckdb
   ];
 
   myHardware = {
@@ -100,7 +101,7 @@
 
   services.resolved.enable = true;
   services.netbird = {
-    # useRoutingFeatures = "both";
+    useRoutingFeatures = "client";
     clients.default = {
       name = "netbird";
       port = 51820;
@@ -110,19 +111,6 @@
       openInternalFirewall = true;
     };
   };
-
-  # clients.default = {
-  #   name = "netbird";
-  #   port = 51820;
-  #   interface = "wt0";
-  #   hardened = false;
-  #   openFirewall = true;
-  #   openInternalFirewall = true;
-  #   login = {
-  #     enable = true;
-  #     setupKeyFile = config.age.secrets."netbird-wt0-setup-key".path;
-  #   };
-  # };
 
   myUsers.youmin = {
     enable = true;

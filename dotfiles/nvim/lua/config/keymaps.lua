@@ -30,6 +30,7 @@ map("n", "<leader>o", Snacks.picker.lsp_symbols, { desc = "Snacks picker lsp sym
 map("n", "<leader>fc", function()
   Snacks.picker.files({ cwd = vim.fn.stdpath("config") })
 end, { desc = "Snacks picker find config files" })
+map("n", "<leader>fD", "<cmd>Dotnet<CR>", { desc = "EasyDotnet commands dicker" })
 
 --     ╭───────────────────────────────────────────────────────────────────╮
 --     │                   Terminal                                        │
