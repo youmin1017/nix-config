@@ -29,6 +29,7 @@
         herdr.enable = true;
         impurity.enable = true;
         ideavim.enable = true;
+        jujutsu.enable = true;
         neovim.enable = true;
         noctalia.enable = true;
         utils.enable = true;

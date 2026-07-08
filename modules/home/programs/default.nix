@@ -6,6 +6,7 @@
     ./hyprshot.nix
     ./ideavim.nix
     ./impurity.nix
+    ./jujutsu.nix
     ./neovim.nix
     ./noctalia.nix
     ./starship.nix
