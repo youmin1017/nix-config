@@ -14,7 +14,6 @@
       axel # A light download accelerator
       btop # A customizable resource monitor (CPU, memory, disks, network)
       inkscape # A professional vector graphics editor and utility
-      jless # A command-line JSON viewer and pager for interactive exploration
       jq # A lightweight and flexible command-line JSON processor
       just # A handy way to save and run project-specific commands
       lazydocker # A simple terminal UI for docker and docker-compose
