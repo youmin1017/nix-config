@@ -52,6 +52,7 @@
       enable = true;
       defaultEditor = true;
       vimAlias = true;
+      sideloadInitLua = true;
 
       withRuby = false;
       withPython3 = false;
@@ -73,21 +74,16 @@
     xdg.configFile =
       lib.genAttrs
         [
-          "nvim/init.lua"
-          "nvim/.neoconf.json"
-          "nvim/lazy-lock.json"
-          "nvim/stylua.toml"
-          "nvim/lua"
-
+          "nvim"
           "nvim-vscode"
         ]
         (name: {
           source = impurity.link "${self}/dotfiles/${name}";
-        })
-      // {
-        "nvim/lazyvim.json".source = pkgs.writeText "lazyvim.json" (
-          builtins.toJSON config.myHome.programs.neovim.lazyvim
-        );
-      };
+        });
+    home.file = {
+      ".local/share/nvim/lazyvim.json".source = pkgs.writeText "lazyvim.json" (
+        builtins.toJSON config.myHome.programs.neovim.lazyvim
+      );
+    };
   };
 }

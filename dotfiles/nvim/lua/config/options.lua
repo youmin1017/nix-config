@@ -15,9 +15,7 @@ vim.filetype.add({
 })
 
 -- LazyVim  Options
-
 ---@type "vtsls" | "tsgo"
 vim.g.lazyvim_ts_lsp = "tsgo"
-
 ---@type "rust-analyzer" | "bacon-ls"
 vim.g.lazyvim_rust_diagnostics = "bacon-ls"
