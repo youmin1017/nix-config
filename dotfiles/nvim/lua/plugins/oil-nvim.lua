@@ -1,4 +1,3 @@
----@diagnostic disable: missing-fields
 ---@type LazySpec
 local spec = {
   {
@@ -10,12 +9,12 @@ local spec = {
       {
         "-",
         function()
-          require("oil").toggle_float(nil, { preview = {} })
+          require("oil").open(nil, { preview = {} })
         end,
         desc = "File Open oil.nvim",
       },
     },
-    ---@type oil.Config
+    ---@type oil.SetupOpts
     opts = {
       default_file_explorer = false,
       delete_to_trash = true,
@@ -24,9 +23,9 @@ local spec = {
         ["<C-h>"] = false,
         ["<C-l>"] = false,
         ["<C-p>"] = false,
-        ["-"] = false,
-        ["`"] = false,
-        ["s"] = { "<cmd>write<CR>", mode = "n", desc = "Sync/apply changes" },
+        ["-"] = "actions.close",
+        ["<C-s>"] = { "actions.select", opts = { horizontal = true } },
+        ["s"] = { "<cmd>write<cr>", mode = "n", desc = "Sync/apply changes" },
         ["R"] = "actions.refresh",
         ["H"] = "actions.toggle_hidden",
         ["."] = "actions.cd",
