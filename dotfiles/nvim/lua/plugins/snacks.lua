@@ -17,6 +17,7 @@ return {
         return true
       end,
     },
+    ---@type snacks.picker.Config
     picker = {
       sources = {
         explorer = {
@@ -27,21 +28,6 @@ return {
     ---@type snacks.picker.explorer.Config
     explorer = {
       trash = true,
-      config = function(opts)
-        local actions = require("snacks.explorer.actions")
-        function actions.actions.confirm(picker, item, action)
-          if not item then
-            return
-          elseif item.dir then
-            require("snacks.explorer.tree"):toggle(item.file)
-            actions.update(picker, { refresh = true })
-          else
-            require("snacks").picker.actions.jump(picker, item, action)
-          end
-        end
-        return require("snacks.picker.source.explorer").setup(opts)
-      end,
-      win = { input = { keys = { ["l"] = "confirm" } } },
     },
     dashboard = {
       preset = {

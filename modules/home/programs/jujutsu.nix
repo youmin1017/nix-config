@@ -1,6 +1,5 @@
 {
   config,
-  pkgs,
   lib,
   ...
 }:
@@ -11,16 +10,25 @@ in
   options.myHome.programs.jujutsu.enable = lib.mkEnableOption "Enable jujutsu program";
 
   config = lib.mkIf cfg.enable {
-    home.packages = with pkgs; [
-      jujutsu
-    ];
+    programs.jujutsu = {
+      enable = true;
+      settings = {
+        user = {
+          name = config.myHome.programs.git.user.name;
+          email = config.myHome.programs.git.user.email;
+        };
 
-    xdg.configFile = {
-      "jj/config.toml".text = ''
-        [user]
-        email = "${config.myHome.programs.git.user.email}"
-        name = "${config.myHome.programs.git.user.name}"
-      '';
+        aliases = {
+          tug = [
+            "bookmark"
+            "move"
+            "--from"
+            "heads(::@- & bookmarks())"
+            "--to"
+            "@-"
+          ];
+        };
+      };
     };
   };
 }
