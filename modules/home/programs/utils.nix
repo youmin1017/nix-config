@@ -88,11 +88,13 @@
           "--border"
         ];
 
-        fileWidgetCommand = "fd --type f --hidden --strip-cwd-prefix";
-        fileWidgetOptions = [
-          "--preview"
-          "'bat --color=always -n --line-range :500 {}'"
-        ];
+        fileWidget = {
+          command = "fd --type f --hidden --strip-cwd-prefix";
+          options = [
+            "--preview"
+            "'bat --color=always -n --line-range :500 {}'"
+          ];
+        };
 
         # dracula
         colors = {

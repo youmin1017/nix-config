@@ -1,6 +1,6 @@
 {
   "permissions": {
-    "allow": ["Skill(commit-commands:commit)"]
+    "allow": ["Skill(commit-commands:commit)", "Bash(jj)"]
   },
   "attribution": {
     "commit": "",

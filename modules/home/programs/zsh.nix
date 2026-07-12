@@ -15,7 +15,7 @@
           stty -ixon -ixoff
           setopt noflowcontrol
 
-          zstyle ':completion:*' matcher-list '''''' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+          zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z} r:|=*' 'm:{a-zA-Z}={A-Za-z}  l:|=* r:|=*' 'm:{a-zA-Z}={A-Za-z}'
           zstyle ':fzf-tab:*' fzf-pad 4
           function zvm_config() {
             ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT

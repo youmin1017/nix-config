@@ -46,7 +46,6 @@
   environment.systemPackages = with pkgs; [
     brave
     onlyoffice-desktopeditors
-    gitbutler
     quickemu
     remmina
     spotify
