@@ -10,6 +10,11 @@ return {
         enabled = true,
         auto_refresh_codelens = false,
       },
+      auto_bootstrap_namespace = {
+        ---@type "block_scoped" | "file_scoped"
+        type = "file_scoped",
+        enabled = true,
+      },
     },
   },
   {
