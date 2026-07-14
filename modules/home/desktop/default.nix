@@ -1,7 +1,8 @@
 { config, lib, ... }:
 {
   imports = [
-    ./hyprland
+    ./hyprland.nix
+    ./niri.nix
   ];
 
   options.myHome.desktop.enable = lib.mkOption {

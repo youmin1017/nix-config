@@ -23,10 +23,6 @@
       "1.1.1.1"
       "8.8.8.8"
     ];
-
-    # firewall =  {
-    #   allowedTCPPorts = [ 22022 ];
-    # };
   };
 
   system.stateVersion = "25.11";
@@ -78,7 +74,9 @@
 
   myNixOS = {
     base.enable = true;
-    desktop.hyprland.enable = true;
+    desktop = {
+      hyprland.enable = true;
+    };
 
     programs = {
       nix.enable = true;
