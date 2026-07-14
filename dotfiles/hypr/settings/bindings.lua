@@ -2,24 +2,24 @@ hl.bind("SUPER + Q", hl.dsp.window.close())
 hl.bind("SUPER + G", hl.dsp.window.float({ action = "toggle" }))
 
 hl.bind("SUPER + CTRL + Q", hl.dsp.exec_cmd("noctalia-shell ipc call lockScreen lock"))
-hl.bind("SUPER + SHIFT + comma", hl.dsp.exec_cmd("noctalia-shell ipc call settings toggle"))
+hl.bind("SUPER + SHIFT + COMMA", hl.dsp.exec_cmd("noctalia-shell ipc call settings toggle"))
 
 hl.bind("SUPER + SPACE", hl.dsp.exec_cmd("vicinae toggle"))
-hl.bind("SUPER + p", hl.dsp.exec_cmd("ghostty"))
+hl.bind("SUPER + T", hl.dsp.exec_cmd("ghostty"))
 
 hl.bind("Print", hl.dsp.exec_cmd("hyprshot -m region --freeze"))
 hl.bind("SHIFT + Print", hl.dsp.exec_cmd("hyprshot -m window --freeze"))
 hl.bind("CTRL + Print", hl.dsp.exec_cmd("hyprshot -m output --freeze"))
 
-hl.bind("SUPER + h", hl.dsp.focus({ direction = "l" }))
-hl.bind("SUPER + l", hl.dsp.focus({ direction = "r" }))
-hl.bind("SUPER + k", hl.dsp.focus({ direction = "u" }))
-hl.bind("SUPER + j", hl.dsp.focus({ direction = "d" }))
+hl.bind("SUPER + H", hl.dsp.focus({ direction = "l" }))
+hl.bind("SUPER + L", hl.dsp.focus({ direction = "r" }))
+hl.bind("SUPER + K", hl.dsp.focus({ direction = "u" }))
+hl.bind("SUPER + J", hl.dsp.focus({ direction = "d" }))
 
-hl.bind("SUPER + SHIFT + h", hl.dsp.window.move({ direction = "l" }))
-hl.bind("SUPER + SHIFT + l", hl.dsp.window.move({ direction = "r" }))
-hl.bind("SUPER + SHIFT + k", hl.dsp.window.move({ direction = "u" }))
-hl.bind("SUPER + SHIFT + j", hl.dsp.window.move({ direction = "d" }))
+hl.bind("SUPER + SHIFT + H", hl.dsp.window.move({ direction = "l" }))
+hl.bind("SUPER + SHIFT + L", hl.dsp.window.move({ direction = "r" }))
+hl.bind("SUPER + SHIFT + K", hl.dsp.window.move({ direction = "u" }))
+hl.bind("SUPER + SHIFT + J", hl.dsp.window.move({ direction = "d" }))
 
 local smw = require("plugins.split-monitor-workspaces")
 for i = 1, smw.get_amount_of_workspaces() do

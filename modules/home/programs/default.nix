@@ -14,6 +14,7 @@
     ./utils.nix
     ./vicinae.nix
     ./zed.nix
+    ./zen-browser.nix
     ./zoxide.nix
     ./zsh.nix
   ];

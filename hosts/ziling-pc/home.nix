@@ -39,6 +39,7 @@
         zed.enable = true;
         zoxide.enable = true;
         zsh.enable = true;
+        zen-browser.enable = true;
       };
 
       services = {

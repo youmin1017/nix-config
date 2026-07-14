@@ -21,10 +21,11 @@
     programs.hyprland = {
       enable = true;
       withUWSM = true;
-      # package = self.inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-      # portalPackage =
-      #   self.inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     };
+
+    services.dbus.packages = [
+      pkgs.nautilus
+    ];
 
     # Polkit agent for Hyprland
     systemd.user.services.polkit-gnome-authentication-agent-1 = {

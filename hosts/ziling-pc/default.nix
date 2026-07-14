@@ -85,7 +85,6 @@
       # browsers
       chromium.enable = true;
       firefox.enable = true;
-      zen-browser.enable = true;
     };
 
     services = {
