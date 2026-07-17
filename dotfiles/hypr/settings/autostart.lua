@@ -1,6 +1,6 @@
 hl.on("hyprland.start", function()
   hl.exec_cmd("noctalia-shell")
+  hl.exec_cmd("Telegram", { workspace = "special" })
   hl.exec_cmd("zen-beta", { monitor = "DP-2" })
   hl.exec_cmd("ghostty", { monitor = "DP-3" })
-  hl.exec_cmd("Telegram", { workspace = "special" })
 end)
