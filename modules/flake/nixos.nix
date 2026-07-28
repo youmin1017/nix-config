@@ -19,6 +19,7 @@
       inputs.nixpkgs.lib.genAttrs
         [
           "ziling-pc"
+          "mtaxi"
         ]
         (
           host:

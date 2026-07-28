@@ -6,6 +6,7 @@
     ./profiles
     ./services
     ./programs
+    ./wsl.nix
   ];
 
   options.myNixOS.FLAKE = lib.mkOption {
