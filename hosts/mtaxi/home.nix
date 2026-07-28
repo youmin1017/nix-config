@@ -1,4 +1,4 @@
-{ self, pkgs, ... }:
+{ self, ... }:
 {
   home-manager.users.youmin = {
     imports = [
@@ -26,7 +26,10 @@
         neovim.enable = true;
         utils.enable = true;
         starship.enable = true;
-        tmux.enable = true;
+        tmux = {
+          enable = true;
+          terminal = "xterm-256color";
+        };
         zoxide.enable = true;
         zsh.enable = true;
       };

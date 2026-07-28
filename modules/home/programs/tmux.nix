@@ -5,10 +5,19 @@
   ...
 }:
 {
-  options.myHome.programs.tmux.enable = lib.mkEnableOption "tmux";
+  options.myHome.programs.tmux = {
+    enable = lib.mkEnableOption "tmux";
+    terminal = lib.mkOption {
+      type = lib.types.str;
+      default = "xterm-ghostty";
+      description = "The terminal type to use for tmux.";
+    };
+  };
 
   config =
     let
+      cfg = config.myHome.programs.tmux;
+
       tmuxPopup =
         let
           tmux = "${pkgs.tmux}/bin/tmux";
@@ -60,7 +69,7 @@
           fi
         '';
     in
-    lib.mkIf config.myHome.programs.tmux.enable {
+    lib.mkIf cfg.enable {
       myHome = {
         # required by sesh
         programs.zoxide.enable = true;
@@ -74,7 +83,7 @@
         tmux = {
           enable = true;
 
-          terminal = "xterm-ghostty";
+          inherit (cfg) terminal;
           baseIndex = 1; # Start pane and window indices at 1 instead of 0
           reverseSplit = true;
 
