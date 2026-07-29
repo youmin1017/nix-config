@@ -21,6 +21,10 @@
       };
 
       programs = {
+        git = {
+          user.name = "youmin1017";
+          user.email = "youmin.wu@mobile.com.tw";
+        };
         impurity.enable = true;
         jujutsu.enable = true;
         neovim.enable = true;

@@ -23,9 +23,9 @@
       };
       myHome = {
         programs.git = {
-          enable = true;
-          user.name = "youmin1017";
-          user.email = "youmin.main@gmail.com";
+          enable = lib.mkDefault true;
+          user.name = lib.mkDefault "youmin1017";
+          user.email = lib.mkDefault "youmin.main@gmail.com";
         };
       };
     }
