@@ -29,6 +29,10 @@
     defaultUser = "youmin";
   };
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "dotnet-sdk-6.0.428"
+  ];
+
   myNixOS = {
     wsl.enable = true;
     programs = {

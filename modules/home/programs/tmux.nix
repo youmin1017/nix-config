@@ -119,6 +119,7 @@
             set -s set-clipboard on
             set -g allow-passthrough on
             set -s copy-command wl-copy
+            set -g focus-events on
 
             bind -n M-o if-shell "[[ $(tmux display-message -p '#S') = floating* ]]" {
                 detach-client

@@ -1,4 +1,4 @@
-{ self, ... }:
+{ self, pkgs, ... }:
 {
   home-manager.users.youmin = {
     imports = [
@@ -13,7 +13,15 @@
         nix.enable = true;
         go.enable = true;
         docker.enable = true;
-        dotnet.enable = true;
+        dotnet = {
+          enable = true;
+          sdk =
+            with pkgs.dotnetCorePackages;
+            combinePackages [
+              sdk_10_0
+              sdk_6_0
+            ];
+        };
       };
 
       profiles = {
